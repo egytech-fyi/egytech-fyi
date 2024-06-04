@@ -1,0 +1,12 @@
+.salary-comment-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 767px) {
+    .salary-comment-container {
+        margin: 0.5rem 1rem;
+        flex-direction: inherit;
+    }
+}

@@ -1,0 +1,25 @@
+.inputs-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}
+
+.submit-button {
+    width: fit-content;
+}
+
+.disclaimer {
+    font-size: 12px;
+    margin: 0;
+  }
+  
+  .labelText {
+    text-align: indent;
+  }
+
+@media only screen and (max-width: 767px) {
+    .inputs-container {
+        flex-direction: column;
+    }
+}

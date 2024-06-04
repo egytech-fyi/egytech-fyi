@@ -1,0 +1,16 @@
+.filters-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.filters-drawer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100%;
+}
+.filters-cta {
+    font-size: 18px;
+    height: auto;
+}

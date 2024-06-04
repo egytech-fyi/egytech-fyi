@@ -1,0 +1,92 @@
+.button {
+    border-radius: 0;
+    box-shadow: none;
+    width: 100%;
+    height: 100%;
+}
+.custom-tag {
+    min-height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: fit-content;
+    font-size: 14px;
+    line-height: 25px;
+    text-wrap: wrap;
+}
+
+.float-label {
+    position: relative;
+    width: 100%;
+    max-width: 304px;
+    overflow-x: clip;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.label {
+    width: fit-content;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 12px;
+    top: 11px;
+    right: 24px;
+    transition: 0.2s ease all;
+}
+
+.as-placeholder {
+    color: #bfbfbf;
+    top: 0;
+    line-height: 30px;
+}
+
+.as-label {
+    top: -10px;
+    font-size: 12px !important;
+    padding: 0 4px;
+    margin-left: -4px;
+}
+.content-span {
+    position: relative;
+    z-index: 0;
+}
+
+.hiding-span {
+    display: block;
+    position: absolute;
+    top: calc(48.5% - -1px);
+    width: calc(100% + 4px);
+    background: white;
+    height: 1px;
+    z-index: -1;
+    left: -2px;
+}
+
+.number {
+    left: 60px;
+}
+
+.comment-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header-text {
+    text-align: center;
+    color: #4c88ef;
+}
+
+.header-subtext {
+    text-align: center;
+    color: #3fa95b;
+}
+
+@media only screen and (max-width: 767px) {
+    .comment-container {
+        margin: 0.5rem 1rem;
+        flex-direction: inherit;
+    }
+}

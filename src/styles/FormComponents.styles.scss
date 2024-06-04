@@ -1,0 +1,22 @@
+.input {
+    min-width: 160px;
+    background-color: white;
+    border-radius: 5px;
+    .ant-input-number-group-addon {
+        padding: 0;
+    }
+}
+.number-input {
+    width: 100%;
+}
+.ant-input-number-wrapper {
+    z-index: 0;
+}
+.search-input {
+    width: 100%;
+    min-width: 100px;
+    max-width: 304px;
+}
+.select-input {
+    width: 100%;
+}

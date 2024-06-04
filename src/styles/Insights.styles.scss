@@ -1,0 +1,15 @@
+.desktop-anchor {
+    display: none;
+}
+
+@media (min-width: 767px) {
+    .desktop-anchor {
+        display: block;
+    }
+}
+
+@media (max-width: 767px) {
+    .desktop-anchor {
+        display: none;
+    }
+}
