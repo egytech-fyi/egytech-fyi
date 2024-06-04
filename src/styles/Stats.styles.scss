@@ -1,0 +1,89 @@
+.stats-outer-container {
+    padding-inline: 3%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-block: 10px;
+    align-items: stretch;
+    .median {
+        flex: 1 1 30%;
+        justify-content: space-evenly;
+    }
+    .percentile-container {
+        flex: 1 1 40%;
+        justify-content: space-evenly;
+    }
+
+    .stats-inner-container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+
+        .stat {
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            &.laptop {
+                display: flex;
+            }
+            &.mobile {
+                display: none;
+            }
+
+            .stat-value {
+                font-size: inherit;
+                font-weight: 500;
+                &.median {
+                    font-size: 34px;
+                    color: #097969;
+                    font-weight: 700;
+                }
+            }
+            .stat-label {
+                color: #727272;
+                font-size: 14px;
+                font-weight: 700;
+            }
+            .indicator {
+                width: 100%;
+                height: 8px;
+                border-radius: 5px;
+            }
+
+            .p20 {
+                background-color: #c2e2da;
+            }
+            .p75 {
+                background-color: #6ec4a6;
+            }
+            .p90 {
+                background-color: #007646;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .stats-outer-container {
+        flex-direction: column;
+        gap: 20px;
+
+        .stats-inner-container {
+            justify-content: space-around;
+            .stat {
+                &.laptop {
+                    display: none;
+                }
+                &.mobile {
+                    display: flex;
+                }
+                .stat-value {
+                    &.median {
+                        font-size: 28px;
+                    }
+                }
+            }
+        }
+    }
+}

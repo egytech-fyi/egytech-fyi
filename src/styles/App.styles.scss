@@ -1,0 +1,24 @@
+@import "./variables.scss";
+
+#root {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.app-container {
+    display: flex;
+    min-height: calc(100vh - 64px);
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.ant-layout-header {
+    padding: 0%;
+}
+
+@media only screen and (max-width: 767px) {
+    .app-container {
+        padding: 1rem;
+    }
+}

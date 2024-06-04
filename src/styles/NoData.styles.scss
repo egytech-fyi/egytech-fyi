@@ -1,0 +1,13 @@
+.no-data-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    .cat-img {
+        width: 200px;
+        transform: rotate(200deg);
+    }
+    .text {
+        font-size: 20px;
+    }
+}

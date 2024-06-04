@@ -1,0 +1,18 @@
+.inactive {
+    opacity: 0.3;
+    filter: brightness(80%);
+}
+.active {
+    opacity: 1;
+    filter: brightness(100%);
+}
+
+@media only screen and (max-width: 767px) {
+    .highcharts-subtitle {
+        font-size: 10px !important;
+        text-align: center;
+    }
+    .highcharts-axis {
+        font-size: 12px !important;
+    }
+}
