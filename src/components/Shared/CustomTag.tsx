@@ -3,7 +3,7 @@ import "@styles/SharedComponents.styles.scss";
 
 interface CustomTagProps extends TagProps {
     fieldKey: string;
-    fieldValue: string | number | boolean;
+    fieldValue: string | number | boolean | string[];
 }
 
 export const CustomTag = ({

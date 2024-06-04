@@ -2,7 +2,7 @@ import { useMemo, useRef } from "react";
 import * as Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import Annotations from "highcharts/modules/annotations";
-import { getHistogramOptions } from "@utils/getHistogramOptions";
+import { getHistogramOptions } from "../../utils/getHistogramOptions";
 import "@styles/chart.styles.scss";
 
 Annotations(Highcharts);

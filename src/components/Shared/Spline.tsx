@@ -1,7 +1,7 @@
 import { useMemo, useRef } from "react";
 import * as Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
-import { SplineDataType, getSplineOptions } from "@utils/getSplineOptions";
+import { SplineDataType, getSplineOptions } from "../../utils/getSplineOptions";
 import "@styles/chart.styles.scss";
 
 export const Spline = (

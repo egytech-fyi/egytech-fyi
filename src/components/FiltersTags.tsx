@@ -42,7 +42,7 @@ export const FiltersTags = () => {
                         color={colors[index]}
                         fieldKey={fieldKeyMap[key]}
                         fieldValue={
-                            typeof value !== "boolean" && keyValueMap[value]
+                            typeof value !== "object" && (typeof value !== "boolean" && keyValueMap[value])
                                 ? keyValueMap[value]
                                 : value
                         }
