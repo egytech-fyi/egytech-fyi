@@ -211,7 +211,7 @@ Contributions are welcome! To help make this project better, please follow these
 3. Commit your changes (`git commit -am 'Add some AmazingFeature'`).
 4. Push to the branch (`git push origin feature/AmazingFeature`).
 5. Open a pull request to staging branch.
-6. Once merged test your changes on [staging](https://staging.egytech-fyi-frontend.pages.dev) 
+6. Once merged test your changes on [staging](https://staging.egytech-fyi-3s7.pages.dev) 
 
 ### Contributors
 This project exists thanks to all the people who contribute. A special thanks to our key contributors:
