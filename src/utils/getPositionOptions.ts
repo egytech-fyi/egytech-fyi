@@ -49,7 +49,7 @@ export interface PositionOption {
     disabled?: boolean;
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
+ 
 const PositionsIconsMap: Record<PositionCategory, unknown> = {
     designer: FormatPainterOutlined,
     engineer: SettingOutlined,
