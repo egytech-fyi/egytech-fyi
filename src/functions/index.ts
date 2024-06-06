@@ -1,2 +1,2 @@
-export * from "./getCategories";
-export * from "./transformBuckets";
+export * from './getCategories'
+export * from './transformBuckets'

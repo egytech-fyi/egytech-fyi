@@ -1,1 +1,1 @@
-export { default as CryingCat } from "./crying-cat.png";
+export { default as CryingCat } from './crying-cat.png'
