@@ -10,35 +10,36 @@ Welcome to the frontend repository for egytech.fyi, a dynamic dashboard and repo
     - [🔧 Prerequisites](#-prerequisites)
     - [📦 Installation](#-installation)
     - [🖥️ Running the Application](#️-running-the-application)
-    - [🔍 Running Lant](#-running-lint)
+    - [🔍 Running Lint](#-running-lint)
     - [👀 Previewing Build](#-previewing-build)
   - [🎨 Features](#-features)
   - [📚 Folder Structure](#-folder-structure)
   - [🤝 Contributing](#-contributing)
-  - [📜 License](#-license)
+    - [Contributors](#contributors)
 
 ## 🚀 Getting Started
 
 ### 🔧 Prerequisites
 
 Before you begin, ensure you have the following installed:
+
 - [Node.js](https://nodejs.org/)
-- [npm](https://npmjs.com/) (or [Yarn](https://yarnpkg.com/))
+- [Yarn](https://yarnpkg.com/)
 
 ### 📦 Installation
 
 To set up the project locally, follow these steps:
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/your-username/egytechfyi-frontend.git
    cd egytechfyi-frontend
    ```
 
 2. Install dependencies:
+
    ```bash
-   npm install
-   # or
    yarn install
    ```
 
@@ -47,8 +48,6 @@ To set up the project locally, follow these steps:
 Start the development server:
 
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 
@@ -59,8 +58,6 @@ This will launch the Vite development server, making the application accessible 
 To ensure code quality and consistency, run ESLint with:
 
 ```bash
-npm run lint
-# or
 yarn lint
 ```
 
@@ -69,9 +66,6 @@ yarn lint
 To build the project and preview it locally:
 
 ```bash
-npm run build
-npm run preview
-# or
 yarn run build
 yarn preview
 ```
@@ -79,6 +73,7 @@ yarn preview
 ## 🎨 Features
 
 This dashboard includes:
+
 - Interactive filters to view data based on job titles, experience levels, and technology stacks.
 - Visual representations of salary ranges and distributions.
 - Comparisons and analytical reports similar to industry surveys.
@@ -211,9 +206,10 @@ Contributions are welcome! To help make this project better, please follow these
 3. Commit your changes (`git commit -am 'Add some AmazingFeature'`).
 4. Push to the branch (`git push origin feature/AmazingFeature`).
 5. Open a pull request to staging branch.
-6. Once merged test your changes on [staging](https://staging.egytech-fyi-3s7.pages.dev) 
+6. Once merged test your changes on [staging](https://staging.egytech-fyi-3s7.pages.dev)
 
 ### Contributors
+
 This project exists thanks to all the people who contribute. A special thanks to our key contributors:
 
 - **Abdelrahman Eladawy**
