@@ -80,121 +80,41 @@ This dashboard includes:
 
 ## 📚 Folder Structure
 
-```
-/
-|-- public
-|   |-- egypt-tech-scene-logo.svg
-|   |-- egytechfyi Main Logo 2400x1800.jpg
-|   |-- egytechfyi Main Logo.png
-|   |-- inverted-color-logo.png
-|   |-- symbol.svg
-|   |-- vite.svg
-|   |-- white-logo.png
-|
-|-- src
-|   |-- Services
-|   |   |-- constants.ts
-|   |   |-- getParticipants.ts
-|   |   |-- getStats.ts
-|   |
-|   |-- assets
-|   |   |-- crying-cat.png
-|   |   |-- pin-png-39474.png
-|   |   |-- react.svg
-|   |
-|   |-- components
-|   |   |-- NavBar.tsx
-|   |   |-- Footer.tsx
-|   |   |-- Dashboard
-|   |   |   |-- FiltersDrawer.tsx
-|   |   |   |-- FiltersTags.tsx
-|   |   |   |-- GraphCard.tsx
-|   |   |   |-- MainContainer.tsx
-|   |   |   |-- MainFilters.tsx
-|   |   |   |-- NoData.tsx
-|   |   |   |-- SalaryComment.tsx
-|   |   |   |-- StatsCard.tsx
-|   |   |   |-- StatsContainer.tsx
-|   |   |-- FormComponents
-|   |   |   |-- CustomInput.tsx
-|   |   |-- Pages
-|   |   |   |-- Compensation.tsx
-|   |   |   |-- Insights.tsx
-|   |   |   |-- LandingPage.tsx
-|   |   |   |-- Overview.tsx
-|   |   |   |-- Satisfaction.tsx
-|   |   |   |-- Technology.tsx
-|   |   |-- Shared
-|   |       |-- BaseComment.tsx
-|   |       |-- CustomButton.tsx
-|   |       |-- CustomTag.tsx
-|   |       |-- Filters.tsx
-|   |       |-- FloatLabel.ts
-|   |       |-- Histogram.tsx
-|   |       |-- RangeSlider.tsx
-|   |       |-- Spline.tsx
-|   |       |-- StepCard.tsx
-|   |-- constants
-|   |   |-- HistogramOptions.ts
-|   |   |-- PositionsOptions.ts
-|   |   |-- SplineOptions.ts
-|   |   |-- colors.ts
-|   |   |-- constants.ts
-|   |   |-- initialState.ts
-|   |-- context
-|   |   |-- GlobalStateContext.tsx
-|   |   |-- useGlobalState.ts
-|   |-- functions
-|   |   |-- getCategories.ts
-|   |   |-- transformBuckets.ts
-|   |-- mock
-|   |   |-- MOCK_FEMALE_DATA.ts
-|   |   |-- MOCK_MALE_DATA.ts
-|   |-- styles
-|   |   |-- App.styles.scss
-|   |   |-- BaseComment.styles.scss
-|   |   |-- FilterTags.styles.scss
-|   |   |-- Filters.styles.scss
-|   |   |-- Footer.styles.scss
-|   |   |-- FormComponents.styles.scss
-|   |   |-- Insights.styles.scss
-|   |   |-- LandingPage.styles.scss
-|   |   |-- MainContainer.styles.scss
-|   |   |-- MainFilters.styles.scss
-|   |   |-- Navbar.styles.scss
-|   |   |-- NoData.styles.scss
-|   |   |-- RangeSlider.styles.scss
-|   |   |-- SharedComponents.styles.scss
-|   |   |-- Stats.styles.scss
-|   |   |-- StepContainer.styles.scss
-|   |   |-- chart.styles.scss
-|   |   |-- variables.scss
-|   |-- types
-|   |   |-- index.ts
-|   |-- utils
-|   |   |-- Transformers
-|   |   |   |-- transformOptions.ts
-|   |   |-- generateHistogramColors.ts
-|   |   |-- generateHueSequence.ts
-|   |   |-- getHistogramBarPages.ts
-|   |   |-- getPositionOptions.ts
-|   |   |-- getSplineOptions.ts
-|   |   |-- getUniqueCategories.ts
-|   |-- App.tsx
-|   |-- index.css
-|   |-- main.tsx
-|   |-- vite-env.d.ts
-|
-|-- .eslintrc.cjs
-|-- .gitattributes
-|-- .gitignore
-|-- README.md
-|-- index.html
-|-- package-lock.json
-|-- package.json
-|-- tsconfig.json
-|-- tsconconfig.node.json
-|-- vite.config.ts
+```javascript
+└── 📁egytech-fyi
+    └── 📁.github
+        └── PULL_REQUEST_TEMPLATE.md
+    └── 📁.husky
+        └── pre-commit
+        └── pre-push
+    └── .prettierrc
+    └── 📁.vscode
+        └── settings.json
+    └── 📁public
+    └── 📁src
+        └── 📁assets 
+        └── 📁components // for all the components used
+            └── 📁Shared // for shared agnostic components
+        └── 📁constants // for constants used across the repo
+        └── 📁context // for state contexts
+        └── 📁functions // for general functions
+        └── 📁mock //for mock data
+        └── 📁pages // for pages
+        └── 📁services // for api services 
+        └── 📁styles // for style files (should follow the convention of <FileName>.styles.scss)
+        └── 📁types // type script types
+        └── 📁utils // for utility functions
+            └── 📁Transformers // for data transformation functions
+        └── App.tsx
+        └── index.css
+        └── main.tsx
+        └── vite-env.d.ts
+    └── README.md
+    └── index.html 
+    └── package.json 
+    └── tsconfig.json
+    └── tsconfig.node.json
+    └── vite.config.ts
 ```
 
 ## 🤝 Contributing
