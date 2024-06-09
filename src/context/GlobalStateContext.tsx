@@ -27,7 +27,7 @@ export type ActionType =
 function reducer(state: StateType, action: ActionType): StateType {
   if (action.type === 'filters') {
     const filteredObject = Object.fromEntries(
-      Object.entries(action.payload).filter(([key, value]) => key && value),
+      Object.entries(action.payload).filter(([key, value]) => key && value !== undefined),
     )
     return { ...state, ...filteredObject }
   } else {
