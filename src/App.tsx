@@ -6,6 +6,11 @@ import { GlobalStateProvider } from '@context'
 import { LandingPage, Compensation, Insights } from '@pages'
 import '@styles/App.styles.scss'
 import { useState } from 'react'
+import Highcharts from 'highcharts'
+import HighchartsAccessibility from 'highcharts/modules/accessibility'
+
+// Initialize the accessibility module
+HighchartsAccessibility(Highcharts)
 
 const { Content } = Layout
 
