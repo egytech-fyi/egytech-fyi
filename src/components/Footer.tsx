@@ -1,4 +1,10 @@
-import { MailOutlined, BellOutlined, PlusCircleOutlined, TeamOutlined } from '@ant-design/icons'
+import {
+  MailOutlined,
+  BellOutlined,
+  PlusCircleOutlined,
+  TeamOutlined,
+  GithubOutlined,
+} from '@ant-design/icons'
 import '@styles/Footer.styles.scss'
 
 const FooterNotes = () => {
@@ -47,7 +53,11 @@ const FooterActions = () => {
         href='https://docs.google.com/forms/d/e/1FAIpQLSfBAjjgs14SQ9i3Dgo6BDPp-m7sxqHaUt4kFOghV-44knIUPg/viewform'
         target='_blank'>
         <PlusCircleOutlined />
-        Contribute
+        Participate
+      </a>
+      <a href='https://github.com/egytech-fyi' target='_blank'>
+        <GithubOutlined />
+        Collaborate
       </a>
       <a
         href='https://docs.google.com/forms/d/e/1FAIpQLSfKS-ZBzixfgOlsqpMEmn65_Em1Ek1-wOLXfhrXHORP9gsp0g/viewform?usp=sf_link'
