@@ -1,11 +1,11 @@
-import { BrowserRouter as Router, Route, Routes as Switch } from 'react-router-dom'
-import { QueryClient, QueryClientProvider } from 'react-query'
-import { Layout } from 'antd'
 import { Footer, Navbar } from '@components'
 import { GlobalStateProvider } from '@context'
-import { LandingPage, Compensation, Insights } from '@pages'
+import { Compensation, Insights, LandingPage, Survey } from '@pages'
 import '@styles/App.styles.scss'
+import { Layout } from 'antd'
 import { useState } from 'react'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { Route, BrowserRouter as Router, Routes as Switch } from 'react-router-dom'
 
 const { Content } = Layout
 
@@ -43,6 +43,7 @@ function App() {
                   element={<Insights drawerOpen={visible} onDrawerClose={handleCloseDrawer} />}
                 />
                 <Route path='/dashboard' element={<Compensation />} />
+                <Route path='/survey' element={<Survey />} />
               </Switch>
               <Footer />
             </div>
