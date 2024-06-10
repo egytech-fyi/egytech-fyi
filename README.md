@@ -33,8 +33,8 @@ To set up the project locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/egytechfyi-frontend.git
-   cd egytechfyi-frontend
+   git clone https://github.com/your-username/egytech-fyi.git
+   cd egytech-fyi
    ```
 
 2. Install dependencies:
@@ -92,7 +92,7 @@ This dashboard includes:
         └── settings.json
     └── 📁public
     └── 📁src
-        └── 📁assets 
+        └── 📁assets
         └── 📁components // for all the components used
             └── 📁Shared // for shared agnostic components
         └── 📁constants // for constants used across the repo
@@ -100,7 +100,7 @@ This dashboard includes:
         └── 📁functions // for general functions
         └── 📁mock //for mock data
         └── 📁pages // for pages
-        └── 📁services // for api services 
+        └── 📁services // for api services
         └── 📁styles // for style files (should follow the convention of <FileName>.styles.scss)
         └── 📁types // type script types
         └── 📁utils // for utility functions
@@ -110,8 +110,8 @@ This dashboard includes:
         └── main.tsx
         └── vite-env.d.ts
     └── README.md
-    └── index.html 
-    └── package.json 
+    └── index.html
+    └── package.json
     └── tsconfig.json
     └── tsconfig.node.json
     └── vite.config.ts
@@ -133,10 +133,12 @@ Contributions are welcome! To help make this project better, please follow these
 This project exists thanks to all the people who contribute. A special thanks to our key contributors:
 
 - **Abdelrahman Eladawy**
+
   - **GitHub:** [MrViometal](https://github.com/MrViometal)
   - **LinkedIn:** [Abdelrahman Eladawy](https://www.linkedin.com/in/abdelrahman-el-adawy/)
 
 - **Ahmed Eladawy**
+
   - **LinkedIn:** [Ahmed Eladawy](https://www.linkedin.com/in/ahmed-eladawy-00b4a3115/)
 
 - **Mahmoud Salem**
