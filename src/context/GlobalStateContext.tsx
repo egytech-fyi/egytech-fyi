@@ -19,17 +19,20 @@ export type ActionType =
   | { type: 'title'; payload: string[] | undefined }
   | { type: 'programming_language'; payload: string | undefined }
   | { type: 'salary'; payload: number | undefined }
-  | {
-      type: 'filters'
-      payload: FiltersPayload
-    }
+  | { type: 'filters'; payload: FiltersPayload }
+  | { type: 'clearFilters' }
 
 function reducer(state: StateType, action: ActionType): StateType {
   if (action.type === 'filters') {
-    const filteredObject = Object.fromEntries(
-      Object.entries(action.payload).filter(([key, value]) => key && value !== undefined),
-    )
+    const filteredObject = Object.fromEntries(Object.entries(action.payload))
     return { ...state, ...filteredObject }
+  } else if (action.type === 'clearFilters') {
+    const { salary, title, ...rest } = state
+    const clearedFilters: { [key: string]: undefined } = {}
+
+    Object.keys(rest).forEach((key) => (clearedFilters[key] = undefined))
+
+    return { salary, title, ...clearedFilters }
   } else {
     return { ...state, [action.type]: action.payload }
   }

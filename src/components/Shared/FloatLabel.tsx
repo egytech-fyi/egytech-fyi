@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import '@styles/SharedComponents.styles.scss'
+import { CloseOutlined } from '@ant-design/icons'
 
 interface FloatLabelProps {
   label: string
@@ -9,11 +10,12 @@ interface FloatLabelProps {
   required?: boolean
   extraLeft?: boolean
   children?: React.ReactNode
+  clearValue?: () => void
 }
 
 export const FloatLabel = (props: FloatLabelProps) => {
   const [focus, setFocus] = useState(false)
-  const { label, value, required, children } = props
+  const { label, value, required, children, clearValue } = props
   let placeholder = props.placeholder
 
   if (!props.placeholder) placeholder = label
@@ -34,6 +36,15 @@ export const FloatLabel = (props: FloatLabelProps) => {
           {isOccupied && <span className='hiding-span'></span>}
         </span>
       </label>
+      {value && clearValue && (
+        <CloseOutlined
+          className='close-icon'
+          onClick={() => {
+            clearValue?.()
+            setFocus(false)
+          }}
+        />
+      )}
     </div>
   )
 }

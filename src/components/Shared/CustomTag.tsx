@@ -7,9 +7,10 @@ interface CustomTagProps extends TagProps {
 }
 
 export const CustomTag = ({ closable, onClose, fieldKey, color, fieldValue }: CustomTagProps) => {
+  const formattedTagValue = typeof fieldValue === 'boolean' ? '' : `: ${fieldValue}`
   return (
     <Tag closable={closable} onClose={onClose} className='custom-tag' color={color}>
-      {`${fieldKey}: ${fieldValue}`}
+      {`${fieldKey}${formattedTagValue}`}
     </Tag>
   )
 }

@@ -1,16 +1,32 @@
 .filters-container {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 .filters-drawer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 100%;
+}
+.filters-cta-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .filters-cta {
-    font-size: 18px;
-    height: auto;
+  font-size: 18px;
+  height: auto;
+  border: none;
+  &.clear {
+    font-size: 14px;
+    &:hover &:focus {
+      background: none !important;
+      border: none;
+      outline: none;
+      text-decoration-line: underline;
+      text-underline-offset: 4px;
+    }
+  }
 }
