@@ -1,2 +1,2 @@
-export * from "./GlobalStateContext";
-export * from "./useGlobalState";
+export * from './GlobalStateContext'
+export * from './useGlobalState'

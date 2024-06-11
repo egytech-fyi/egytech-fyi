@@ -1,44 +1,22 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import path from "path";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+import path from 'path'
 
 export default defineConfig({
-    resolve: {
-        alias: {
-            "@assets": path.resolve(
-                new URL("./src/assets", import.meta.url).pathname
-            ),
-            "@components": path.resolve(
-                new URL("./src/components", import.meta.url).pathname
-            ),
-            "@constants": path.resolve(
-                new URL("./src/constants", import.meta.url).pathname
-            ),
-            "@context": path.resolve(
-                new URL("./src/context", import.meta.url).pathname
-            ),
-            "@functions": path.resolve(
-                new URL("./src/functions", import.meta.url).pathname
-            ),
-            "@mock": path.resolve(
-                new URL("./src/mock", import.meta.url).pathname
-            ),
-            "@pages": path.resolve(
-                new URL("./src/pages", import.meta.url).pathname
-            ),
-            "@services": path.resolve(
-                new URL("./src/services", import.meta.url).pathname
-            ),
-            "@styles": path.resolve(
-                new URL("./src/styles", import.meta.url).pathname
-            ),
-            "@types": path.resolve(
-                new URL("./src/types", import.meta.url).pathname
-            ),
-            "@utils": path.resolve(
-                new URL("./src/utils", import.meta.url).pathname
-            ),
-        },
+  resolve: {
+    alias: {
+      '@assets': path.resolve(__dirname, 'src/assets'),
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@constants': path.resolve(__dirname, 'src/constants'),
+      '@context': path.resolve(__dirname, 'src/context'),
+      '@functions': path.resolve(__dirname, 'src/functions'),
+      '@mock': path.resolve(__dirname, 'src/mock'),
+      '@pages': path.resolve(__dirname, 'src/pages'),
+      '@services': path.resolve(__dirname, 'src/services'),
+      '@styles': path.resolve(__dirname, 'src/styles'),
+      '@types': path.resolve(__dirname, 'src/types'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
     },
-    plugins: [react()],
-});
+  },
+  plugins: [react()],
+})
