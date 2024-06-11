@@ -8,6 +8,7 @@ import '@styles/FormComponents.styles.scss'
 interface CommonProps {
   show?: boolean
   label: string
+  clearValue?: () => void
 }
 
 interface CustomInputNumberProps extends CommonProps, Omit<InputNumberProps, 'onChange'> {
@@ -59,6 +60,7 @@ const CustomNumberInput: React.FC<CustomInputNumberProps> = ({
   inputLabel1 = 'EGP',
   onPressEnter,
   value,
+  clearValue,
 }: CustomInputNumberProps) => {
   const [number, setNumber] = useState<number | undefined>(value)
   if (!show) return null
@@ -68,7 +70,15 @@ const CustomNumberInput: React.FC<CustomInputNumberProps> = ({
       label={label}
       placeholder={placeholder as string}
       value={number !== undefined ? `${number}` : undefined}
-      extraLeft>
+      extraLeft
+      clearValue={
+        clearValue
+          ? () => {
+              clearValue?.()
+              setNumber(undefined)
+            }
+          : undefined
+      }>
       <InputNumber<number>
         className='input number-input'
         addonBefore={<span style={{ paddingInline: '10px' }}>{inputLabel1}</span>}
@@ -76,7 +86,7 @@ const CustomNumberInput: React.FC<CustomInputNumberProps> = ({
         inputMode='tel'
         pattern='[0-9]*'
         onChange={(value) => {
-          setNumber(value ?? 0)
+          setNumber(value ?? undefined)
           !actionable && onChange?.(value as number)
         }}
         status={number === 0 || (number && number < 0) ? 'error' : ''}
@@ -105,12 +115,17 @@ const CustomSearchInput = ({
   placeholder,
   value,
   show = true,
+  clearValue,
   ...props
 }: CustomSearchInputProps) => {
   if (!show) return null
 
   return (
-    <FloatLabel label={label} placeholder={placeholder as string} value={value}>
+    <FloatLabel
+      label={label}
+      placeholder={placeholder as string}
+      value={value}
+      clearValue={clearValue}>
       <Select
         className='search-input'
         showSearch
@@ -139,12 +154,17 @@ const CustomSelectInput = ({
   label,
   value,
   show = true,
+  clearValue,
   ...props
 }: CustomSelectInputProps) => {
   if (!show) return null
 
   return (
-    <FloatLabel label={label} placeholder={placeholder as string} value={value}>
+    <FloatLabel
+      label={label}
+      placeholder={placeholder as string}
+      value={value}
+      clearValue={clearValue}>
       <Select
         className='select-input'
         onSelect={onSelect}
