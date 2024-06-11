@@ -37,6 +37,10 @@ export const FiltersDrawer = ({ open, onClose }: FiltersDrawerProps) => {
     setFilters({ ...initialAdditionalFiltersState, ...state })
   }
 
+  function clearFilter(key: keyof StateType) {
+    setFilters((prev) => ({ ...prev, [key]: undefined }))
+  }
+
   return (
     <Drawer afterOpenChange={handleOpen} open={open} onClose={handleClose}>
       <div className='filters-drawer'>
@@ -66,7 +70,7 @@ export const FiltersDrawer = ({ open, onClose }: FiltersDrawerProps) => {
             value={filters?.yoe_from_included}
             inputLabel1='YoE'
             onChange={(yoe_from_included) => setFilters((prev) => ({ ...prev, yoe_from_included }))}
-            clearValue={() => setFilters((prev) => ({ ...prev, yoe_from_included: undefined }))}
+            clearValue={() => clearFilter('yoe_from_included')}
           />
           <CustomInput
             type='number'
@@ -75,7 +79,7 @@ export const FiltersDrawer = ({ open, onClose }: FiltersDrawerProps) => {
             value={filters?.yoe_to_excluded}
             inputLabel1='YoE'
             onChange={(yoe_to_excluded) => setFilters((prev) => ({ ...prev, yoe_to_excluded }))}
-            clearValue={() => setFilters((prev) => ({ ...prev, yoe_to_excluded: undefined }))}
+            clearValue={() => clearFilter('yoe_to_excluded')}
           />
           <CustomInput
             type='select'
@@ -84,7 +88,7 @@ export const FiltersDrawer = ({ open, onClose }: FiltersDrawerProps) => {
             value={filters?.level}
             options={transformOptions(levelMap)}
             onSelect={(level) => setFilters((prev) => ({ ...prev, level }))}
-            clearValue={() => setFilters((prev) => ({ ...prev, level: undefined }))}
+            clearValue={() => clearFilter('level')}
           />
           <CustomInput
             type='select'
@@ -93,7 +97,7 @@ export const FiltersDrawer = ({ open, onClose }: FiltersDrawerProps) => {
             value={filters?.gender}
             options={transformOptions(genderMap)}
             onSelect={(gender) => setFilters((prev) => ({ ...prev, gender }))}
-            clearValue={() => setFilters((prev) => ({ ...prev, gender: undefined }))}
+            clearValue={() => clearFilter('gender')}
           />
           <CustomInput
             type='select'
@@ -102,7 +106,7 @@ export const FiltersDrawer = ({ open, onClose }: FiltersDrawerProps) => {
             value={filters?.cs_degree}
             options={transformOptions(degreeMap)}
             onSelect={(cs_degree) => setFilters((prev) => ({ ...prev, cs_degree }))}
-            clearValue={() => setFilters((prev) => ({ ...prev, cs_degree: undefined }))}
+            clearValue={() => clearFilter('cs_degree')}
           />
           <CustomInput
             type='select'
@@ -113,7 +117,7 @@ export const FiltersDrawer = ({ open, onClose }: FiltersDrawerProps) => {
             onSelect={(programming_language) =>
               setFilters((prev) => ({ ...prev, programming_language }))
             }
-            clearValue={() => setFilters((prev) => ({ ...prev, programming_language: undefined }))}
+            clearValue={() => clearFilter('programming_language')}
           />
           <CustomInput
             type='select'
@@ -122,7 +126,7 @@ export const FiltersDrawer = ({ open, onClose }: FiltersDrawerProps) => {
             value={filters?.business_line}
             options={transformOptions(businessLineMap)}
             onSelect={(business_line) => setFilters((prev) => ({ ...prev, business_line }))}
-            clearValue={() => setFilters((prev) => ({ ...prev, business_line: undefined }))}
+            clearValue={() => clearFilter('business_line')}
           />
           <CustomInput
             type='select'
@@ -131,7 +135,7 @@ export const FiltersDrawer = ({ open, onClose }: FiltersDrawerProps) => {
             value={filters?.business_focus}
             options={transformOptions(businessFocusMap)}
             onSelect={(business_focus) => setFilters((prev) => ({ ...prev, business_focus }))}
-            clearValue={() => setFilters((prev) => ({ ...prev, business_focus: undefined }))}
+            clearValue={() => clearFilter('business_focus')}
           />
           <CustomInput
             type='select'
@@ -140,7 +144,7 @@ export const FiltersDrawer = ({ open, onClose }: FiltersDrawerProps) => {
             value={filters?.business_size}
             options={transformOptions(businessSizeMap)}
             onSelect={(business_size) => setFilters((prev) => ({ ...prev, business_size }))}
-            clearValue={() => setFilters((prev) => ({ ...prev, business_size: undefined }))}
+            clearValue={() => clearFilter('business_size')}
           />
           <CustomInput
             type='select'
@@ -149,17 +153,14 @@ export const FiltersDrawer = ({ open, onClose }: FiltersDrawerProps) => {
             value={filters?.business_market}
             options={transformOptions(businessMarketMap)}
             onSelect={(business_market) => setFilters((prev) => ({ ...prev, business_market }))}
-            clearValue={() => setFilters((prev) => ({ ...prev, business_market: undefined }))}
+            clearValue={() => clearFilter('business_market')}
           />
         </div>
         <div className='filters-cta-container'>
           <Button
             type='text'
             className='filters-cta clear'
-            onClick={() => {
-              dispatch({ type: 'clearFilters' })
-              handleClose()
-            }}>
+            onClick={() => dispatch({ type: 'clearFilters' })}>
             Clear filters
           </Button>
           <Button
