@@ -61,6 +61,13 @@ To ensure code quality and consistency, run ESLint with:
 yarn lint
 ```
 
+For best development, use these VS Code extensions:
+
+- EditorConfig
+- ESLint
+- Prettier - Code formatter
+
+
 ### 👀 Previewing Build
 
 To build the project and preview it locally:
