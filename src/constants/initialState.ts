@@ -15,6 +15,7 @@ export const initialAdditionalFiltersState = {
   include_relocated: undefined,
   include_remote_abroad: undefined,
   level: undefined,
+  programming_language: undefined,
   yoe_from_included: undefined,
   yoe_to_excluded: undefined,
 }
