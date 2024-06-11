@@ -160,7 +160,7 @@ export const FiltersDrawer = ({ open, onClose }: FiltersDrawerProps) => {
           <Button
             type='text'
             className='filters-cta clear'
-            onClick={() => dispatch({ type: 'clearFilters' })}>
+            onClick={() => setFilters(initialAdditionalFiltersState)}>
             Clear filters
           </Button>
           <Button
