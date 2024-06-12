@@ -1,8 +1,8 @@
 import { BaseComment, FormStep } from '@components'
 import { getSurvey } from '@services'
 import { Survey } from '@types'
-import type { FormProps } from 'antd'
-import { Button, Divider, Form } from 'antd'
+import type { FormProps, StepProps } from 'antd'
+import { Button, Divider, Form, Steps } from 'antd'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
@@ -19,19 +19,26 @@ const onFinishFailed: FormProps<Survey>['onFinishFailed'] = (errorInfo) => {
 export function Contribute() {
   const [survey, setSurvey] = useState<Survey>()
   const [isLoading, setIsLoading] = useState(false)
-  // const [error, setError] = useState(null);
-
+  const [error, setError] = useState(false)
+  const [currentStep, setCurrentStep] = useState(0)
+  const [steps, setSteps] = useState<StepProps[]>([])
   useEffect(() => {
+    // fetch latest survey from api
     const fetchData = async () => {
       setIsLoading(true)
-      // setError(null);
+      setError(false)
       try {
         const fetchedQuestions = await getSurvey()
         console.log(fetchedQuestions)
         setSurvey(fetchedQuestions)
+        setSteps(
+          fetchedQuestions.sections.map((section, i) => {
+            return { key: i } as StepProps
+          }),
+        )
       } catch (err) {
         console.log(err)
-        // setError(err);
+        setError(true)
       } finally {
         setIsLoading(false)
       }
@@ -60,7 +67,8 @@ export function Contribute() {
         </span>
       </BaseComment>
       <Divider />
-      {!isLoading && (
+      <Steps direction='horizontal' current={currentStep} items={steps} />
+      {!isLoading && !error && (
         <Form
           layout='horizontal'
           name='survey'
@@ -71,15 +79,42 @@ export function Contribute() {
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}>
           {survey?.sections.map((section, i) => {
-            return <FormStep section={section} key={i} />
+            // render each survey section
+            return currentStep == i && <FormStep section={section} key={i} />
           })}
 
           <Form.Item wrapperCol={{ offset: 10, span: 4 }}>
-            <Button type='primary' htmlType='submit'>
-              Submit
-            </Button>
+            <div className='survey-buttons'>
+              {currentStep != 0 && (
+                <Button
+                  type='primary'
+                  className='survey-back'
+                  onClick={() => setCurrentStep(currentStep - 1)}>
+                  Back
+                </Button>
+              )}
+              {currentStep != steps.length - 1 && (
+                <Button
+                  type='primary'
+                  className='survey-next'
+                  onClick={() => setCurrentStep(currentStep + 1)}>
+                  Next
+                </Button>
+              )}
+              {currentStep == steps.length - 1 && (
+                <Button type='primary' htmlType='submit'>
+                  Submit
+                </Button>
+              )}
+            </div>
           </Form.Item>
         </Form>
+      )}
+      {error && (
+        <div>
+          <strong>Failed to fetch survey 😔 </strong>
+          <br /> please try again later
+        </div>
       )}
     </div>
   )
