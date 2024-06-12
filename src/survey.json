@@ -27,12 +27,12 @@
       "isRequired": true
     },
     {
-      "type": "string",
+      "type": "URL",
       "question": "Your Linkedin Profile",
       "isRequired": false
     },
     {
-      "type": "string",
+      "type": "URL",
       "question": "Your email address",
       "isRequired": false
     },

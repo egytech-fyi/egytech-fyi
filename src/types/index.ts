@@ -62,7 +62,7 @@ export interface Question {
   question: string
   name?: string
   // type: QuestionType
-  type: 'MCQ' | number | string | 'checkbox'
+  type: 'MCQ' | 'number' | 'string' | 'checkbox' | 'URL'
   choices?: string[]
   isRequired: boolean
 }
