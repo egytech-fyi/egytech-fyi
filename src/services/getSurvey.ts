@@ -1,7 +1,8 @@
 import { Survey } from '@types'
-import data from '../survey.json'
-export const getSurvey = async (): Promise<Survey> => {
-  const survey = data as Survey
+import axios from 'axios'
 
-  return new Promise((resolve) => setTimeout(() => resolve(survey), 1000))
+export const getSurvey = async (): Promise<Survey> => {
+  return axios
+    .get('http://localhost:8787' + '/survey') // TODO: replace with BASE_URL
+    .then((response) => response.data)
 }

@@ -1,5 +1,5 @@
 import { BaseComment } from '@components'
-import { BASE_URL, getSurvey } from '@services'
+import { getSurvey } from '@services'
 import { Question, QuestionType, Survey } from '@types'
 import type { FormProps } from 'antd'
 import { Button, Checkbox, Divider, Form, Input, InputNumber, Radio } from 'antd'
@@ -8,7 +8,8 @@ import { useEffect, useState } from 'react'
 
 const onFinish: FormProps<QuestionType>['onFinish'] = (values) => {
   console.log('Success:', values)
-  axios.post(BASE_URL + '/survey', values).catch((error) => console.log(error))
+  // TODO: replace with Base_URL
+  axios.post('http://localhost:8787' + '/survey', values).catch((error) => console.log(error))
 }
 
 const onFinishFailed: FormProps<QuestionType>['onFinishFailed'] = (errorInfo) => {
@@ -37,7 +38,9 @@ function getQuestionInput(question: Question) {
     case QuestionType.CHECKBOX:
       return <Checkbox.Group options={question.choices} />
     case QuestionType.URL:
-      return <Input prefix='https://' type='URL' />
+      return <Input type='URL' />
+    default:
+      return null
   }
 }
 
@@ -52,6 +55,7 @@ export function Contribute() {
       // setError(null);
       try {
         const fetchedQuestions = await getSurvey()
+        console.log(fetchedQuestions)
         setSurvey(fetchedQuestions)
       } catch (err) {
         console.log(err)
@@ -95,14 +99,15 @@ export function Contribute() {
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}>
           {survey?.sections.map((section) => {
-            return survey[section as keyof typeof survey].map((question, i) => {
-              question = question as Question
+            // return survey[section as keyof typeof survey].map((question, i) => {
+            return survey[section as keyof Survey].map((value, i) => {
+              const question = value as Question
               return (
                 <Form.Item
                   style={{ textAlign: 'left' }}
                   key={i}
                   label={question.question}
-                  name={`general_questions_${i}`}
+                  name={`${section}_${i}`}
                   rules={[{ required: question.isRequired, message: 'This field is required' }]}>
                   {getQuestionInput(question)}
                 </Form.Item>

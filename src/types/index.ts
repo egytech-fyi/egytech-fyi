@@ -61,8 +61,8 @@ export enum QuestionType {
 export interface Question {
   question: string
   name?: string
-  // type: QuestionType
-  type: 'MCQ' | 'number' | 'string' | 'checkbox' | 'URL'
+  type: QuestionType
+  // type: 'MCQ' | 'number' | 'string' | 'checkbox' | 'URL'
   choices?: string[]
   isRequired: boolean
 }
