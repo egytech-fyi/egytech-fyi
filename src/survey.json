@@ -1,621 +1,635 @@
 {
   "sections": [
-    "general_questions",
-    "activities_product",
-    "skills_engineering",
-    "activities_engineering",
-    "activities_management",
-    "salary",
-    "satisfaction"
-  ],
-  "general_questions": [
     {
-      "type": "MCQ",
-      "question": "You're a",
-      "choices": ["Male", "Female"],
-      "isRequired": true
+      "title": "General",
+      "questions": [
+        {
+          "type": "MCQ",
+          "question": "You're a",
+          "choices": ["Male", "Female"],
+          "isRequired": true
+        },
+        {
+          "type": "number",
+          "question": "How old are you?",
+          "isRequired": true
+        },
+        {
+          "type": "MCQ",
+          "question": "Do you have a computer science/engineering degree?",
+          "choices": ["Yes", "No"],
+          "isRequired": true
+        },
+        {
+          "type": "string",
+          "question": "Your Linkedin Profile",
+          "isRequired": false
+        },
+        {
+          "type": "string",
+          "question": "Your email address",
+          "isRequired": false
+        },
+        {
+          "type": "string",
+          "question": "Your current company:",
+          "isRequired": true
+        },
+        {
+          "type": "string",
+          "question": "Your job title:",
+          "isRequired": true
+        },
+        {
+          "type": "MCQ",
+          "question": "Do you consider yourself a/an",
+          "choices": [
+            "Backend Engineer",
+            "Frontend Engineer",
+            "Full-stack Engineer",
+            "QA / SDET Engineer",
+            "Mobile Development Engineer",
+            "DevOps / SRE / Platform",
+            "Data Scientist",
+            "Data Engineer",
+            "Data Analytics",
+            "Engineering Manager",
+            "Executive (C-level, director, etc.)",
+            "Systems Architect",
+            "Embedded Systems Engineer",
+            "R&D Engineer (Computer Vision, NLP, etc.)",
+            "AI & Automation Engineer",
+            "UI/UX Designer/Engineer",
+            "Hardware Engineer (Semiconductors, Digital Design, Electronics, etc)",
+            "Product Owner",
+            "Product Manager",
+            "Scrum Master",
+            "Security/Network Engineer",
+            "Technical Support",
+            "CRM Developer"
+          ],
+          "isRequired": true
+        },
+        {
+          "type": "MCQ",
+          "question": "Your level at your current company is:",
+          "choices": [
+            "Junior (Software Engineer, Data Scientist, Product Manager, etc.)",
+            "Mid-level (Software Engineer, Data Scientist, Product Manager, etc.)",
+            "Senior (Software Engineer, Data Scientist, Product Manager, etc.)",
+            "Team Lead",
+            "Staff (Software Engineer, Data Scientist, Product Manager, etc.)",
+            "Senior Staff (Software Engineer, Data Scientist, Product Manager, etc.)",
+            "Principal (Software Engineer, Data Scientist, Product Manager, etc.)",
+            "Group Product Manager",
+            "Head of Products",
+            "Senior Principal (Software Engineer, Data Scientist, Product Manager, etc.)",
+            "Manager",
+            "Senior Manager",
+            "Director",
+            "Group Director",
+            "VP (Engineering, Product, etc.)",
+            "CTO / CPO / Chief Scientist / etc.",
+            "Other:"
+          ],
+          "isRequired": true
+        },
+        {
+          "type": "number",
+          "question": "Years of experience:",
+          "isRequired": true
+        },
+        {
+          "type": "number",
+          "question": "How many companies did you work at in the last 5 years?",
+          "isRequired": true
+        },
+        {
+          "type": "MCQ",
+          "question": "Did you work at the same company last year (January 2023) ?",
+          "choices": ["Yes", "No"],
+          "isRequired": false
+        },
+        {
+          "type": "MCQ",
+          "question": "You work from",
+          "choices": [
+            "Office for a company in Egypt",
+            "Home for a company in Egypt",
+            "Hybrid for a company in Egypt (e.g 2-3 days from home or office)",
+            "Home for a company abroad (Remote employee)",
+            "Abroad in another country (Relocated elsewhere)"
+          ],
+          "isRequired": true
+        },
+        {
+          "type": "MCQ",
+          "question": "Your company is considered:",
+          "choices": [
+            "A Start-up",
+            "A Small and Medium Enterprise",
+            "A Large Enterprise/Multinational Company"
+          ],
+          "isRequired": true
+        },
+        {
+          "type": "MCQ",
+          "question": "Company Location in case it's operating from Egypt:",
+          "choices": [
+            "No site in Egypt",
+            "Cairo",
+            "Alexandria",
+            "Hurghada (Or Gouna)",
+            "Port Said / Suez",
+            "Mansoura",
+            "Faiyum",
+            "Luxor / Aswan",
+            "Other:"
+          ],
+          "isRequired": true
+        },
+        {
+          "type": "MCQ",
+          "question": "You work in a:",
+          "choices": ["Software House", "Product-based company", "Other:"],
+          "isRequired": true
+        },
+        {
+          "type": "MCQ",
+          "question": "The business main focus is:",
+          "choices": ["B2B", "B2C", "B2B & B2C lines"],
+          "isRequired": true
+        },
+        {
+          "type": "MCQ",
+          "question": "The business is",
+          "choices": [
+            "Local / National (operates inside Egypt)",
+            "Regional (has some business lines in Saudi Arabia, Emirates, etc)",
+            "Global (has some business lines in the region, the US, Europe, Asia, etc.)"
+          ],
+          "isRequired": false
+        },
+        {
+          "type": "checkbox",
+          "question": "The industries of the business are",
+          "choices": [
+            "Fintech",
+            "Healthcare",
+            "Insurance",
+            "Automotive",
+            "Delivery",
+            "Supply Chain",
+            "Transportation",
+            "Telecommunications",
+            "Energy",
+            "Manufacturing",
+            "Technology",
+            "Education",
+            "Human Resources Services",
+            "Law",
+            "Agriculture",
+            "Production",
+            "Aerospace",
+            "Other:"
+          ],
+          "isRequired": false
+        }
+      ]
     },
     {
-      "type": "number",
-      "question": "How old are you?",
-      "isRequired": true
+      "title": "Activities (Product)",
+      "questions": [
+        {
+          "type": "checkbox",
+          "question": "Which functions of these are part of your quarterly activities?",
+          "choices": [
+            "Collaborating with technical and design functions",
+            "Collaborating with other functions",
+            "Defining product strategy",
+            "Define product requirements",
+            "Engaging with customers and partners",
+            "Reviewing metrics",
+            "Market research and competition",
+            "Planning and maintaining roadmaps",
+            "Pricing and packaging",
+            "Coaching, team management and recruiting"
+          ],
+          "isRequired": false
+        },
+        {
+          "type": "MCQ",
+          "question": "What percentage of your week is spent in planning?",
+          "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
+          "isRequired": false
+        },
+        {
+          "type": "MCQ",
+          "question": "What percentage of your week is spent in meetings?",
+          "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
+          "isRequired": false
+        },
+        {
+          "type": "MCQ",
+          "question": "What percentage of your week is spent analyzing data?",
+          "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
+          "isRequired": false
+        },
+        {
+          "type": "checkbox",
+          "question": "Which of these tools do you use in your weekly activities?",
+          "choices": [
+            "Notion",
+            "Obsidian",
+            "Jira",
+            "Trello",
+            "Miro",
+            "Hotjar",
+            "Confluence",
+            "Looker Studio",
+            "Power BI",
+            "Amplitude",
+            "UX Pin",
+            "ProductBoard",
+            "ProductPlan",
+            "Aha!",
+            "Tableau",
+            "SurveyMonkey",
+            "Typeform",
+            "UserVoice",
+            "Gartner",
+            "Figma",
+            "Adobe XD",
+            "Proto.io",
+            "ClickUp"
+          ],
+          "isRequired": false
+        },
+        {
+          "type": "string",
+          "question": "Which tools do you use for customer surveys?",
+          "isRequired": false
+        },
+        {
+          "type": "string",
+          "question": "Which tools do you use for project management?",
+          "isRequired": false
+        },
+        {
+          "type": "MCQ",
+          "question": "Who takes pricing and packaging decisions for your product?",
+          "choices": [
+            "You",
+            "Executive team (C-Level)",
+            "Sales & Marketing",
+            "We have dedicated pricing team (or RevOps)",
+            "Other:"
+          ],
+          "isRequired": false
+        },
+        {
+          "type": "string",
+          "question": "When do you find it super useful to use the help of an AI assistant (ChatGPT, Gemini, etc.)",
+          "isRequired": false
+        },
+        {
+          "type": "string",
+          "question": "If you had a product idea, which tools would you use to build a prototype?",
+          "isRequired": false
+        },
+        {
+          "type": "string",
+          "question": "Which tools do you use for A/B Testing (or feature flagging)?",
+          "isRequired": false
+        },
+        {
+          "type": "MCQ",
+          "question": "What are your go-to tools to analyze data?",
+          "choices": [
+            "Sheets/Excel",
+            "SQL (or database query languages in general)",
+            "Programming Languages (e.g python, R, etc.)",
+            "Other:"
+          ],
+          "isRequired": false
+        },
+        {
+          "type": "string",
+          "question": "Which no-code tool do you find very powerful to build a prototype with?",
+          "isRequired": false
+        },
+        {
+          "type": "string",
+          "question": "Which session replay and heatmap tools do you use?",
+          "isRequired": false
+        },
+        {
+          "type": "string",
+          "question": "Which user analysis tools do you use?",
+          "isRequired": false
+        }
+      ]
     },
     {
-      "type": "MCQ",
-      "question": "Do you have a computer science/engineering degree?",
-      "choices": ["Yes", "No"],
-      "isRequired": true
+      "title": "Skills (Engineering)",
+      "questions": [
+        {
+          "type": "checkbox",
+          "question": "Which programming languages do you use the most?",
+          "choices": [
+            "C#",
+            "Java",
+            "PHP",
+            "JavaScript",
+            "Python",
+            "Go",
+            "Rust",
+            "Ruby",
+            "C/C++",
+            "TypeScript",
+            "Scala",
+            "Kotlin",
+            "Swift",
+            "R",
+            "HTML/CSS",
+            "Other:"
+          ],
+          "isRequired": false
+        },
+        {
+          "type": "checkbox",
+          "question": "Which frameworks do you use the most?",
+          "choices": [
+            "ASP.Net",
+            "Spring",
+            "Django",
+            "Flask",
+            "Laravel",
+            "Express",
+            "FastAPI",
+            "Ruby on Rails",
+            "React",
+            "Angular",
+            "JQuery",
+            "Vue.js",
+            "NestJS",
+            "Nuxt.js",
+            "Next.js",
+            "Gatsby",
+            "Deno",
+            "Tensorflow",
+            "Pytorch",
+            "OpenCV",
+            "Autosar",
+            "React Native",
+            "Ionic",
+            "Flutter",
+            "Android",
+            "Other:"
+          ],
+          "isRequired": false
+        },
+        {
+          "type": "checkbox",
+          "question": "Which cloud provider hosts the services you help in building?",
+          "choices": ["AWS", "GCP", "Azure", "Cloudflare", "Firebase", "Self-hosted", "Other:"],
+          "isRequired": false
+        },
+        {
+          "type": "checkbox",
+          "question": "Which databases do you use the most?",
+          "choices": [
+            "PostgreSQL",
+            "MySQL",
+            "SQLite",
+            "MongoDB",
+            "SQL Server",
+            "Redis",
+            "MariaDB",
+            "ElasticSearch",
+            "Oracle",
+            "DynamoDB",
+            "Cassandra",
+            "Firebase",
+            "Other:"
+          ],
+          "isRequired": false
+        },
+        {
+          "type": "checkbox",
+          "question": "Which of these technologies do you use in your daily activities?",
+          "choices": [
+            "Kubernetes",
+            "Docker",
+            "Terraform",
+            "Jenkins",
+            "TeamCity",
+            "CircleCI",
+            "TravisCI",
+            "Kafka",
+            "RabbitMQ",
+            "Spark",
+            "Redshift",
+            "Snowflake",
+            "BigQuery",
+            "Airflow",
+            "Tableu",
+            "Looker",
+            "Hive",
+            "PowerBI",
+            "Other:"
+          ],
+          "isRequired": false
+        }
+      ]
     },
     {
-      "type": "URL",
-      "question": "Your Linkedin Profile",
-      "isRequired": false
+      "title": "Activities (Engineering)",
+      "questions": [
+        {
+          "type": "MCQ",
+          "question": "What percentage of your week is spent in coding/testing/implementing?",
+          "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
+          "isRequired": false
+        },
+        {
+          "type": "MCQ",
+          "question": "What percentage of your week is spent in designing?",
+          "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
+          "isRequired": false
+        },
+        {
+          "type": "MCQ",
+          "question": "What percentage of your week is spent in meetings?",
+          "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
+          "isRequired": false
+        },
+        {
+          "type": "MCQ",
+          "question": "What percentage of your week is spent in mentoring?",
+          "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
+          "isRequired": false
+        }
+      ]
     },
     {
-      "type": "URL",
-      "question": "Your email address",
-      "isRequired": false
+      "title": "Activities (Management)",
+      "questions": [
+        {
+          "type": "MCQ",
+          "question": "How long does it take to onboard a new talent in your team?",
+          "choices": ["2 Weeks", "1 Month", "2 Months", "Other:"],
+          "isRequired": true
+        },
+        {
+          "type": "MCQ",
+          "question": "How long does it usually take to hire a senior talent?",
+          "choices": ["1 Month", "1-3 Months", "3-5 Months", "5+ Months", "Other:"],
+          "isRequired": true
+        },
+        {
+          "type": "MCQ",
+          "question": "What percentage of your week is spent in planning?",
+          "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
+          "isRequired": true
+        },
+        {
+          "type": "MCQ",
+          "question": "What percentage of your week is spent in meetings?",
+          "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
+          "isRequired": true
+        },
+        {
+          "type": "MCQ",
+          "question": "What percentage of your week is spent in mentoring?",
+          "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
+          "isRequired": true
+        }
+      ]
     },
     {
-      "type": "string",
-      "question": "Your current company:",
-      "isRequired": true
+      "title": "Salary",
+      "questions": [
+        {
+          "type": "MCQ",
+          "question": "In what currency do you receive your salary?",
+          "choices": [
+            "EGP",
+            "Another currency (e.g USD)",
+            "Hybrid (e.g: Base in EGP and Cost of Living Allowance in EUR)"
+          ],
+          "isRequired": true
+        },
+        {
+          "type": "MCQ",
+          "question": "If part or all your salary is pegged to another currency, is it pegged to the central bank's transfer rate?",
+          "choices": ["Yes", "No"],
+          "isRequired": false
+        },
+        {
+          "type": "MCQ",
+          "question": "If you receive your salary in (or if it's pegged to) another currency or in a hybrid setting, what's the other currency (Let's call it X)?",
+          "choices": ["USD", "EUR", "SAR", "AED", "GBP", "KWD", "Other:"],
+          "isRequired": false
+        },
+        {
+          "type": "number",
+          "question": "EGP Net Monthly Salary",
+          "isRequired": true
+        },
+        {
+          "type": "number",
+          "question": "X Net Monthly Salary",
+          "isRequired": true
+        },
+        {
+          "type": "number",
+          "question": "EGP Net Monthly Bonus",
+          "isRequired": true
+        },
+        {
+          "type": "number",
+          "question": "X Net Monthly Bonus",
+          "isRequired": true
+        },
+        {
+          "type": "number",
+          "question": "If you're receiving stocks/equity, what's the value in ONE YEAR (In USD, 2 thousands == 2000)",
+          "isRequired": false
+        },
+        {
+          "type": "string",
+          "question": "Do you want to add any notes about your bonuses that weren't covered in the previous questions?",
+          "isRequired": false
+        },
+        {
+          "type": "MCQ",
+          "question": "When was your most recent salary increase implemented?",
+          "choices": [
+            "A new hire",
+            "Less than 3 months",
+            "Less than 6 months",
+            "Less than a year",
+            "More than a year"
+          ],
+          "isRequired": false
+        },
+        {
+          "type": "number",
+          "question": "What was your EGP NET salary in December 2022 including any bonuses (USD == 24.5 EGP then)",
+          "isRequired": false
+        },
+        {
+          "type": "number",
+          "question": "If you were to apply for a new job, how much will your expected net salary be in EGP?",
+          "isRequired": false
+        }
+      ]
     },
     {
-      "type": "string",
-      "question": "Your job title:",
-      "isRequired": true
-    },
-    {
-      "type": "MCQ",
-      "question": "Do you consider yourself a/an",
-      "choices": [
-        "Backend Engineer",
-        "Frontend Engineer",
-        "Full-stack Engineer",
-        "QA / SDET Engineer",
-        "Mobile Development Engineer",
-        "DevOps / SRE / Platform",
-        "Data Scientist",
-        "Data Engineer",
-        "Data Analytics",
-        "Engineering Manager",
-        "Executive (C-level, director, etc.)",
-        "Systems Architect",
-        "Embedded Systems Engineer",
-        "R&D Engineer (Computer Vision, NLP, etc.)",
-        "AI & Automation Engineer",
-        "UI/UX Designer/Engineer",
-        "Hardware Engineer (Semiconductors, Digital Design, Electronics, etc)",
-        "Product Owner",
-        "Product Manager",
-        "Scrum Master",
-        "Security/Network Engineer",
-        "Technical Support",
-        "CRM Developer"
-      ],
-      "isRequired": true
-    },
-    {
-      "type": "MCQ",
-      "question": "Your level at your current company is:",
-      "choices": [
-        "Junior (Software Engineer, Data Scientist, Product Manager, etc.)",
-        "Mid-level (Software Engineer, Data Scientist, Product Manager, etc.)",
-        "Senior (Software Engineer, Data Scientist, Product Manager, etc.)",
-        "Team Lead",
-        "Staff (Software Engineer, Data Scientist, Product Manager, etc.)",
-        "Senior Staff (Software Engineer, Data Scientist, Product Manager, etc.)",
-        "Principal (Software Engineer, Data Scientist, Product Manager, etc.)",
-        "Group Product Manager",
-        "Head of Products",
-        "Senior Principal (Software Engineer, Data Scientist, Product Manager, etc.)",
-        "Manager",
-        "Senior Manager",
-        "Director",
-        "Group Director",
-        "VP (Engineering, Product, etc.)",
-        "CTO / CPO / Chief Scientist / etc.",
-        "Other:"
-      ],
-      "isRequired": true
-    },
-    {
-      "type": "number",
-      "question": "Years of experience:",
-      "isRequired": true
-    },
-    {
-      "type": "number",
-      "question": "How many companies did you work at in the last 5 years?",
-      "isRequired": true
-    },
-    {
-      "type": "MCQ",
-      "question": "Did you work at the same company last year (January 2023) ?",
-      "choices": ["Yes", "No"],
-      "isRequired": false
-    },
-    {
-      "type": "MCQ",
-      "question": "You work from",
-      "choices": [
-        "Office for a company in Egypt",
-        "Home for a company in Egypt",
-        "Hybrid for a company in Egypt (e.g 2-3 days from home or office)",
-        "Home for a company abroad (Remote employee)",
-        "Abroad in another country (Relocated elsewhere)"
-      ],
-      "isRequired": true
-    },
-    {
-      "type": "MCQ",
-      "question": "Your company is considered:",
-      "choices": [
-        "A Start-up",
-        "A Small and Medium Enterprise",
-        "A Large Enterprise/Multinational Company"
-      ],
-      "isRequired": true
-    },
-    {
-      "type": "MCQ",
-      "question": "Company Location in case it's operating from Egypt:",
-      "choices": [
-        "No site in Egypt",
-        "Cairo",
-        "Alexandria",
-        "Hurghada (Or Gouna)",
-        "Port Said / Suez",
-        "Mansoura",
-        "Faiyum",
-        "Luxor / Aswan",
-        "Other:"
-      ],
-      "isRequired": true
-    },
-    {
-      "type": "MCQ",
-      "question": "You work in a:",
-      "choices": ["Software House", "Product-based company", "Other:"],
-      "isRequired": true
-    },
-    {
-      "type": "MCQ",
-      "question": "The business main focus is:",
-      "choices": ["B2B", "B2C", "B2B & B2C lines"],
-      "isRequired": true
-    },
-    {
-      "type": "MCQ",
-      "question": "The business is",
-      "choices": [
-        "Local / National (operates inside Egypt)",
-        "Regional (has some business lines in Saudi Arabia, Emirates, etc)",
-        "Global (has some business lines in the region, the US, Europe, Asia, etc.)"
-      ],
-      "isRequired": false
-    },
-    {
-      "type": "checkbox",
-      "question": "The industries of the business are",
-      "choices": [
-        "Fintech",
-        "Healthcare",
-        "Insurance",
-        "Automotive",
-        "Delivery",
-        "Supply Chain",
-        "Transportation",
-        "Telecommunications",
-        "Energy",
-        "Manufacturing",
-        "Technology",
-        "Education",
-        "Human Resources Services",
-        "Law",
-        "Agriculture",
-        "Production",
-        "Aerospace",
-        "Other:"
-      ],
-      "isRequired": false
-    }
-  ],
-  "activities_product": [
-    {
-      "type": "checkbox",
-      "question": "Which functions of these are part of your quarterly activities?",
-      "choices": [
-        "Collaborating with technical and design functions",
-        "Collaborating with other functions",
-        "Defining product strategy",
-        "Define product requirements",
-        "Engaging with customers and partners",
-        "Reviewing metrics",
-        "Market research and competition",
-        "Planning and maintaining roadmaps",
-        "Pricing and packaging",
-        "Coaching, team management and recruiting"
-      ],
-      "isRequired": false
-    },
-    {
-      "type": "MCQ",
-      "question": "What percentage of your week is spent in planning?",
-      "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
-      "isRequired": false
-    },
-    {
-      "type": "MCQ",
-      "question": "What percentage of your week is spent in meetings?",
-      "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
-      "isRequired": false
-    },
-    {
-      "type": "MCQ",
-      "question": "What percentage of your week is spent analyzing data?",
-      "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
-      "isRequired": false
-    },
-    {
-      "type": "checkbox",
-      "question": "Which of these tools do you use in your weekly activities?",
-      "choices": [
-        "Notion",
-        "Obsidian",
-        "Jira",
-        "Trello",
-        "Miro",
-        "Hotjar",
-        "Confluence",
-        "Looker Studio",
-        "Power BI",
-        "Amplitude",
-        "UX Pin",
-        "ProductBoard",
-        "ProductPlan",
-        "Aha!",
-        "Tableau",
-        "SurveyMonkey",
-        "Typeform",
-        "UserVoice",
-        "Gartner",
-        "Figma",
-        "Adobe XD",
-        "Proto.io",
-        "ClickUp"
-      ],
-      "isRequired": false
-    },
-    {
-      "type": "string",
-      "question": "Which tools do you use for customer surveys?",
-      "isRequired": false
-    },
-    {
-      "type": "string",
-      "question": "Which tools do you use for project management?",
-      "isRequired": false
-    },
-    {
-      "type": "MCQ",
-      "question": "Who takes pricing and packaging decisions for your product?",
-      "choices": [
-        "You",
-        "Executive team (C-Level)",
-        "Sales & Marketing",
-        "We have dedicated pricing team (or RevOps)",
-        "Other:"
-      ],
-      "isRequired": false
-    },
-    {
-      "type": "string",
-      "question": "When do you find it super useful to use the help of an AI assistant (ChatGPT, Gemini, etc.)",
-      "isRequired": false
-    },
-    {
-      "type": "string",
-      "question": "If you had a product idea, which tools would you use to build a prototype?",
-      "isRequired": false
-    },
-    {
-      "type": "string",
-      "question": "Which tools do you use for A/B Testing (or feature flagging)?",
-      "isRequired": false
-    },
-    {
-      "type": "MCQ",
-      "question": "What are your go-to tools to analyze data?",
-      "choices": [
-        "Sheets/Excel",
-        "SQL (or database query languages in general)",
-        "Programming Languages (e.g python, R, etc.)",
-        "Other:"
-      ],
-      "isRequired": false
-    },
-    {
-      "type": "string",
-      "question": "Which no-code tool do you find very powerful to build a prototype with?",
-      "isRequired": false
-    },
-    {
-      "type": "string",
-      "question": "Which session replay and heatmap tools do you use?",
-      "isRequired": false
-    },
-    {
-      "type": "string",
-      "question": "Which user analysis tools do you use?",
-      "isRequired": false
-    }
-  ],
-  "skills_engineering": [
-    {
-      "type": "checkbox",
-      "question": "Which programming languages do you use the most?",
-      "choices": [
-        "C#",
-        "Java",
-        "PHP",
-        "JavaScript",
-        "Python",
-        "Go",
-        "Rust",
-        "Ruby",
-        "C/C++",
-        "TypeScript",
-        "Scala",
-        "Kotlin",
-        "Swift",
-        "R",
-        "HTML/CSS",
-        "Other:"
-      ],
-      "isRequired": false
-    },
-    {
-      "type": "checkbox",
-      "question": "Which frameworks do you use the most?",
-      "choices": [
-        "ASP.Net",
-        "Spring",
-        "Django",
-        "Flask",
-        "Laravel",
-        "Express",
-        "FastAPI",
-        "Ruby on Rails",
-        "React",
-        "Angular",
-        "JQuery",
-        "Vue.js",
-        "NestJS",
-        "Nuxt.js",
-        "Next.js",
-        "Gatsby",
-        "Deno",
-        "Tensorflow",
-        "Pytorch",
-        "OpenCV",
-        "Autosar",
-        "React Native",
-        "Ionic",
-        "Flutter",
-        "Android",
-        "Other:"
-      ],
-      "isRequired": false
-    },
-    {
-      "type": "checkbox",
-      "question": "Which cloud provider hosts the services you help in building?",
-      "choices": ["AWS", "GCP", "Azure", "Cloudflare", "Firebase", "Self-hosted", "Other:"],
-      "isRequired": false
-    },
-    {
-      "type": "checkbox",
-      "question": "Which databases do you use the most?",
-      "choices": [
-        "PostgreSQL",
-        "MySQL",
-        "SQLite",
-        "MongoDB",
-        "SQL Server",
-        "Redis",
-        "MariaDB",
-        "ElasticSearch",
-        "Oracle",
-        "DynamoDB",
-        "Cassandra",
-        "Firebase",
-        "Other:"
-      ],
-      "isRequired": false
-    },
-    {
-      "type": "checkbox",
-      "question": "Which of these technologies do you use in your daily activities?",
-      "choices": [
-        "Kubernetes",
-        "Docker",
-        "Terraform",
-        "Jenkins",
-        "TeamCity",
-        "CircleCI",
-        "TravisCI",
-        "Kafka",
-        "RabbitMQ",
-        "Spark",
-        "Redshift",
-        "Snowflake",
-        "BigQuery",
-        "Airflow",
-        "Tableu",
-        "Looker",
-        "Hive",
-        "PowerBI",
-        "Other:"
-      ],
-      "isRequired": false
-    }
-  ],
-  "activities_engineering": [
-    {
-      "type": "MCQ",
-      "question": "What percentage of your week is spent in coding/testing/implementing?",
-      "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
-      "isRequired": false
-    },
-    {
-      "type": "MCQ",
-      "question": "What percentage of your week is spent in designing?",
-      "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
-      "isRequired": false
-    },
-    {
-      "type": "MCQ",
-      "question": "What percentage of your week is spent in meetings?",
-      "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
-      "isRequired": false
-    },
-    {
-      "type": "MCQ",
-      "question": "What percentage of your week is spent in mentoring?",
-      "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
-      "isRequired": false
-    }
-  ],
-  "activities_management": [
-    {
-      "type": "MCQ",
-      "question": "How long does it take to onboard a new talent in your team?",
-      "choices": ["2 Weeks", "1 Month", "2 Months", "Other:"],
-      "isRequired": true
-    },
-    {
-      "type": "MCQ",
-      "question": "How long does it usually take to hire a senior talent?",
-      "choices": ["1 Month", "1-3 Months", "3-5 Months", "5+ Months", "Other:"],
-      "isRequired": true
-    },
-    {
-      "type": "MCQ",
-      "question": "What percentage of your week is spent in planning?",
-      "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
-      "isRequired": true
-    },
-    {
-      "type": "MCQ",
-      "question": "What percentage of your week is spent in meetings?",
-      "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
-      "isRequired": true
-    },
-    {
-      "type": "MCQ",
-      "question": "What percentage of your week is spent in mentoring?",
-      "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
-      "isRequired": true
-    }
-  ],
-  "salary": [
-    {
-      "type": "MCQ",
-      "question": "In what currency do you receive your salary?",
-      "choices": [
-        "EGP",
-        "Another currency (e.g USD)",
-        "Hybrid (e.g: Base in EGP and Cost of Living Allowance in EUR)"
-      ],
-      "isRequired": true
-    },
-    {
-      "type": "MCQ",
-      "question": "If part or all your salary is pegged to another currency, is it pegged to the central bank's transfer rate?",
-      "choices": ["Yes", "No"],
-      "isRequired": false
-    },
-    {
-      "type": "MCQ",
-      "question": "If you receive your salary in (or if it's pegged to) another currency or in a hybrid setting, what's the other currency (Let's call it X)?",
-      "choices": ["USD", "EUR", "SAR", "AED", "GBP", "KWD", "Other:"],
-      "isRequired": false
-    },
-    {
-      "type": "number",
-      "question": "EGP Net Monthly Salary",
-      "isRequired": true
-    },
-    {
-      "type": "number",
-      "question": "X Net Monthly Salary",
-      "isRequired": true
-    },
-    {
-      "type": "number",
-      "question": "EGP Net Monthly Bonus",
-      "isRequired": true
-    },
-    {
-      "type": "number",
-      "question": "X Net Monthly Bonus",
-      "isRequired": true
-    },
-    {
-      "type": "number",
-      "question": "If you're receiving stocks/equity, what's the value in ONE YEAR (In USD, 2 thousands == 2000)",
-      "isRequired": false
-    },
-    {
-      "type": "string",
-      "question": "Do you want to add any notes about your bonuses that weren't covered in the previous questions?",
-      "isRequired": false
-    },
-    {
-      "type": "MCQ",
-      "question": "When was your most recent salary increase implemented?",
-      "choices": [
-        "A new hire",
-        "Less than 3 months",
-        "Less than 6 months",
-        "Less than a year",
-        "More than a year"
-      ],
-      "isRequired": false
-    },
-    {
-      "type": "number",
-      "question": "What was your EGP NET salary in December 2022 including any bonuses (USD == 24.5 EGP then)",
-      "isRequired": false
-    },
-    {
-      "type": "number",
-      "question": "If you were to apply for a new job, how much will your expected net salary be in EGP?",
-      "isRequired": false
-    }
-  ],
-  "satisfaction": [
-    {
-      "type": "MCQ",
-      "question": "Do you think you earn what you deserve?",
-      "choices": [
-        "Yes",
-        "No, I should earn more than that",
-        "No, I should earn less than that",
-        "Not sure"
-      ],
-      "isRequired": false
-    },
-    {
-      "type": "MCQ",
-      "question": "Do you think you are placed in the level you deserve?",
-      "choices": [
-        "Yes",
-        "No, I should be in a higher level",
-        "No, I should be in a lesser level",
-        "Not sure"
-      ],
-      "isRequired": false
-    },
-    {
-      "type": "MCQ",
-      "question": "Do you find value in your work?",
-      "choices": ["Yes", "No", "I don't care, just here for the $"],
-      "isRequired": false
-    },
-    {
-      "type": "MCQ",
-      "question": "Are you presented with the chance to learn new things in your job?",
-      "choices": ["Yes", "No", "Sometimes"],
-      "isRequired": false
-    },
-    {
-      "type": "MCQ",
-      "question": "Which work environment do you prefer?",
-      "choices": ["Remote", "In-person", "Hybrid (some remote, some in-person)"],
-      "isRequired": false
+      "title": "Satisfaction",
+      "questions": [
+        {
+          "type": "MCQ",
+          "question": "Do you think you earn what you deserve?",
+          "choices": [
+            "Yes",
+            "No, I should earn more than that",
+            "No, I should earn less than that",
+            "Not sure"
+          ],
+          "isRequired": false
+        },
+        {
+          "type": "MCQ",
+          "question": "Do you think you are placed in the level you deserve?",
+          "choices": [
+            "Yes",
+            "No, I should be in a higher level",
+            "No, I should be in a lesser level",
+            "Not sure"
+          ],
+          "isRequired": false
+        },
+        {
+          "type": "MCQ",
+          "question": "Do you find value in your work?",
+          "choices": ["Yes", "No", "I don't care, just here for the $"],
+          "isRequired": false
+        },
+        {
+          "type": "MCQ",
+          "question": "Are you presented with the chance to learn new things in your job?",
+          "choices": ["Yes", "No", "Sometimes"],
+          "isRequired": false
+        },
+        {
+          "type": "MCQ",
+          "question": "Which work environment do you prefer?",
+          "choices": ["Remote", "In-person", "Hybrid (some remote, some in-person)"],
+          "isRequired": false
+        }
+      ]
     }
   ]
 }

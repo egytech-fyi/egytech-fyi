@@ -1,47 +1,19 @@
-import { BaseComment } from '@components'
+import { BaseComment, FormStep } from '@components'
 import { getSurvey } from '@services'
-import { Question, QuestionType, Survey } from '@types'
+import { Survey } from '@types'
 import type { FormProps } from 'antd'
-import { Button, Checkbox, Divider, Form, Input, InputNumber, Radio } from 'antd'
+import { Button, Divider, Form } from 'antd'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
-const onFinish: FormProps<QuestionType>['onFinish'] = (values) => {
+const onFinish: FormProps<Survey>['onFinish'] = (values) => {
   console.log('Success:', values)
   // TODO: replace with Base_URL
   axios.post('http://localhost:8787' + '/survey', values).catch((error) => console.log(error))
 }
 
-const onFinishFailed: FormProps<QuestionType>['onFinishFailed'] = (errorInfo) => {
+const onFinishFailed: FormProps<Survey>['onFinishFailed'] = (errorInfo) => {
   console.log('Failed:', errorInfo)
-}
-
-function getQuestionInput(question: Question) {
-  switch (question.type) {
-    case QuestionType.STRING:
-      return <Input />
-    case QuestionType.NUMBER:
-      return <InputNumber />
-    case QuestionType.MCQ:
-      return (
-        <Radio.Group>
-          {question.choices?.map((choice, i) => {
-            if (choice.startsWith('Other:')) return <Input key={i} placeholder='Other' />
-            return (
-              <Radio key={i} value={choice}>
-                {choice}
-              </Radio>
-            )
-          })}
-        </Radio.Group>
-      )
-    case QuestionType.CHECKBOX:
-      return <Checkbox.Group options={question.choices} />
-    case QuestionType.URL:
-      return <Input type='URL' />
-    default:
-      return null
-  }
 }
 
 export function Contribute() {
@@ -98,21 +70,8 @@ export function Contribute() {
           initialValues={{ remember: true }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}>
-          {survey?.sections.map((section) => {
-            // return survey[section as keyof typeof survey].map((question, i) => {
-            return survey[section as keyof Survey].map((value, i) => {
-              const question = value as Question
-              return (
-                <Form.Item
-                  style={{ textAlign: 'left' }}
-                  key={i}
-                  label={question.question}
-                  name={`${section}_${i}`}
-                  rules={[{ required: question.isRequired, message: 'This field is required' }]}>
-                  {getQuestionInput(question)}
-                </Form.Item>
-              )
-            })
+          {survey?.sections.map((section, i) => {
+            return <FormStep section={section} key={i} />
           })}
 
           <Form.Item wrapperCol={{ offset: 10, span: 4 }}>

@@ -66,14 +66,11 @@ export interface Question {
   choices?: string[]
   isRequired: boolean
 }
+export interface Section {
+  title: string
+  questions: Question[]
+}
 
 export interface Survey {
-  sections: string[]
-  general_questions: Question[]
-  activities_product: Question[]
-  skills_engineering: Question[]
-  activities_engineering: Question[]
-  activities_management: Question[]
-  salary: Question[]
-  satisfaction: Question[]
+  sections: Section[]
 }
