@@ -1,6 +1,6 @@
 import { Footer, Navbar } from '@components'
 import { GlobalStateProvider } from '@context'
-import { Compensation, Insights, LandingPage, Survey } from '@pages'
+import { Compensation, Contribute, Insights, LandingPage } from '@pages'
 import '@styles/App.styles.scss'
 import { Layout } from 'antd'
 import { useState } from 'react'
@@ -43,7 +43,7 @@ function App() {
                   element={<Insights drawerOpen={visible} onDrawerClose={handleCloseDrawer} />}
                 />
                 <Route path='/dashboard' element={<Compensation />} />
-                <Route path='/survey' element={<Survey />} />
+                <Route path='/contribute' element={<Contribute />} />
               </Switch>
               <Footer />
             </div>

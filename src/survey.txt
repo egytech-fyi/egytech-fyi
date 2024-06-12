@@ -1,0 +1,343 @@
+Egyptian Tech Scene 2023-2024
+
+Thank you for participating in the 2023-2024 Egyptian Tech Scene survey!
+
+This survey is designed to gather valuable insights from you in the most efficient way possible. By keeping the number of questions concise, we can ensure the survey takes approximately 12 minutes to complete.  Some sections may be skipped depending on your job role.  Your participation and willingness to help others in the Egyptian tech market are greatly appreciated.
+
+You're a *
+Male
+Female
+How old are you? *
+Do you have a computer science/engineering degree? *
+Yes
+No
+Your Linkedin Profile
+If you provided your Linkedin and email, you will receive the salary report few weeks before everyone else and your inputs will be considered verified
+Your email address
+If you provided your Linkedin and email, you will receive the salary report few weeks before everyone else and your inputs will be considered verified
+Your current company: *
+We use this information to validate the answer and remove outliers, we don't share it anywhere or publish companies' salary brackets. You can override it by adding *** if you prefer total anonymity.
+Your job title: *
+Do you consider yourself a/an *
+Backend Engineer
+Frontend Engineer
+Full-stack Engineer
+QA / SDET Engineer
+Mobile Development Engineer
+DevOps / SRE / Platform
+Data Scientist
+Data Engineer
+Data Analytics
+Engineering Manager
+Executive (C-level, director, etc.)
+Systems Architect
+Embedded Systems Engineer
+R&D Engineer (Computer Vision, NLP, etc.)
+AI & Automation Engineer
+UI/UX Designer/Engineer
+Hardware Engineer (Semiconductors, Digital Design, Electronics, etc)
+Product Owner
+Product Manager
+Scrum Master
+Security/Network Engineer
+Technical Support
+CRM Developer
+Your level at your current company is: *
+Junior (Software Engineer, Data Scientist, Product Manager, etc.)
+Mid-level (Software Engineer, Data Scientist, Product Manager, etc.)
+Senior (Software Engineer, Data Scientist, Product Manager, etc.)
+Team Lead
+Staff (Software Engineer, Data Scientist, Product Manager, etc.)
+Senior Staff (Software Engineer, Data Scientist, Product Manager, etc.)
+Principal (Software Engineer, Data Scientist, Product Manager, etc.)
+Group Product Manager
+Head of Products
+Senior Principal (Software Engineer, Data Scientist, Product Manager, etc.)
+Manager
+Senior Manager
+Director
+Group Director
+VP (Engineering, Product, etc.)
+CTO / CPO / Chief Scientist / etc.
+Other:
+Years of experience: *
+How many companies did you work at in the last 5 years? *
+Primary full time jobs, not freelancing or secondary jobs
+Did you work at the same company last year (January 2023) ?
+Yes
+No
+You work from *
+Office for a company in Egypt
+Home for a company in Egypt
+Hybrid for a company in Egypt (e.g 2-3 days from home or office)
+Home for a company abroad (Remote employee)
+Abroad in another country (Relocated elsewhere)
+Your company is considered: *
+A Start-up
+A Small and Medium Enterprise
+A Large Enterprise/Multinational Company
+Company Location in case it's operating from Egypt: *
+Majority of employees are working from Egypt, not necessarily the HQ
+No site in Egypt
+Cairo
+Alexandria
+Hurghada (Or Gouna)
+Port Said / Suez
+Mansoura
+Faiyum
+Luxor / Aswan
+Other:
+You work in a: *
+Software House
+Product-based company
+Other:
+The business main focus is: *
+B2B
+B2C
+B2B & B2C lines
+The business is 
+Local / National (operates inside Egypt)
+Regional (has some business lines in Saudi Arabia, Emirates, etc)
+Global (has some business lines in the region, the US, Europe, Asia, etc.)
+The industries of the business are
+Fintech
+Healthcare
+Insurance
+Automotive
+Delivery
+Supply Chain
+Transportation
+Telecommunications
+Energy
+Manufacturing
+Technology
+Education
+Human Resources Services
+Law
+Agriculture
+Production
+Aerospace
+Other:
+
+
+
+
+
+
+
+
+Activities (Product)
+Which functions of these are part of your quarterly activities?
+Collaborating with technical and design functions
+Collaborating with other functions
+Defining product strategy
+Define product requirements
+Engaging with customers and partners
+Reviewing metrics
+Market research and competition
+Planning and maintaining roadmaps
+Pricing and packaging
+Coaching, team management and recruiting
+What percentage of your week is spent in planning?
+0-20%
+20-40%
+40-60%
+60-80%
+What percentage of your week is spent in meetings?
+0-20%
+20-40%
+40-60%
+60-80%
+What percentage of your week is spent analyzing data?
+0-20%
+20-40%
+40-60%
+60-80%
+Which of these tools do you use in your weekly activities?
+Notion
+Obsidian
+Jira
+Trello
+Miro
+Hotjar
+Confluence
+Looker Studio
+Power BI
+Amplitude
+UX Pin
+ProductBoard
+ProductPlan
+Aha!
+Tableau
+SurveyMonkey
+Typeform
+UserVoice
+Gartner
+Figma
+Adobe XD
+Proto.io
+ClickUp
+Which tools do you use for customer surveys? 
+Which tools do you use for project management? 
+e.g: Jira, Trello, etc. 
+Who takes pricing and packaging decisions for your product?
+You
+Executive team (C-Level)
+Sales & Marketing
+We have dedicated pricing team (or RevOps)
+Other:
+When do you find it super useful to use the help of an AI assistant (ChatGPT, Gemini, etc.)
+If you had a product idea, which tools would you use to build a prototype?
+Which tools do you use for A/B Testing (or feature flagging)?
+What are your go-to tools to analyze data?
+Sheets/Excel
+SQL (or database query languages in general)
+Programming Languages (e.g python, R, etc.)
+Other:
+Which no-code tool do you find very powerful to build a prototype with?
+Which session replay and heatmap tools do you use? 
+e.g Hotjar, FullStory, etc.
+Which user analysis tools do you use?
+e.g Amplitude, Pendo, etc. 
+
+
+
+Skills (Engineering)
+Which programming languages do you use the most?
+C#
+Java
+PHP
+JavaScript
+Python
+Go
+Rust
+Ruby
+C/C++
+TypeScript
+Scala
+Kotlin
+Swift
+R
+HTML/CSS
+Other:
+Which frameworks do you use the most?
+ASP.Net
+Spring
+Django
+Flask
+Laravel
+Express
+FastAPI
+Ruby on Rails
+React
+Angular
+JQuery
+Vue.js
+NestJS
+Nuxt.js
+Next.js
+Gatsby
+Deno
+Tensorflow
+Pytorch
+OpenCV
+Autosar
+React Native
+Ionic
+Flutter
+Android
+Other:
+Which cloud provider hosts the services you help in building?
+AWS
+GCP
+Azure
+Cloudflare
+Firebase
+Self-hosted
+Other:
+Which databases do you use the most?
+PostgreSQL
+MySQL
+SQLite
+MongoDB
+SQL Server
+Redis
+MariaDB
+ElasticSearch
+Oracle
+DynamoDB
+Cassandra
+Firebase
+Other:
+Which of these technologies do you use in your daily activities?
+Kubernetes
+Docker
+Terraform
+Jenkins
+TeamCity
+CircleCI
+TravisCI
+Kafka
+RabbitMQ
+Spark
+Redshift
+Snowflake
+BigQuery
+Airflow
+Tableu
+Looker
+Hive
+PowerBI
+Other:
+
+
+Activities (Engineering)
+What percentage of your week is spent in coding/testing/implementing?
+0-20%
+20-40%
+40-60%
+60-80%
+What percentage of your week is spent in designing?
+0-20%
+20-40%
+40-60%
+60-80%
+What percentage of your week is spent in meetings?
+0-20%
+20-40%
+40-60%
+60-80%
+What percentage of your week is spent in mentoring?
+0-20%
+20-40%
+40-60%
+60-80%
+
+
+Activities (Management)
+How long does it take to onboard a new talent in your team?
+2 Weeks
+1 Month
+2 Months
+Other:
+How long does it usually take to hire a senior talent?
+1 Month
+1-3 Months
+3-5 Months
+5+ Months
+Other:
+What percentage of your week is spent in planning?
+0-20%
+20-40%
+40-60%
+60-80%
+What percentage of your week is spent in meetings?
+0-20%
+20-40%
+40-60%
+60-80%
+What percentage of your week is spent in mentoring?
+0-20%
+20-40%
+40-60%
+60-80%

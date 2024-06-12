@@ -1,9 +1,9 @@
-import { useEffect } from 'react'
-import { Button, Layout, Menu } from 'antd'
-import { Link, useLocation } from 'react-router-dom'
-import { FundTwoTone, DollarTwoTone, MenuOutlined, PlusCircleTwoTone } from '@ant-design/icons'
-import logo from '/symbol.svg'
+import { DollarTwoTone, FundTwoTone, MenuOutlined, PlusCircleTwoTone } from '@ant-design/icons'
 import '@styles/Navbar.styles.scss'
+import { Button, Layout, Menu } from 'antd'
+import { useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import logo from '/symbol.svg'
 
 const { Header } = Layout
 
@@ -53,9 +53,9 @@ export const Navbar = ({ handleOpenDrawer }: NavbarProps) => {
         </Menu.Item>
         <Menu.Item
           className='navbar-menu-item'
-          key='/survey'
+          key='/contribute'
           icon={<PlusCircleTwoTone twoToneColor='#4c88ef' />}>
-          <Link to='/survey'>Contribute</Link>
+          <Link to='/contribute'>Contribute</Link>
         </Menu.Item>
       </Menu>
       {isReport && (
