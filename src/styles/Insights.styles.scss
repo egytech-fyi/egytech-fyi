@@ -7,6 +7,13 @@
     text-align: left;
 }
 
+
+.desktop-anchor div.ant-anchor-wrapper{
+    overflow-y:auto;
+    scrollbar-width: thin;
+    scrollbar-color: #7B7B7B #424242;
+}
+
 @media (min-width: 767px) {
     .desktop-anchor {
         display: block;
