@@ -66,11 +66,11 @@ export interface Question {
   choices?: string[]
   isRequired: boolean
 }
-export interface Section {
+export interface SectionType {
   title: string
   questions: Question[]
 }
 
-export interface Survey {
-  sections: Section[]
+export interface SurveyType {
+  sections: SectionType[]
 }
