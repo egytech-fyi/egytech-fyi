@@ -15,7 +15,7 @@ function getInputField(
   field: ControllerRenderProps<FieldValues, string>,
 ): ReactElement {
   switch (question.type) {
-    case QuestionType.STRING || QuestionType.URL:
+    case QuestionType.STRING:
       return <Input {...field} />
     case QuestionType.NUMBER:
       return <InputNumber {...field} />

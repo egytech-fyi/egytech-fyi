@@ -1,12 +1,10 @@
-.survey-question{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    margin: 1rem;
-    font-size: 18px;
-
+.survey-question {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  font-size: 18px;
 }
 
-.field-alert{
-    color: red;
+.field-alert {
+  color: red;
 }

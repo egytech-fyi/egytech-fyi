@@ -1,21 +1,11 @@
-import { BaseComment, FormStep } from '@components'
+import { BaseComment, FormStep, Navigation } from '@components'
 import { getSurvey } from '@services'
 import { SurveyType } from '@types'
 import type { StepProps } from 'antd'
-import { Button, Divider, Form, Steps } from 'antd'
-// import axios from 'axios'
+import { Divider, Steps } from 'antd'
+import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
-
-// const onFinish: FormProps<SurveyType>['onFinish'] = (values) => {
-//   console.log('Success:', values)
-//   // TODO: replace with Base_URL
-//   axios.post('http://localhost:8787' + '/survey', values).catch((error) => console.log(error))
-// }
-
-// const onFinishFailed: FormProps<SurveyType>['onFinishFailed'] = (errorInfo) => {
-//   console.log('Failed:', errorInfo)
-// }
 
 export function Contribute() {
   const [survey, setSurvey] = useState<SurveyType>()
@@ -30,7 +20,8 @@ export function Contribute() {
     trigger,
   } = useForm<FieldValues>({ mode: 'onChange' })
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    console.log(data)
+    console.log('submit:', data)
+    axios.post('http://localhost:8787' + '/survey', data).catch((error) => console.log(error))
   }
 
   useEffect(() => {
@@ -57,12 +48,6 @@ export function Contribute() {
     fetchData()
   }, [])
 
-  async function onNextStep() {
-    await trigger() // validate values
-    if (isValid) {
-      setCurrentStep(currentStep + 1)
-    }
-  }
   return (
     <div
       className='main-container'
@@ -89,7 +74,7 @@ export function Contribute() {
       />
       {!isLoading && !error && (
         /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
-        <form name='survey' onSubmit={handleSubmit(onSubmit)}>
+        <form name='survey' onSubmit={handleSubmit(onSubmit)} style={{ width: '80%' }}>
           {survey?.sections.map((section, i) => {
             // render each survey section
             return (
@@ -99,26 +84,13 @@ export function Contribute() {
             )
           })}
 
-          <Form.Item className='survey-buttons'>
-            {currentStep != 0 && (
-              <Button
-                type='primary'
-                className='survey-back'
-                onClick={() => setCurrentStep(currentStep - 1)}>
-                Back
-              </Button>
-            )}
-            {currentStep != steps.length - 1 && (
-              <Button type='primary' className='survey-next' onClick={onNextStep}>
-                Next
-              </Button>
-            )}
-            {currentStep == steps.length - 1 && (
-              <Button type='primary' htmlType='submit'>
-                Submit
-              </Button>
-            )}
-          </Form.Item>
+          <Navigation
+            currentStep={currentStep}
+            setCurrentStep={setCurrentStep}
+            isLast={currentStep == steps.length - 1}
+            isFormValid={isValid}
+            trigger={trigger}
+          />
         </form>
       )}
       {error && (
