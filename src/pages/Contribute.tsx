@@ -33,7 +33,7 @@ export function Contribute() {
         const fetchedQuestions = await getSurvey()
         setSurvey(fetchedQuestions)
         setSteps(
-          fetchedQuestions.sections.map((section, i) => {
+          fetchedQuestions.sections.map((_, i) => {
             return { key: i } as StepProps
           }),
         )
