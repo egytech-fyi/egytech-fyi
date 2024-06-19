@@ -1,13 +1,14 @@
+import { Navigation } from '@components'
 import '@styles/FormStep.styles.scss'
 import { Question, QuestionType, SectionType } from '@types'
-import { Checkbox, Form, Input, InputNumber, Radio } from 'antd'
-import { ReactElement, ReactNode } from 'react'
+import { Checkbox, Col, Form, Input, InputNumber, Radio } from 'antd'
+import { ReactElement, ReactNode, useEffect, useRef } from 'react'
 import {
-  Control,
   Controller,
   ControllerRenderProps,
-  FieldErrors,
   FieldValues,
+  SubmitHandler,
+  useForm,
 } from 'react-hook-form'
 
 function getInputField(
@@ -23,17 +24,30 @@ function getInputField(
       return (
         <Radio.Group {...field}>
           {question.choices?.map((choice, i) => {
-            // if (choice.startsWith('Other:')) return <Input key={i} placeholder='Other' />
             return (
-              <Radio key={i} value={choice}>
-                {choice}
-              </Radio>
+              <Col span={12}>
+                <Radio key={i} value={choice} style={{ minWidth: '10rem' }}>
+                  {choice}
+                </Radio>
+              </Col>
             )
           })}
         </Radio.Group>
       )
     case QuestionType.CHECKBOX:
-      return <Checkbox.Group options={question.choices} {...field} />
+      return (
+        <Checkbox.Group {...field}>
+          {question.choices?.map((choice, i) => {
+            return (
+              <Col span={12}>
+                <Checkbox key={i} value={choice}>
+                  {choice}
+                </Checkbox>
+              </Col>
+            )
+          })}
+        </Checkbox.Group>
+      )
     case QuestionType.URL:
       return <Input type='URL' {...field} />
   }
@@ -41,14 +55,39 @@ function getInputField(
 
 interface FormStepProps {
   section: SectionType
-  control: Control<FieldValues>
-  errors: FieldErrors<FieldValues>
+  currentStep: number
+  setCurrentStep: (num: number) => void
+  numSteps: number
 }
 // A single step in a multi-step form
-export function FormStep({ section, control, errors }: FormStepProps) {
+export function FormStep({ section, currentStep, setCurrentStep, numSteps }: FormStepProps) {
+  const titleRef = useRef<HTMLHeadingElement | null>(null)
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm<FieldValues>({ mode: 'all' })
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    console.log('submit:', data)
+    setCurrentStep(currentStep + 1)
+  }
+  useEffect(() => {
+    titleRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }, [])
+
+  useEffect(() => {
+    {
+      // scroll to first error
+      const elements = Object.keys(errors)
+        .map((name) => document.getElementsByName(name)[0])
+        .filter((el) => !!el)
+      elements[0]?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+  }, [errors])
+
   return (
-    <div>
-      <h2>{section.title}</h2>
+    <form name='survey' onSubmit={handleSubmit(onSubmit)} style={{ width: '70%' }}>
+      <h2 ref={titleRef}>{section.title}</h2>
       {section.questions.map((value, i) => {
         const fieldName = `${section.title.replace(' ', '_').replace(/[()]/g, '')}_${i}`
         const question = value as Question
@@ -65,7 +104,7 @@ export function FormStep({ section, control, errors }: FormStepProps) {
                   label={question.question}
                   hasFeedback
                   layout='vertical'
-                  style={{ textAlign: 'left' }}>
+                  style={{ textAlign: 'left', minHeight: '80px' }}>
                   {getInputField(question, field)}
                   {errors[fieldName] && (
                     <p className='field-alert' role='alert'>
@@ -78,6 +117,13 @@ export function FormStep({ section, control, errors }: FormStepProps) {
           </div>
         )
       })}
-    </div>
+      <Navigation
+        currentStep={currentStep}
+        setCurrentStep={setCurrentStep}
+        numSteps={numSteps}
+        onNext={() => {}}
+        onBack={() => setCurrentStep(currentStep - 1)}
+      />
+    </form>
   )
 }

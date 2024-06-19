@@ -198,316 +198,6 @@
       ]
     },
     {
-      "title": "Activities (Product)",
-      "questions": [
-        {
-          "type": "checkbox",
-          "question": "Which functions of these are part of your quarterly activities?",
-          "choices": [
-            "Collaborating with technical and design functions",
-            "Collaborating with other functions",
-            "Defining product strategy",
-            "Define product requirements",
-            "Engaging with customers and partners",
-            "Reviewing metrics",
-            "Market research and competition",
-            "Planning and maintaining roadmaps",
-            "Pricing and packaging",
-            "Coaching, team management and recruiting"
-          ],
-          "isRequired": false
-        },
-        {
-          "type": "MCQ",
-          "question": "What percentage of your week is spent in planning?",
-          "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
-          "isRequired": false
-        },
-        {
-          "type": "MCQ",
-          "question": "What percentage of your week is spent in meetings?",
-          "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
-          "isRequired": false
-        },
-        {
-          "type": "MCQ",
-          "question": "What percentage of your week is spent analyzing data?",
-          "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
-          "isRequired": false
-        },
-        {
-          "type": "checkbox",
-          "question": "Which of these tools do you use in your weekly activities?",
-          "choices": [
-            "Notion",
-            "Obsidian",
-            "Jira",
-            "Trello",
-            "Miro",
-            "Hotjar",
-            "Confluence",
-            "Looker Studio",
-            "Power BI",
-            "Amplitude",
-            "UX Pin",
-            "ProductBoard",
-            "ProductPlan",
-            "Aha!",
-            "Tableau",
-            "SurveyMonkey",
-            "Typeform",
-            "UserVoice",
-            "Gartner",
-            "Figma",
-            "Adobe XD",
-            "Proto.io",
-            "ClickUp"
-          ],
-          "isRequired": false
-        },
-        {
-          "type": "string",
-          "question": "Which tools do you use for customer surveys?",
-          "isRequired": false
-        },
-        {
-          "type": "string",
-          "question": "Which tools do you use for project management?",
-          "isRequired": false
-        },
-        {
-          "type": "MCQ",
-          "question": "Who takes pricing and packaging decisions for your product?",
-          "choices": [
-            "You",
-            "Executive team (C-Level)",
-            "Sales & Marketing",
-            "We have dedicated pricing team (or RevOps)",
-            "Other:"
-          ],
-          "isRequired": false
-        },
-        {
-          "type": "string",
-          "question": "When do you find it super useful to use the help of an AI assistant (ChatGPT, Gemini, etc.)",
-          "isRequired": false
-        },
-        {
-          "type": "string",
-          "question": "If you had a product idea, which tools would you use to build a prototype?",
-          "isRequired": false
-        },
-        {
-          "type": "string",
-          "question": "Which tools do you use for A/B Testing (or feature flagging)?",
-          "isRequired": false
-        },
-        {
-          "type": "MCQ",
-          "question": "What are your go-to tools to analyze data?",
-          "choices": [
-            "Sheets/Excel",
-            "SQL (or database query languages in general)",
-            "Programming Languages (e.g python, R, etc.)",
-            "Other:"
-          ],
-          "isRequired": false
-        },
-        {
-          "type": "string",
-          "question": "Which no-code tool do you find very powerful to build a prototype with?",
-          "isRequired": false
-        },
-        {
-          "type": "string",
-          "question": "Which session replay and heatmap tools do you use?",
-          "isRequired": false
-        },
-        {
-          "type": "string",
-          "question": "Which user analysis tools do you use?",
-          "isRequired": false
-        }
-      ]
-    },
-    {
-      "title": "Skills (Engineering)",
-      "questions": [
-        {
-          "type": "checkbox",
-          "question": "Which programming languages do you use the most?",
-          "choices": [
-            "C#",
-            "Java",
-            "PHP",
-            "JavaScript",
-            "Python",
-            "Go",
-            "Rust",
-            "Ruby",
-            "C/C++",
-            "TypeScript",
-            "Scala",
-            "Kotlin",
-            "Swift",
-            "R",
-            "HTML/CSS",
-            "Other:"
-          ],
-          "isRequired": false
-        },
-        {
-          "type": "checkbox",
-          "question": "Which frameworks do you use the most?",
-          "choices": [
-            "ASP.Net",
-            "Spring",
-            "Django",
-            "Flask",
-            "Laravel",
-            "Express",
-            "FastAPI",
-            "Ruby on Rails",
-            "React",
-            "Angular",
-            "JQuery",
-            "Vue.js",
-            "NestJS",
-            "Nuxt.js",
-            "Next.js",
-            "Gatsby",
-            "Deno",
-            "Tensorflow",
-            "Pytorch",
-            "OpenCV",
-            "Autosar",
-            "React Native",
-            "Ionic",
-            "Flutter",
-            "Android",
-            "Other:"
-          ],
-          "isRequired": false
-        },
-        {
-          "type": "checkbox",
-          "question": "Which cloud provider hosts the services you help in building?",
-          "choices": ["AWS", "GCP", "Azure", "Cloudflare", "Firebase", "Self-hosted", "Other:"],
-          "isRequired": false
-        },
-        {
-          "type": "checkbox",
-          "question": "Which databases do you use the most?",
-          "choices": [
-            "PostgreSQL",
-            "MySQL",
-            "SQLite",
-            "MongoDB",
-            "SQL Server",
-            "Redis",
-            "MariaDB",
-            "ElasticSearch",
-            "Oracle",
-            "DynamoDB",
-            "Cassandra",
-            "Firebase",
-            "Other:"
-          ],
-          "isRequired": false
-        },
-        {
-          "type": "checkbox",
-          "question": "Which of these technologies do you use in your daily activities?",
-          "choices": [
-            "Kubernetes",
-            "Docker",
-            "Terraform",
-            "Jenkins",
-            "TeamCity",
-            "CircleCI",
-            "TravisCI",
-            "Kafka",
-            "RabbitMQ",
-            "Spark",
-            "Redshift",
-            "Snowflake",
-            "BigQuery",
-            "Airflow",
-            "Tableu",
-            "Looker",
-            "Hive",
-            "PowerBI",
-            "Other:"
-          ],
-          "isRequired": false
-        }
-      ]
-    },
-    {
-      "title": "Activities (Engineering)",
-      "questions": [
-        {
-          "type": "MCQ",
-          "question": "What percentage of your week is spent in coding/testing/implementing?",
-          "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
-          "isRequired": false
-        },
-        {
-          "type": "MCQ",
-          "question": "What percentage of your week is spent in designing?",
-          "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
-          "isRequired": false
-        },
-        {
-          "type": "MCQ",
-          "question": "What percentage of your week is spent in meetings?",
-          "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
-          "isRequired": false
-        },
-        {
-          "type": "MCQ",
-          "question": "What percentage of your week is spent in mentoring?",
-          "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
-          "isRequired": false
-        }
-      ]
-    },
-    {
-      "title": "Activities (Management)",
-      "questions": [
-        {
-          "type": "MCQ",
-          "question": "How long does it take to onboard a new talent in your team?",
-          "choices": ["2 Weeks", "1 Month", "2 Months", "Other:"],
-          "isRequired": true
-        },
-        {
-          "type": "MCQ",
-          "question": "How long does it usually take to hire a senior talent?",
-          "choices": ["1 Month", "1-3 Months", "3-5 Months", "5+ Months", "Other:"],
-          "isRequired": true
-        },
-        {
-          "type": "MCQ",
-          "question": "What percentage of your week is spent in planning?",
-          "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
-          "isRequired": true
-        },
-        {
-          "type": "MCQ",
-          "question": "What percentage of your week is spent in meetings?",
-          "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
-          "isRequired": true
-        },
-        {
-          "type": "MCQ",
-          "question": "What percentage of your week is spent in mentoring?",
-          "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
-          "isRequired": true
-        }
-      ]
-    },
-    {
       "title": "Salary",
       "questions": [
         {
@@ -631,5 +321,349 @@
         }
       ]
     }
-  ]
+  ],
+  "specialty_sections": {
+    "Engineering": [
+      {
+        "title": "Skills (Engineering)",
+        "questions": [
+          {
+            "type": "checkbox",
+            "question": "Which programming languages do you use the most?",
+            "choices": [
+              "C#",
+              "Java",
+              "PHP",
+              "JavaScript",
+              "Python",
+              "Go",
+              "Rust",
+              "Ruby",
+              "C/C++",
+              "TypeScript",
+              "Scala",
+              "Kotlin",
+              "Swift",
+              "R",
+              "HTML/CSS",
+              "Other:"
+            ],
+            "isRequired": false
+          },
+          {
+            "type": "checkbox",
+            "question": "Which frameworks do you use the most?",
+            "choices": [
+              "ASP.Net",
+              "Spring",
+              "Django",
+              "Flask",
+              "Laravel",
+              "Express",
+              "FastAPI",
+              "Ruby on Rails",
+              "React",
+              "Angular",
+              "JQuery",
+              "Vue.js",
+              "NestJS",
+              "Nuxt.js",
+              "Next.js",
+              "Gatsby",
+              "Deno",
+              "Tensorflow",
+              "Pytorch",
+              "OpenCV",
+              "Autosar",
+              "React Native",
+              "Ionic",
+              "Flutter",
+              "Android",
+              "Other:"
+            ],
+            "isRequired": false
+          },
+          {
+            "type": "checkbox",
+            "question": "Which cloud provider hosts the services you help in building?",
+            "choices": ["AWS", "GCP", "Azure", "Cloudflare", "Firebase", "Self-hosted", "Other:"],
+            "isRequired": false
+          },
+          {
+            "type": "checkbox",
+            "question": "Which databases do you use the most?",
+            "choices": [
+              "PostgreSQL",
+              "MySQL",
+              "SQLite",
+              "MongoDB",
+              "SQL Server",
+              "Redis",
+              "MariaDB",
+              "ElasticSearch",
+              "Oracle",
+              "DynamoDB",
+              "Cassandra",
+              "Firebase",
+              "Other:"
+            ],
+            "isRequired": false
+          },
+          {
+            "type": "checkbox",
+            "question": "Which of these technologies do you use in your daily activities?",
+            "choices": [
+              "Kubernetes",
+              "Docker",
+              "Terraform",
+              "Jenkins",
+              "TeamCity",
+              "CircleCI",
+              "TravisCI",
+              "Kafka",
+              "RabbitMQ",
+              "Spark",
+              "Redshift",
+              "Snowflake",
+              "BigQuery",
+              "Airflow",
+              "Tableu",
+              "Looker",
+              "Hive",
+              "PowerBI",
+              "Other:"
+            ],
+            "isRequired": false
+          }
+        ]
+      },
+      {
+        "title": "Activities (Engineering)",
+        "questions": [
+          {
+            "type": "MCQ",
+            "question": "What percentage of your week is spent in coding/testing/implementing?",
+            "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
+            "isRequired": false
+          },
+          {
+            "type": "MCQ",
+            "question": "What percentage of your week is spent in designing?",
+            "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
+            "isRequired": false
+          },
+          {
+            "type": "MCQ",
+            "question": "What percentage of your week is spent in meetings?",
+            "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
+            "isRequired": false
+          },
+          {
+            "type": "MCQ",
+            "question": "What percentage of your week is spent in mentoring?",
+            "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
+            "isRequired": false
+          }
+        ]
+      }
+    ],
+    "Product": [
+      {
+        "title": "Activities (Product)",
+        "questions": [
+          {
+            "type": "checkbox",
+            "question": "Which functions of these are part of your quarterly activities?",
+            "choices": [
+              "Collaborating with technical and design functions",
+              "Collaborating with other functions",
+              "Defining product strategy",
+              "Define product requirements",
+              "Engaging with customers and partners",
+              "Reviewing metrics",
+              "Market research and competition",
+              "Planning and maintaining roadmaps",
+              "Pricing and packaging",
+              "Coaching, team management and recruiting"
+            ],
+            "isRequired": false
+          },
+          {
+            "type": "MCQ",
+            "question": "What percentage of your week is spent in planning?",
+            "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
+            "isRequired": false
+          },
+          {
+            "type": "MCQ",
+            "question": "What percentage of your week is spent in meetings?",
+            "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
+            "isRequired": false
+          },
+          {
+            "type": "MCQ",
+            "question": "What percentage of your week is spent analyzing data?",
+            "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
+            "isRequired": false
+          },
+          {
+            "type": "checkbox",
+            "question": "Which of these tools do you use in your weekly activities?",
+            "choices": [
+              "Notion",
+              "Obsidian",
+              "Jira",
+              "Trello",
+              "Miro",
+              "Hotjar",
+              "Confluence",
+              "Looker Studio",
+              "Power BI",
+              "Amplitude",
+              "UX Pin",
+              "ProductBoard",
+              "ProductPlan",
+              "Aha!",
+              "Tableau",
+              "SurveyMonkey",
+              "Typeform",
+              "UserVoice",
+              "Gartner",
+              "Figma",
+              "Adobe XD",
+              "Proto.io",
+              "ClickUp"
+            ],
+            "isRequired": false
+          },
+          {
+            "type": "string",
+            "question": "Which tools do you use for customer surveys?",
+            "isRequired": false
+          },
+          {
+            "type": "string",
+            "question": "Which tools do you use for project management?",
+            "isRequired": false
+          },
+          {
+            "type": "MCQ",
+            "question": "Who takes pricing and packaging decisions for your product?",
+            "choices": [
+              "You",
+              "Executive team (C-Level)",
+              "Sales & Marketing",
+              "We have dedicated pricing team (or RevOps)",
+              "Other:"
+            ],
+            "isRequired": false
+          },
+          {
+            "type": "string",
+            "question": "When do you find it super useful to use the help of an AI assistant (ChatGPT, Gemini, etc.)",
+            "isRequired": false
+          },
+          {
+            "type": "string",
+            "question": "If you had a product idea, which tools would you use to build a prototype?",
+            "isRequired": false
+          },
+          {
+            "type": "string",
+            "question": "Which tools do you use for A/B Testing (or feature flagging)?",
+            "isRequired": false
+          },
+          {
+            "type": "MCQ",
+            "question": "What are your go-to tools to analyze data?",
+            "choices": [
+              "Sheets/Excel",
+              "SQL (or database query languages in general)",
+              "Programming Languages (e.g python, R, etc.)",
+              "Other:"
+            ],
+            "isRequired": false
+          },
+          {
+            "type": "string",
+            "question": "Which no-code tool do you find very powerful to build a prototype with?",
+            "isRequired": false
+          },
+          {
+            "type": "string",
+            "question": "Which session replay and heatmap tools do you use?",
+            "isRequired": false
+          },
+          {
+            "type": "string",
+            "question": "Which user analysis tools do you use?",
+            "isRequired": false
+          }
+        ]
+      }
+    ],
+    "Management": [
+      {
+        "title": "Activities (Management)",
+        "questions": [
+          {
+            "type": "MCQ",
+            "question": "How long does it take to onboard a new talent in your team?",
+            "choices": ["2 Weeks", "1 Month", "2 Months", "Other:"],
+            "isRequired": true
+          },
+          {
+            "type": "MCQ",
+            "question": "How long does it usually take to hire a senior talent?",
+            "choices": ["1 Month", "1-3 Months", "3-5 Months", "5+ Months", "Other:"],
+            "isRequired": true
+          },
+          {
+            "type": "MCQ",
+            "question": "What percentage of your week is spent in planning?",
+            "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
+            "isRequired": true
+          },
+          {
+            "type": "MCQ",
+            "question": "What percentage of your week is spent in meetings?",
+            "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
+            "isRequired": true
+          },
+          {
+            "type": "MCQ",
+            "question": "What percentage of your week is spent in mentoring?",
+            "choices": ["0-20%", "20-40%", "40-60%", "60-80%"],
+            "isRequired": true
+          }
+        ]
+      }
+    ]
+  },
+  "year": 2024,
+
+  "specialty_to_titles": {
+    "Engineering": [
+      "Backend Engineer",
+      "Frontend Engineer",
+      "Full-stack Engineer",
+      "QA / SDET Engineer",
+      "Mobile Development Engineer",
+      "DevOps / SRE / Platform",
+      "Data Scientist",
+      "Data Engineer",
+      "Data Analytics",
+      "Systems Architect",
+      "Embedded Systems Engineer",
+      "R&D Engineer (Computer Vision, NLP, etc.)",
+      "AI & Automation Engineer",
+      "UI/UX Designer/Engineer",
+      "Hardware Engineer (Semiconductors, Digital Design, Electronics, etc)",
+      "Security/Network Engineer",
+      "Technical Support",
+      "CRM Developer"
+    ],
+    "Management": ["Engineering Manager", "Executive (C-level, director, etc.)"],
+    "Product": ["Product Owner", "Product Manager", "Scrum Master"]
+  }
 }

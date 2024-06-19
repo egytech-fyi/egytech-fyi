@@ -69,6 +69,7 @@ export interface Question {
 export interface SectionType {
   title: string
   questions: Question[]
+  next: string | { [key: string]: string }
 }
 
 export interface SurveyType {
