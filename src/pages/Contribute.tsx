@@ -1,59 +1,65 @@
-import { BaseComment, FormStep } from '@components'
-import { getSurvey } from '@services'
+import { BaseComment, GeneralQuestions } from '@components'
+
 import '@styles/Contribute.styles.scss'
-import { SurveyType } from '@types'
-import type { StepProps } from 'antd'
-import { Divider, Progress, Spin, Steps } from 'antd'
+import { Button, Divider } from 'antd'
 import { useEffect, useState } from 'react'
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 
 export function Contribute() {
-  const [surveyQs, setSurveyQs] = useState<SurveyType | null>(null)
-  // const [surveyState, setSurveyState] = useState({})
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState(false)
-  const [steps, setSteps] = useState<StepProps[]>([])
   const [currentStep, setCurrentStep] = useState(0)
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm<FieldValues>({ mode: 'all' })
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    console.log('submit:', data)
+    setCurrentStep(currentStep + 1)
+  }
+
+  useEffect(() => {
+    {
+      // scroll to first error
+      const elements = Object.keys(errors)
+        .map((name) => document.getElementsByName(name)[0])
+        .filter((el) => !!el)
+      elements[0]?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+  }, [errors])
+
   // "General" => 0 etc.
   // const [sectionTitleToStep, setSectionTitleToStep] = useState<Map<string, number>>(new Map())
 
-  // const onSubmit: SubmitHandler<FieldValues> = (data) => {
-  //   console.log('submit:', data)
-  //   //TODO: change endpoint
-  //   axios.post('http://localhost:8787' + '/survey', data).catch((error) => console.log(error))
-  //   setCurrentStep(currentStep + 1)
-  //   // TODO: set cookie as form submitted
-  //   // TODO: disable submit button
-  // }
+  // useEffect(() => {
+  //   // fetch survey from api
+  //   const fetchData = async () => {
+  //     setIsLoading(true)
+  //     setError(false)
+  //     try {
+  //       const fetchedQuestions = await getSurvey()
+  //       setSurveyQs(fetchedQuestions)
+  //       setSteps(
+  //         fetchedQuestions.sections.map((_, i) => {
+  //           return { key: i } as StepProps
+  //         }),
+  //       )
 
-  useEffect(() => {
-    // fetch survey from api
-    const fetchData = async () => {
-      setIsLoading(true)
-      setError(false)
-      try {
-        const fetchedQuestions = await getSurvey()
-        setSurveyQs(fetchedQuestions)
-        setSteps(
-          fetchedQuestions.sections.map((_, i) => {
-            return { key: i } as StepProps
-          }),
-        )
-
-        // map section title to index (used for dynamic navigation)
-        const titleToIndex = new Map()
-        fetchedQuestions.sections.forEach((section, i) => {
-          titleToIndex.set(section.title, i)
-        })
-        // setSectionTitleToStep(titleToIndex)
-      } catch (err) {
-        console.log(err)
-        setError(true)
-      } finally {
-        setIsLoading(false)
-      }
-    }
-    fetchData()
-  }, [])
+  //       // map section title to index (used for dynamic navigation)
+  //       const titleToIndex = new Map()
+  //       fetchedQuestions.sections.forEach((section, i) => {
+  //         titleToIndex.set(section.title, i)
+  //       })
+  //       // setSectionTitleToStep(titleToIndex)
+  //     } catch (err) {
+  //       console.log(err)
+  //       setError(true)
+  //     } finally {
+  //       setIsLoading(false)
+  //     }
+  //   }
+  //   fetchData()
+  // }, [])
 
   // async function onNext() {
   //   await trigger() // validate form values
@@ -87,48 +93,29 @@ export function Contribute() {
         </BaseComment>
       </div>
       <Divider />
-      {isLoading && <Spin size='large' />}
-      {!isLoading && !error && (
-        <>
-          <Steps
-            className='survey-steps'
-            current={currentStep}
-            items={steps}
-            progressDot
-            responsive={false}
-            direction='horizontal'
-          />
-          <Progress
-            className='survey-percentage'
-            type='circle'
-            percent={Math.ceil((currentStep / steps.length) * 100)}
-            trailColor='rgba(0, 0, 0, 0.06)'
-            steps={steps.length}
-            showInfo={false}
-          />
 
-          {surveyQs?.sections.map((section, i) => {
-            // render each survey section
-            return (
-              currentStep == i && (
-                <FormStep
-                  section={section}
-                  key={i}
-                  currentStep={currentStep}
-                  setCurrentStep={setCurrentStep}
-                  numSteps={steps.length}
-                />
-              )
-            )
-          })}
-        </>
-      )}
-      {error && (
-        <div>
-          <strong>Failed to fetch survey 😔 </strong>
-          <br /> please try again later
-        </div>
-      )}
+      <>
+        {/* <Steps
+          className='survey-steps'
+          current={currentStep}
+          items={steps}
+          progressDot
+          responsive={false}
+          direction='horizontal'
+        />
+        <Progress
+          className='survey-percentage'
+          type='circle'
+          percent={Math.ceil((currentStep / steps.length) * 100)}
+          trailColor='rgba(0, 0, 0, 0.06)'
+          steps={steps.length}
+          showInfo={false}
+        /> */}
+        <form name='survey' onSubmit={handleSubmit(onSubmit)}>
+          <GeneralQuestions control={control} errors={errors} register={register} />
+          <Button htmlType='submit'>submit</Button>
+        </form>
+      </>
     </div>
   )
 }
