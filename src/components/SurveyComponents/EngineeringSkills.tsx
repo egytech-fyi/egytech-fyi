@@ -1,4 +1,4 @@
-import { FormSelect, Navigation, StepCard } from '@components'
+import { FormSelect, Navigation, SurveyStep } from '@components'
 import { useEffect, useRef } from 'react'
 
 const engineeringSkills = {
@@ -123,8 +123,10 @@ export function EngineeringSkills({ next, back }: propTypes) {
     titleRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }, [])
   return (
-    <StepCard>
-      <h2 ref={titleRef}>{engineeringSkills.title}</h2>
+    <SurveyStep>
+      <h2 className='header-subtext' ref={titleRef}>
+        {engineeringSkills.title}
+      </h2>
       <FormSelect
         name='programmingLanguages'
         label={engineeringSkills.programmingLanguages.question}
@@ -170,6 +172,6 @@ export function EngineeringSkills({ next, back }: propTypes) {
         }}
         onBack={() => back()}
       />
-    </StepCard>
+    </SurveyStep>
   )
 }

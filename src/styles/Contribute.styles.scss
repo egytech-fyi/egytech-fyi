@@ -1,9 +1,11 @@
-$large: 1026px;
+$large: 1258px;
 
 .survey-steps {
-  display: flex;
-  max-width: $large;
-  padding: 10px;
+  justify-content: center;
+  padding: 12px;
+}
+.survey-percentage {
+  padding: 12px;
 }
 @media screen and (max-width: $large) {
   .survey-steps {
@@ -25,10 +27,9 @@ $large: 1026px;
   align-items: center;
 }
 
-
 @media only screen and (max-width: 767px) {
-    .comment-container {
-        margin: 0.5rem 1rem;
-        flex-direction: inherit;
-    }
+  .comment-container {
+    margin: 0.5rem 1rem;
+    flex-direction: inherit;
+  }
 }

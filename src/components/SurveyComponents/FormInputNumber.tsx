@@ -1,6 +1,7 @@
 import { Form, InputNumber } from 'antd'
 import { ReactNode } from 'react'
 import { Controller, useFormContext } from 'react-hook-form'
+import '@styles/SurveyComponents.styles.scss'
 
 interface PropTypes {
   name: string

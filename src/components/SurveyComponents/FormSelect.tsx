@@ -1,3 +1,4 @@
+import '@styles/SurveyComponents.styles.scss'
 import { Form, Radio, Select } from 'antd'
 import { ReactNode } from 'react'
 import { Controller, useFormContext } from 'react-hook-form'

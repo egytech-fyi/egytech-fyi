@@ -10,7 +10,7 @@ import {
 } from '@components'
 
 import '@styles/Contribute.styles.scss'
-import { Divider, StepProps, Steps } from 'antd'
+import { Col, Divider, Progress, StepProps, Steps } from 'antd'
 import { useEffect, useState } from 'react'
 import { FieldValues, FormProvider, SubmitHandler, useForm } from 'react-hook-form'
 
@@ -25,7 +25,7 @@ export function Contribute() {
   useEffect(() => {
     {
       console.log('scrolling to error')
-      // scroll to first error
+      // scroll to first error TODO: fix
       const elements = Object.keys(methods.formState.errors)
         .map((name) => document.getElementsByName(name)[0])
         .filter((el) => !!el)
@@ -57,7 +57,7 @@ export function Contribute() {
   ]
   const CurrentPage = formPages[currentStep].component
   return (
-    <div className='survey-container'>
+    <Col xs={24} md={16} lg={12}>
       <h1 className='header-text'>Survey</h1>
       <div className='comment-container'>
         <BaseComment>
@@ -71,29 +71,25 @@ export function Contribute() {
       </div>
       <Divider />
 
-      <>
-        <Steps
-          className='survey-steps'
-          current={currentStep}
-          items={formPages as StepProps[]}
-          progressDot
-          responsive={false}
-          direction='horizontal'
-        />
-        {/* <Progress
-          className='survey-percentage'
-          type='circle'
-          percent={Math.ceil((currentStep / steps.length) * 100)}
-          trailColor='rgba(0, 0, 0, 0.06)'
-          steps={steps.length}
-          showInfo={false}
-        /> */}
-        <FormProvider {...methods}>
-          <form name='survey' onSubmit={methods.handleSubmit(onSubmit)}>
-            <CurrentPage next={onNext} back={onBack} />
-          </form>
-        </FormProvider>
-      </>
-    </div>
+      <Steps
+        className='survey-steps'
+        current={currentStep}
+        items={formPages as StepProps[]}
+        progressDot
+      />
+      <Progress
+        className='survey-percentage'
+        type='circle'
+        percent={Math.ceil((currentStep / formPages.length) * 100)}
+        trailColor='rgba(0, 0, 0, 0.06)'
+        steps={formPages.length}
+        showInfo={false}
+      />
+      <FormProvider {...methods}>
+        <form name='survey' onSubmit={methods.handleSubmit(onSubmit)}>
+          <CurrentPage next={onNext} back={onBack} />
+        </form>
+      </FormProvider>
+    </Col>
   )
 }

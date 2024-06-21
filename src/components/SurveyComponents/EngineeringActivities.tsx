@@ -1,4 +1,4 @@
-import { FormSelect, Navigation, StepCard } from '@components'
+import { FormSelect, Navigation, SurveyStep } from '@components'
 import { useEffect, useRef } from 'react'
 
 const activitiesQuestions = {
@@ -39,8 +39,10 @@ export function EngineeringActivities({ next, back }: propTypes) {
     titleRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }, [])
   return (
-    <StepCard>
-      <h2 ref={titleRef}>{activitiesQuestions.title}</h2>
+    <SurveyStep>
+      <h2 className='header-subtext' ref={titleRef}>
+        {activitiesQuestions.title}
+      </h2>
       <FormSelect
         name='codingPercentage'
         label={activitiesQuestions.codingPercentage.question}
@@ -78,6 +80,6 @@ export function EngineeringActivities({ next, back }: propTypes) {
         }}
         onBack={() => back()}
       />
-    </StepCard>
+    </SurveyStep>
   )
 }

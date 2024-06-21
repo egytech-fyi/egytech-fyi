@@ -1,4 +1,4 @@
-import { FormInput, FormInputNumber, Navigation, StepCard } from '@components'
+import { FormInput, FormInputNumber, Navigation, SurveyStep } from '@components'
 import { useEffect, useRef } from 'react'
 import { FormSelect } from './FormSelect'
 
@@ -208,8 +208,10 @@ export function GeneralQuestions({ next }: propTypes) {
     titleRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }, [])
   return (
-    <StepCard>
-      <h2 ref={titleRef}>{generalQuestions.title}</h2>
+    <SurveyStep>
+      <h2 className='header-subtext' ref={titleRef}>
+        {generalQuestions.title}
+      </h2>
       <FormSelect
         name='gender'
         label={generalQuestions.gender.question}
@@ -339,6 +341,6 @@ export function GeneralQuestions({ next }: propTypes) {
           next(1)
         }}
       />
-    </StepCard>
+    </SurveyStep>
   )
 }

@@ -1,4 +1,4 @@
-import { FormInput, FormSelect, StepCard } from '@components'
+import { FormInput, FormSelect, SurveyStep } from '@components'
 import { useEffect, useRef } from 'react'
 
 const productActivities = {
@@ -141,8 +141,10 @@ export function ProductActivities() {
     titleRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }, [])
   return (
-    <StepCard>
-      <h2 ref={titleRef}>{productActivities.title}</h2>
+    <SurveyStep>
+      <h2 className='header-subtext' ref={titleRef}>
+        {productActivities.title}
+      </h2>
       <FormSelect
         name='quarterlyActivities'
         label={productActivities.quarterlyActivities.question}
@@ -246,6 +248,6 @@ export function ProductActivities() {
         label={productActivities.userAnalysisTools.question}
         isRequired={productActivities.userAnalysisTools.isRequired}
       />
-    </StepCard>
+    </SurveyStep>
   )
 }

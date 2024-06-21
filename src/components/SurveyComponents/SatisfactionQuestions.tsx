@@ -1,4 +1,4 @@
-import { FormSelect, Navigation, StepCard } from '@components'
+import { FormSelect, Navigation, SurveyStep } from '@components'
 import { useEffect, useRef } from 'react'
 
 const satisfactionQuestions = {
@@ -46,7 +46,6 @@ const satisfactionQuestions = {
 }
 
 interface propTypes {
-  // next: (step: number) => void
   back: () => void
 }
 export function SatisfactionQuestions({ back }: propTypes) {
@@ -56,8 +55,10 @@ export function SatisfactionQuestions({ back }: propTypes) {
     titleRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }, [])
   return (
-    <StepCard>
-      <h2 ref={titleRef}>{satisfactionQuestions.title}</h2>
+    <SurveyStep>
+      <h2 className='header-subtext' ref={titleRef}>
+        {satisfactionQuestions.title}
+      </h2>
       <FormSelect
         name='earnDeserved'
         label={satisfactionQuestions.earnDeserved.question}
@@ -94,6 +95,6 @@ export function SatisfactionQuestions({ back }: propTypes) {
         isMultipleChoices={false}
       />
       <Navigation onBack={() => back()} submit />
-    </StepCard>
+    </SurveyStep>
   )
 }

@@ -1,4 +1,4 @@
-import { FormInput, FormInputNumber, FormSelect, Navigation, StepCard } from '@components'
+import { FormInput, FormInputNumber, FormSelect, Navigation, SurveyStep } from '@components'
 import { useEffect, useRef } from 'react'
 
 const salaryQuestions = {
@@ -95,8 +95,10 @@ export function SalaryQuestions({ next, back }: propTypes) {
     titleRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }, [])
   return (
-    <StepCard>
-      <h2 ref={titleRef}>{salaryQuestions.title}</h2>
+    <SurveyStep>
+      <h2 className='header-subtext' ref={titleRef}>
+        {salaryQuestions.title}
+      </h2>
       <FormSelect
         name='salaryCurrency'
         label={salaryQuestions.salaryCurrency.question}
@@ -182,6 +184,6 @@ export function SalaryQuestions({ next, back }: propTypes) {
         }}
         onBack={() => back()}
       />
-    </StepCard>
+    </SurveyStep>
   )
 }
