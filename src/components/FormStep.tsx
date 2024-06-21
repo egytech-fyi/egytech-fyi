@@ -1,4 +1,3 @@
-import { Navigation } from '@components'
 import '@styles/FormStep.styles.scss'
 import { Question, QuestionType, SectionType } from '@types'
 import { Checkbox, Col, Form, Input, InputNumber, Radio } from 'antd'
@@ -60,7 +59,7 @@ interface FormStepProps {
   numSteps: number
 }
 // A single step in a multi-step form
-export function FormStep({ section, currentStep, setCurrentStep, numSteps }: FormStepProps) {
+export function FormStep({ section, currentStep, setCurrentStep }: FormStepProps) {
   const titleRef = useRef<HTMLHeadingElement | null>(null)
   const {
     handleSubmit,
@@ -117,13 +116,13 @@ export function FormStep({ section, currentStep, setCurrentStep, numSteps }: For
           </div>
         )
       })}
-      <Navigation
+      {/* <Navigation
         currentStep={currentStep}
         setCurrentStep={setCurrentStep}
         numSteps={numSteps}
         onNext={() => {}}
         onBack={() => setCurrentStep(currentStep - 1)}
-      />
+      /> */}
     </form>
   )
 }
