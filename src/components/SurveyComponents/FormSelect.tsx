@@ -11,6 +11,11 @@ interface PropTypes {
   isMultipleChoices: boolean
 }
 const { Option } = Select
+/**
+ *  FormSelect is a form input component that renders either a Select dropdown or a
+ *  Radio group based on the number of options and allows for single or multiple selections.
+ *  It integrates with react-hook-form for form state and validation management.
+ */
 export function FormSelect({ name, label, options, isRequired, isMultipleChoices }: PropTypes) {
   const {
     control,

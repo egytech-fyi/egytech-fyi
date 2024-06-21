@@ -25,7 +25,7 @@ export function Contribute() {
   useEffect(() => {
     {
       console.log('scrolling to error')
-      // scroll to first error TODO: fix
+      // scroll to first error TODO: doesn't always work fix
       const elements = Object.keys(methods.formState.errors)
         .map((name) => document.getElementsByName(name)[0])
         .filter((el) => !!el)
@@ -37,11 +37,13 @@ export function Contribute() {
     await methods.trigger() // validate form values
     const isValid = Object.keys(methods.formState.errors).length == 0
     if (isValid) {
+      // navigate to next page after saving current page to HistoryStack
       setHistoryStack((prev) => [...prev, currentStep])
       setCurrentStep(stepNum)
     }
   }
   function onBack() {
+    // Navigate to last page and remove it from the stack
     setCurrentStep(historyStack[historyStack.length - 1])
     setHistoryStack(historyStack.slice(0, -1))
   }
