@@ -1,26 +1,20 @@
 import { Form, Radio, Select } from 'antd'
 import { ReactNode } from 'react'
-import { Control, Controller, FieldErrors } from 'react-hook-form'
+import { Controller, useFormContext } from 'react-hook-form'
 
 interface PropTypes {
   name: string
   label: string
   isRequired: boolean
   options: string[]
-  control: Control
-  errors: FieldErrors
   isMultipleChoices: boolean
 }
 const { Option } = Select
-export function FormSelect({
-  name,
-  label,
-  options,
-  control,
-  isRequired,
-  errors,
-  isMultipleChoices,
-}: PropTypes) {
+export function FormSelect({ name, label, options, isRequired, isMultipleChoices }: PropTypes) {
+  const {
+    control,
+    formState: { errors },
+  } = useFormContext()
   return (
     <Controller
       name={name}

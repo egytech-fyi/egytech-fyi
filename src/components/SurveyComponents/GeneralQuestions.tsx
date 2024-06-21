@@ -1,9 +1,9 @@
-import { FormInput, StepCard } from '@components'
-import { Control, FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form'
-import { FormInputNumber } from './FormInputNumber'
+import { FormInput, FormInputNumber, Navigation, StepCard } from '@components'
+import { useEffect, useRef } from 'react'
 import { FormSelect } from './FormSelect'
 
-const Questions = {
+const generalQuestions = {
+  title: 'General',
   gender: {
     type: 'MCQ',
     question: "You're a",
@@ -197,176 +197,147 @@ const Questions = {
     isRequired: false,
   },
 }
-interface GeneralQuestionsPropsType {
-  control: Control
-  errors: FieldErrors
-  register: UseFormRegister<FieldValues>
+interface propTypes {
+  next: (step: number) => void
+  back: (step: number) => void
 }
-export function GeneralQuestions({ control, errors }: GeneralQuestionsPropsType) {
+export function GeneralQuestions({ next }: propTypes) {
+  const titleRef = useRef<HTMLHeadingElement | null>(null)
+  useEffect(() => {
+    // scroll to top
+    titleRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }, [])
   return (
     <StepCard>
+      <h2 ref={titleRef}>{generalQuestions.title}</h2>
       <FormSelect
         name='gender'
-        label={Questions.gender.question}
-        isRequired={Questions.gender.isRequired}
-        options={Questions.gender.choices}
+        label={generalQuestions.gender.question}
+        isRequired={generalQuestions.gender.isRequired}
+        options={generalQuestions.gender.choices}
         isMultipleChoices={false}
-        control={control}
-        errors={errors}
       />
 
       <FormInputNumber
         name='age'
-        label={Questions.age.question}
-        isRequired={Questions.age.isRequired}
-        control={control}
-        errors={errors}
+        label={generalQuestions.age.question}
+        isRequired={generalQuestions.age.isRequired}
         max={100}
         min={16} // need min?
       />
       <FormSelect
         name='degree'
-        label={Questions.CSDegree.question}
-        isRequired={Questions.CSDegree.isRequired}
-        options={Questions.CSDegree.choices}
+        label={generalQuestions.CSDegree.question}
+        isRequired={generalQuestions.CSDegree.isRequired}
+        options={generalQuestions.CSDegree.choices}
         isMultipleChoices={false}
-        control={control}
-        errors={errors}
       />
       <FormInput
         name='linkedin'
-        label={Questions.linkedinProfile.question}
-        isRequired={Questions.linkedinProfile.isRequired}
-        control={control}
-        errors={errors}
+        label={generalQuestions.linkedinProfile.question}
+        isRequired={generalQuestions.linkedinProfile.isRequired}
       />
-
       <FormInput
         name='email'
-        label={Questions.email.question}
-        isRequired={Questions.email.isRequired}
-        control={control}
-        errors={errors}
+        label={generalQuestions.email.question}
+        isRequired={generalQuestions.email.isRequired}
       />
       <FormInput
         name='company'
-        label={Questions.currentCompany.question}
-        isRequired={Questions.currentCompany.isRequired}
-        control={control}
-        errors={errors}
+        label={generalQuestions.currentCompany.question}
+        isRequired={generalQuestions.currentCompany.isRequired}
       />
       <FormInput
         name='job-title'
-        label={Questions.jobTitle.question}
-        isRequired={Questions.jobTitle.isRequired}
-        control={control}
-        errors={errors}
+        label={generalQuestions.jobTitle.question}
+        isRequired={generalQuestions.jobTitle.isRequired}
       />
       <FormSelect
         name='role'
-        label={Questions.role.question}
-        isRequired={Questions.role.isRequired}
-        options={Questions.role.choices}
+        label={generalQuestions.role.question}
+        isRequired={generalQuestions.role.isRequired}
+        options={generalQuestions.role.choices}
         isMultipleChoices={false}
-        control={control}
-        errors={errors}
       />
       <FormSelect
         name='level'
-        label={Questions.level.question}
-        isRequired={Questions.level.isRequired}
-        options={Questions.level.choices}
+        label={generalQuestions.level.question}
+        isRequired={generalQuestions.level.isRequired}
+        options={generalQuestions.level.choices}
         isMultipleChoices={false}
-        control={control}
-        errors={errors}
       />
       <FormInputNumber
         name='years-experience'
-        label={Questions.yearsOfExperience.question}
-        isRequired={Questions.yearsOfExperience.isRequired}
-        control={control}
-        errors={errors}
+        label={generalQuestions.yearsOfExperience.question}
+        isRequired={generalQuestions.yearsOfExperience.isRequired}
         max={50} // too low? high?
       />
       <FormInputNumber
         name='companies-last-5'
-        label={Questions.companiesLast5Years.question}
-        isRequired={Questions.companiesLast5Years.isRequired}
-        control={control}
-        errors={errors}
+        label={generalQuestions.companiesLast5Years.question}
+        isRequired={generalQuestions.companiesLast5Years.isRequired}
         max={10}
       />
       <FormSelect
         name='same-company'
-        label={Questions.sameCompanyLastYear.question}
-        isRequired={Questions.sameCompanyLastYear.isRequired}
-        options={Questions.sameCompanyLastYear.choices}
+        label={generalQuestions.sameCompanyLastYear.question}
+        isRequired={generalQuestions.sameCompanyLastYear.isRequired}
+        options={generalQuestions.sameCompanyLastYear.choices}
         isMultipleChoices={false}
-        control={control}
-        errors={errors}
       />
       <FormSelect
         name='employee-location'
-        label={Questions.workLocation.question}
-        isRequired={Questions.workLocation.isRequired}
-        options={Questions.workLocation.choices}
+        label={generalQuestions.workLocation.question}
+        isRequired={generalQuestions.workLocation.isRequired}
+        options={generalQuestions.workLocation.choices}
         isMultipleChoices={false}
-        control={control}
-        errors={errors}
       />
       <FormSelect
         name='company-size'
-        label={Questions.companySize.question}
-        isRequired={Questions.companySize.isRequired}
-        options={Questions.companySize.choices}
+        label={generalQuestions.companySize.question}
+        isRequired={generalQuestions.companySize.isRequired}
+        options={generalQuestions.companySize.choices}
         isMultipleChoices={false}
-        control={control}
-        errors={errors}
       />
       <FormSelect
         name='company-location'
-        label={Questions.companyLocationEgypt.question}
-        isRequired={Questions.companyLocationEgypt.isRequired}
-        options={Questions.companyLocationEgypt.choices}
+        label={generalQuestions.companyLocationEgypt.question}
+        isRequired={generalQuestions.companyLocationEgypt.isRequired}
+        options={generalQuestions.companyLocationEgypt.choices}
         isMultipleChoices={false}
-        control={control}
-        errors={errors}
       />
       <FormSelect
         name='company-type'
-        label={Questions.companyType.question}
-        isRequired={Questions.companyType.isRequired}
-        options={Questions.companyType.choices}
+        label={generalQuestions.companyType.question}
+        isRequired={generalQuestions.companyType.isRequired}
+        options={generalQuestions.companyType.choices}
         isMultipleChoices={false}
-        control={control}
-        errors={errors}
       />
       <FormSelect
         name='business-focus'
-        label={Questions.businessFocus.question}
-        isRequired={Questions.businessFocus.isRequired}
-        options={Questions.businessFocus.choices}
+        label={generalQuestions.businessFocus.question}
+        isRequired={generalQuestions.businessFocus.isRequired}
+        options={generalQuestions.businessFocus.choices}
         isMultipleChoices={false}
-        control={control}
-        errors={errors}
       />
       <FormSelect
         name='business-scope'
-        label={Questions.businessScope.question}
-        isRequired={Questions.businessScope.isRequired}
-        options={Questions.businessScope.choices}
+        label={generalQuestions.businessScope.question}
+        isRequired={generalQuestions.businessScope.isRequired}
+        options={generalQuestions.businessScope.choices}
         isMultipleChoices={false}
-        control={control}
-        errors={errors}
       />
       <FormSelect
         name='business-industries'
-        label={Questions.businessIndustries.question}
-        isRequired={Questions.businessIndustries.isRequired}
-        options={Questions.businessIndustries.choices}
+        label={generalQuestions.businessIndustries.question}
+        isRequired={generalQuestions.businessIndustries.isRequired}
+        options={generalQuestions.businessIndustries.choices}
         isMultipleChoices={true}
-        control={control}
-        errors={errors}
+      />
+      <Navigation
+        onNext={() => {
+          next(1)
+        }}
       />
     </StepCard>
   )

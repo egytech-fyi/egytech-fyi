@@ -2,6 +2,8 @@ $large: 1026px;
 
 .survey-steps {
   display: flex;
+  max-width: $large;
+  padding: 10px;
 }
 @media screen and (max-width: $large) {
   .survey-steps {

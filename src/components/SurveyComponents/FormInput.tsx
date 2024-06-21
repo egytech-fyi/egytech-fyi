@@ -1,15 +1,17 @@
 import { Form, Input } from 'antd'
 import { ReactNode } from 'react'
-import { Control, Controller, FieldErrors } from 'react-hook-form'
+import { Controller, useFormContext } from 'react-hook-form'
 
 interface PropTypes {
   name: string
   label: string
   isRequired: boolean
-  control: Control
-  errors: FieldErrors
 }
-export function FormInput({ name, label, control, isRequired, errors }: PropTypes) {
+export function FormInput({ name, label, isRequired }: PropTypes) {
+  const {
+    control,
+    formState: { errors },
+  } = useFormContext()
   return (
     <Controller
       name={name}

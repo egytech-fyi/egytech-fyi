@@ -1,31 +1,35 @@
 import { Button, Form } from 'antd'
 
 interface NavigationProps {
-  currentStep: number
-  setCurrentStep: (step: number) => void
-  numSteps: number
-  onNext: () => void
-  onBack: () => void
+  onNext?: () => void
+  onBack?: () => void
+  submit?: boolean
 }
 
-export function Navigation({ currentStep, numSteps, onBack }: NavigationProps) {
+export function Navigation({ onNext, onBack, submit }: NavigationProps) {
   return (
     <div className='survey-buttons'>
       <Form.Item>
-        {currentStep > 0 && (
+        {onBack && (
           <Button type='primary' className='survey-back' onClick={onBack}>
             Back
           </Button>
         )}
       </Form.Item>
       <Form.Item>
-        {currentStep < numSteps && (
-          <Button type='primary' className='survey-next' htmlType='submit'>
+        {onNext && (
+          <Button type='primary' className='survey-next' onClick={onNext}>
             Next
           </Button>
         )}
       </Form.Item>
-      <Form.Item>{currentStep == numSteps - 1 && <Button type='primary'>Submit</Button>}</Form.Item>
+      <Form.Item>
+        {submit && (
+          <Button type='primary' htmlType='submit'>
+            Submit
+          </Button>
+        )}
+      </Form.Item>
     </div>
   )
 }
