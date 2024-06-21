@@ -50,28 +50,3 @@ export interface GetStatsResponse {
   stats: Stats
   buckets: Bucket[]
 }
-export enum QuestionType {
-  STRING = 'string',
-  NUMBER = 'number',
-  MCQ = 'MCQ',
-  CHECKBOX = 'checkbox',
-  URL = 'URL',
-}
-
-export interface Question {
-  question: string
-  name?: string
-  type: QuestionType
-  // type: 'MCQ' | 'number' | 'string' | 'checkbox' | 'URL'
-  choices?: string[]
-  isRequired: boolean
-}
-export interface SectionType {
-  title: string
-  questions: Question[]
-  next: string | { [key: string]: string }
-}
-
-export interface SurveyType {
-  sections: SectionType[]
-}

@@ -24,7 +24,6 @@ export function Contribute() {
 
   useEffect(() => {
     {
-      console.log('scrolling to error')
       // scroll to first error TODO: doesn't always work fix
       const elements = Object.keys(methods.formState.errors)
         .map((name) => document.getElementsByName(name)[0])
