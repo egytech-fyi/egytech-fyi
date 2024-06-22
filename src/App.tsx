@@ -1,16 +1,20 @@
 import { BrowserRouter as Router, Route, Routes as Switch } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { Layout } from 'antd'
+import { Layout, Spin } from 'antd'
 import { Footer, Navbar } from '@components'
 import { GlobalStateProvider } from '@context'
-import { LandingPage, Compensation, Insights } from '@pages'
+import { LandingPage, Compensation } from '@pages'
 import '@styles/App.styles.scss'
-import { useState } from 'react'
+import { Suspense, lazy, useState } from 'react'
 import Highcharts from 'highcharts'
 import HighchartsAccessibility from 'highcharts/modules/accessibility'
 
 // Initialize the accessibility module
 HighchartsAccessibility(Highcharts)
+
+const Insights = lazy(() =>
+  import('./pages/Insights').then((module) => ({ default: module.Insights })),
+)
 
 const { Content } = Layout
 
@@ -41,14 +45,16 @@ function App() {
           <Navbar handleOpenDrawer={showDrawer} />
           <Content>
             <div className='app-container'>
-              <Switch>
-                <Route path='/' element={<LandingPage />} />
-                <Route
-                  path='/report'
-                  element={<Insights drawerOpen={visible} onDrawerClose={handleCloseDrawer} />}
-                />
-                <Route path='/dashboard' element={<Compensation />} />
-              </Switch>
+              <Suspense fallback={<Spin size='large' style={{ margin: 'auto' }} />}>
+                <Switch>
+                  <Route path='/' element={<LandingPage />} />
+                  <Route
+                    path='/report'
+                    element={<Insights drawerOpen={visible} onDrawerClose={handleCloseDrawer} />}
+                  />
+                  <Route path='/dashboard' element={<Compensation />} />
+                </Switch>
+              </Suspense>
               <Footer />
             </div>
           </Content>
