@@ -1,5 +1,6 @@
 import { FormInput, FormInputNumber, Navigation, SurveyStep } from '@components'
 import { useEffect, useRef } from 'react'
+import { useFormContext } from 'react-hook-form'
 import { FormSelect } from './FormSelect'
 
 const generalQuestions = {
@@ -197,12 +198,51 @@ const generalQuestions = {
     isRequired: false,
   },
 }
+
+const engineeringRoles = new Set([
+  'Backend Engineer',
+  'Frontend Engineer',
+  'Full-stack Engineer',
+  'QA / SDET Engineer',
+  'Mobile Development Engineer',
+  'DevOps / SRE / Platform',
+  'Data Scientist',
+  'Data Engineer',
+  'Data Analytics',
+  'Systems Architect',
+  'Embedded Systems Engineer',
+  'R&D Engineer (Computer Vision, NLP, etc.)',
+  'AI & Automation Engineer',
+  'UI/UX Designer/Engineer',
+  'Hardware Engineer (Semiconductors, Digital Design, Electronics, etc)',
+  'Security/Network Engineer',
+  'Technical Support',
+  'CRM Developer',
+])
+
+const managementRoles = new Set(['Engineering Manager', 'Executive (C-level, director, etc.)'])
+const productRoles = new Set(['Product Owner', 'Product Manager'])
+
+function getRoleSpecificPage(role: string): number {
+  if (role == '') {
+    return 1
+  }
+  if (engineeringRoles.has(role)) {
+    return 1
+  } else if (managementRoles.has(role)) {
+    return 4
+  } else if (productRoles.has(role)) {
+    return 3
+  }
+  return 5 // straight to salary
+}
 interface propTypes {
   next: (step: number) => void
-  back: (step: number) => void
+  back: () => void
 }
-export function GeneralQuestions({ next }: propTypes) {
+export function GeneralQuestions({ next, back }: propTypes) {
   const titleRef = useRef<HTMLHeadingElement | null>(null)
+  const { getValues } = useFormContext()
   useEffect(() => {
     // scroll to top
     titleRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
@@ -338,8 +378,9 @@ export function GeneralQuestions({ next }: propTypes) {
       />
       <Navigation
         onNext={() => {
-          next(1)
+          next(getRoleSpecificPage(getValues('role')))
         }}
+        onBack={back}
       />
     </SurveyStep>
   )

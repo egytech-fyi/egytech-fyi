@@ -170,7 +170,7 @@ export function EngineeringSkills({ next, back }: propTypes) {
         onNext={() => {
           next(2)
         }}
-        onBack={() => back()}
+        onBack={back}
       />
     </SurveyStep>
   )

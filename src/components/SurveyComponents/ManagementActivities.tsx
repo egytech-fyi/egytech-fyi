@@ -1,4 +1,4 @@
-import { FormSelect, SurveyStep } from '@components'
+import { FormSelect, Navigation, SurveyStep } from '@components'
 import { useEffect, useRef } from 'react'
 
 const managementActivities = {
@@ -34,8 +34,11 @@ const managementActivities = {
     isRequired: true,
   },
 }
-
-export function ManagementActivities() {
+interface propTypes {
+  next: (step: number) => void
+  back: () => void
+}
+export function ManagementActivities({ next, back }: propTypes) {
   const titleRef = useRef<HTMLHeadingElement | null>(null)
   useEffect(() => {
     // scroll to top
@@ -84,6 +87,12 @@ export function ManagementActivities() {
         isRequired={managementActivities.mentoringPercentage.isRequired}
         options={managementActivities.mentoringPercentage.choices}
         isMultipleChoices={false}
+      />
+      <Navigation
+        onNext={() => {
+          next(5)
+        }}
+        onBack={back}
       />
     </SurveyStep>
   )

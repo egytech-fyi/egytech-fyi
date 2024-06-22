@@ -1,4 +1,4 @@
-import { FormInput, FormSelect, SurveyStep } from '@components'
+import { FormInput, FormSelect, Navigation, SurveyStep } from '@components'
 import { useEffect, useRef } from 'react'
 
 const productActivities = {
@@ -133,8 +133,11 @@ const productActivities = {
     isRequired: false,
   },
 }
-
-export function ProductActivities() {
+interface propTypes {
+  next: (step: number) => void
+  back: () => void
+}
+export function ProductActivities({ next, back }: propTypes) {
   const titleRef = useRef<HTMLHeadingElement | null>(null)
   useEffect(() => {
     // scroll to top
@@ -247,6 +250,12 @@ export function ProductActivities() {
         name='userAnalysisTools'
         label={productActivities.userAnalysisTools.question}
         isRequired={productActivities.userAnalysisTools.isRequired}
+      />
+      <Navigation
+        onNext={() => {
+          next(5)
+        }}
+        onBack={back}
       />
     </SurveyStep>
   )
