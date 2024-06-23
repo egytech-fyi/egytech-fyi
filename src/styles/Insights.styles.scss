@@ -1,10 +1,18 @@
 .insights-page {
+    min-height: calc(100vh - 64px);
     padding: 2.5rem 0;
 }
 
 .desktop-anchor {
     display: none;
     text-align: left;
+}
+
+
+.desktop-anchor div.ant-anchor-wrapper{
+    overflow-y:auto;
+    scrollbar-width: thin;
+    scrollbar-color: #7B7B7B #424242;
 }
 
 @media (min-width: 767px) {

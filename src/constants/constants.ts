@@ -75,15 +75,21 @@ export const businessLineMap: Record<string, string> = {
   both: 'B2B & B2C lines',
 }
 
-export const keyValueMap = {
-  ...titleMap,
-  ...levelMap,
-  ...genderMap,
-  ...degreeMap,
-  ...businessMarketMap,
-  ...businessSizeMap,
-  ...businessFocusMap,
-  ...businessLineMap,
+export const programmingLanguageMap: Record<string, string> = {
+  java_script: 'JavaScript',
+  type_script: 'TypeScript',
+  python: 'Python',
+  c_sharp: 'C#',
+  java: 'Java',
+  php: 'PHP',
+  c_cplusplus: 'C/C++',
+  kotlin: 'Kotlin',
+  swift: 'Swift',
+  dart: 'Dart',
+  go: 'Go',
+  r: 'R',
+  scala: 'Scala',
+  rust: 'Rust',
 }
 
 export const fieldKeyMap: Record<string, string> = {
@@ -103,19 +109,14 @@ export const fieldKeyMap: Record<string, string> = {
   programming_language: 'Programming Language',
 }
 
-export const programmingLanguageMap: Record<string, string> = {
-  java_script: 'JavaScript',
-  type_script: 'TypeScript',
-  python: 'Python',
-  c_sharp: 'C#',
-  java: 'Java',
-  php: 'PHP',
-  c_cplusplus: 'C/C++',
-  kotlin: 'Kotlin',
-  swift: 'Swift',
-  dart: 'Dart',
-  go: 'Go',
-  r: 'R',
-  scala: 'Scala',
-  rust: 'Rust',
+export const keyValueMap = {
+  ...titleMap,
+  ...levelMap,
+  ...genderMap,
+  ...degreeMap,
+  ...businessMarketMap,
+  ...businessSizeMap,
+  ...businessFocusMap,
+  ...businessLineMap,
+  ...programmingLanguageMap,
 }
