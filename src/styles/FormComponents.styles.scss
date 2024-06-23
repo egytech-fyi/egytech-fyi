@@ -1,45 +1,61 @@
 .input {
-    min-width: 160px;
-    background-color: white;
-    border-radius: 5px;
-    .ant-input-number-group-addon {
-        padding: 0;
-    }
+  min-width: 160px;
+  background-color: white;
+  border-radius: 5px;
+  .ant-input-number-group-addon {
+    padding: 0;
+  }
 }
 .number-input {
-    width: 100%;
+  width: 100%;
 }
 .ant-input-number-wrapper {
-    z-index: 0;
+  z-index: 0;
 }
 .search-input {
-    width: 100%;
-    min-width: 100px;
-    max-width: 304px;
+  width: 100%;
+  min-width: 100px;
+  max-width: 304px;
 }
 .select-input {
-    width: 100%;
+  width: 100%;
 }
 
-.survey-next{
-    margin: 1rem;
+.survey-next {
+  margin: 1rem;
 }
-.survey-back{
-    margin: 1rem;
-    background: #faf9f9;
-    color: var(--accent-color);
-}
-
-.survey-buttons{
-    width: 100%;
-    display: flex;
-    justify-content: end;
-    align-items: center;
+.survey-back {
+  margin: 1rem;
+  background: #faf9f9;
+  color: var(--accent-color);
 }
 
-.survey-step{
-    padding: 12px;
-    padding-inline: 24px;
-    font-size: 18px;
-    // background: #faf9f9;
+.survey-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.survey-step {
+  padding: 12px;
+  padding-inline: 24px;
+  font-size: 18px;
+  // background: #faf9f9;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 16px;
+  padding-block: 8px;
+  gap: 4px;
+}
+
+.field-alert {
+  color: red;
+  font-size: 14px;
+  margin: 2px;
+
 }

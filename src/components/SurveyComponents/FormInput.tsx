@@ -1,7 +1,8 @@
+import { FormItem } from '@components'
 import '@styles/SurveyComponents.styles.scss'
-import { Form, Input } from 'antd'
-import { ReactNode } from 'react'
+import { Input } from 'antd'
 import { Controller, useFormContext } from 'react-hook-form'
+
 interface PropTypes {
   name: string
   label: string
@@ -25,20 +26,9 @@ export function FormInput({ name, label, isRequired }: PropTypes) {
         required: { value: isRequired, message: 'This question is required!' },
       }}
       render={({ field }) => (
-        <Form.Item
-          validateStatus={errors[name] ? 'error' : ''}
-          required={isRequired}
-          label={label}
-          hasFeedback
-          layout='vertical'
-          style={{ textAlign: 'left' }}>
+        <FormItem error={errors[name]?.message?.toString()} isRequired={isRequired} label={label}>
           <Input {...field} />
-          {errors[name] && (
-            <p className='field-alert' role='alert'>
-              {errors[name]?.message as ReactNode}
-            </p>
-          )}
-        </Form.Item>
+        </FormItem>
       )}
     />
   )

@@ -223,6 +223,7 @@ const engineeringRoles = new Set([
 const managementRoles = new Set(['Engineering Manager', 'Executive (C-level, director, etc.)'])
 const productRoles = new Set(['Product Owner', 'Product Manager'])
 
+// TODO: clear fields after current page because if user goes general => product => general => engineering the answers for product would still be filled.
 function getRoleSpecificPage(role: string): number {
   if (role == '') {
     return 1

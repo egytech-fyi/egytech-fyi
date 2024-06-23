@@ -1,6 +1,6 @@
+import { FormItem } from '@components'
 import '@styles/SurveyComponents.styles.scss'
-import { Form, Radio, Select } from 'antd'
-import { ReactNode } from 'react'
+import { Radio, Select } from 'antd'
 import { Controller, useFormContext } from 'react-hook-form'
 
 interface PropTypes {
@@ -27,13 +27,7 @@ export function FormSelect({ name, label, options, isRequired, isMultipleChoices
       control={control}
       rules={{ required: isRequired && 'This question is required!' }}
       render={({ field }) => (
-        <Form.Item
-          validateStatus={errors[name] ? 'error' : ''}
-          required={isRequired}
-          label={label}
-          hasFeedback
-          layout='vertical'
-          style={{ textAlign: 'left' }}>
+        <FormItem error={errors[name]?.message?.toString()} isRequired={isRequired} label={label}>
           {options.length > 3 && (
             <Select
               {...field}
@@ -56,12 +50,7 @@ export function FormSelect({ name, label, options, isRequired, isMultipleChoices
               ))}
             </Radio.Group>
           )}
-          {errors[name] && (
-            <p className='field-alert' role='alert'>
-              {errors[name]?.message as ReactNode}
-            </p>
-          )}
-        </Form.Item>
+        </FormItem>
       )}
     />
   )

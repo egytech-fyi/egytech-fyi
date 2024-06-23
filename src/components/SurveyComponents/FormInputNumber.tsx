@@ -1,6 +1,6 @@
+import { FormItem } from '@components'
 import '@styles/SurveyComponents.styles.scss'
-import { Form, InputNumber } from 'antd'
-import { ReactNode } from 'react'
+import { InputNumber } from 'antd'
 import { Controller, useFormContext } from 'react-hook-form'
 
 interface PropTypes {
@@ -29,20 +29,9 @@ export function FormInputNumber({ name, label, isRequired, min, max }: PropTypes
         max: { value: max ?? Infinity, message: `The max value is ${max ?? Infinity}` },
       }}
       render={({ field }) => (
-        <Form.Item
-          validateStatus={errors[name] ? 'error' : ''}
-          required={isRequired}
-          label={label}
-          hasFeedback
-          layout='vertical'
-          style={{ textAlign: 'left' }}>
+        <FormItem error={errors[name]?.message?.toString()} isRequired={isRequired} label={label}>
           <InputNumber {...field} />
-          {errors[name] && (
-            <p className='field-alert' role='alert'>
-              {errors[name]?.message as ReactNode}
-            </p>
-          )}
-        </Form.Item>
+        </FormItem>
       )}
     />
   )

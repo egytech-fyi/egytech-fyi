@@ -9,7 +9,7 @@ $large: 1258px;
 }
 @media screen and (max-width: $large) {
   .survey-steps {
-    display: none;
+    display: none !important;
   }
 }
 @media screen and (min-width: $large) {
