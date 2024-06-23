@@ -1,6 +1,7 @@
-import { Anchor, Col, Divider, Drawer, Row } from 'antd'
+import { Anchor, Col, Divider, Drawer, Row, Spin } from 'antd'
 import { Overview, Satisfaction, Technology } from '@pages'
 import '@styles/Insights.styles.scss'
+import { useEffect, useState } from 'react'
 
 interface AnchorItem {
   key: string
@@ -112,6 +113,14 @@ const anchorItems: AnchorItem[] = [
 ]
 
 export const Insights = ({ drawerOpen, onDrawerClose }: InsightsProps) => {
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    setIsLoading(false)
+  }, [])
+
+  if (isLoading) return <Spin size='large' style={{ margin: 'auto' }} />
+
   return (
     <div className='insights-page'>
       <Row>
