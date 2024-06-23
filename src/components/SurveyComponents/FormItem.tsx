@@ -13,11 +13,13 @@ export function FormItem({ children, error, label, isRequired }: PropTypes) {
         {label} <span className='field-alert'>{isRequired && '*'}</span>
       </span>
       {children}
-      {error && (
-        <p className='field-alert' role='alert'>
-          {error as ReactNode}
-        </p>
-      )}
+      <div className='error-container'>
+        {error && (
+          <p className='field-alert' role='alert'>
+            {error as ReactNode}
+          </p>
+        )}
+      </div>
     </div>
   )
 }
