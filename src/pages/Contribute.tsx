@@ -10,7 +10,7 @@ import {
 } from '@components'
 
 import '@styles/Contribute.styles.scss'
-import { Col, Divider, Progress, StepProps, Steps } from 'antd'
+import { Col, Divider, Progress, Steps } from 'antd'
 import { useEffect, useState } from 'react'
 import { FieldValues, FormProvider, SubmitHandler, useForm } from 'react-hook-form'
 
@@ -75,7 +75,12 @@ export function Contribute() {
       <Steps
         className='survey-steps'
         current={currentStep}
-        items={formPages as StepProps[]}
+        items={formPages.map(() => {
+          // to create steps without any text
+          return {
+            title: '',
+          }
+        })}
         progressDot
       />
       <Progress
