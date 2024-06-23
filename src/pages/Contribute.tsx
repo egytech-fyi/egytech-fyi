@@ -11,8 +11,8 @@ import {
 
 import '@styles/Contribute.styles.scss'
 import { Col, Divider, Progress, Steps } from 'antd'
-import { useEffect, useState } from 'react'
-import { FieldValues, FormProvider, SubmitHandler, useForm } from 'react-hook-form'
+import { useState } from 'react'
+import { FieldErrors, FieldValues, FormProvider, SubmitHandler, useForm } from 'react-hook-form'
 
 export function Contribute() {
   const [currentStep, setCurrentStep] = useState(0)
@@ -22,15 +22,13 @@ export function Contribute() {
     console.log('submit:', data)
   }
 
-  useEffect(() => {
-    {
-      // scroll to first error TODO: doesn't always work fix
-      const elements = Object.keys(methods.formState.errors)
-        .map((name) => document.getElementsByName(name)[0])
-        .filter((el) => !!el)
-      elements[0]?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-    }
-  }, [methods.formState.errors])
+  function scrollToFirstError(errors: FieldErrors) {
+    // scroll to first error
+    const elements = Object.keys(errors)
+      .map((name) => document.getElementsByName(name)[0])
+      .filter((el) => !!el)
+    elements[0]?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }
 
   async function onNext(stepNum: number) {
     await methods.trigger() // validate form values
@@ -39,6 +37,8 @@ export function Contribute() {
       // navigate to next page after saving current page to HistoryStack
       setHistoryStack((prev) => [...prev, currentStep])
       setCurrentStep(stepNum)
+    } else {
+      scrollToFirstError(methods.formState.errors)
     }
   }
   function onBack() {
