@@ -1,6 +1,7 @@
 import { FormSelect, Navigation, SurveyStep } from '@components'
+import { scrollToRef } from '@utils'
 import { useEffect, useRef } from 'react'
-
+const percentageBins = ['0-20%', '20-40%', '40-60%', '60-80%']
 const managementActivities = {
   title: 'Activities',
   onboardingDuration: {
@@ -18,19 +19,19 @@ const managementActivities = {
   planningPercentage: {
     type: 'MCQ',
     question: 'What percentage of your week is spent in planning?',
-    choices: ['0-20%', '20-40%', '40-60%', '60-80%'],
+    choices: percentageBins,
     isRequired: true,
   },
   meetingsPercentage: {
     type: 'MCQ',
     question: 'What percentage of your week is spent in meetings?',
-    choices: ['0-20%', '20-40%', '40-60%', '60-80%'],
+    choices: percentageBins,
     isRequired: true,
   },
   mentoringPercentage: {
     type: 'MCQ',
     question: 'What percentage of your week is spent in mentoring?',
-    choices: ['0-20%', '20-40%', '40-60%', '60-80%'],
+    choices: percentageBins,
     isRequired: true,
   },
 }
@@ -41,8 +42,7 @@ interface propTypes {
 export function ManagementActivities({ next, back }: propTypes) {
   const titleRef = useRef<HTMLHeadingElement | null>(null)
   useEffect(() => {
-    // scroll to top
-    titleRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    scrollToRef(titleRef.current)
   }, [])
   return (
     <SurveyStep>

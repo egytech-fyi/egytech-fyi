@@ -11,6 +11,7 @@ interface PropTypes {
   isMultipleChoices: boolean
 }
 const { Option } = Select
+const MAX_RADIO_OPTIONS = 3
 /**
  *  FormSelect is a form input component that renders either a Select dropdown or a
  *  Radio group based on the number of options and allows for single or multiple selections.
@@ -28,7 +29,7 @@ export function FormSelect({ name, label, options, isRequired, isMultipleChoices
       rules={{ required: isRequired && 'This question is required!' }}
       render={({ field }) => (
         <FormItem error={errors[name]?.message?.toString()} isRequired={isRequired} label={label}>
-          {options.length > 3 && (
+          {options.length > MAX_RADIO_OPTIONS && (
             <Select
               {...field}
               mode={isMultipleChoices ? 'multiple' : undefined}
@@ -41,7 +42,7 @@ export function FormSelect({ name, label, options, isRequired, isMultipleChoices
               ))}
             </Select>
           )}
-          {options.length <= 3 && !isMultipleChoices && (
+          {options.length <= MAX_RADIO_OPTIONS && !isMultipleChoices && (
             <Radio.Group {...field}>
               {options.map((option, i) => (
                 <Radio value={option} key={i}>

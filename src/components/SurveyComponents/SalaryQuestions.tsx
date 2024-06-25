@@ -89,6 +89,7 @@ interface propTypes {
   back: () => void
 }
 
+//TODO: Either EGP or foreign currency is required not both
 export function SalaryQuestions({ next, back }: propTypes) {
   const titleRef = useRef<HTMLHeadingElement | null>(null)
   useEffect(() => {

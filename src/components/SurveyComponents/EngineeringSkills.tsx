@@ -1,4 +1,5 @@
 import { FormSelect, Navigation, SurveyStep } from '@components'
+import { scrollToRef } from '@utils'
 import { useEffect, useRef } from 'react'
 
 const engineeringSkills = {
@@ -119,8 +120,7 @@ interface propTypes {
 export function EngineeringSkills({ next, back }: propTypes) {
   const titleRef = useRef<HTMLHeadingElement | null>(null)
   useEffect(() => {
-    // scroll to top
-    titleRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    scrollToRef(titleRef.current)
   }, [])
   return (
     <SurveyStep>

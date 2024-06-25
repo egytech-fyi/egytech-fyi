@@ -26,7 +26,7 @@ export const Navbar = ({ handleOpenDrawer }: NavbarProps) => {
   }, [location.pathname])
 
   const isReport = location.pathname === '/report'
-
+  const twoToneColor = '#4c88ef'
   return (
     <Header className='navbar-header'>
       <Menu
@@ -42,19 +42,19 @@ export const Navbar = ({ handleOpenDrawer }: NavbarProps) => {
         <Menu.Item
           className='navbar-menu-item'
           key='/dashboard'
-          icon={<DollarTwoTone twoToneColor='#4c88ef' />}>
+          icon={<DollarTwoTone twoToneColor={twoToneColor} />}>
           <Link to='/dashboard'>Dashboard</Link>
         </Menu.Item>
         <Menu.Item
           className='navbar-menu-item'
           key='/report'
-          icon={<FundTwoTone twoToneColor='#4c88ef' />}>
+          icon={<FundTwoTone twoToneColor={twoToneColor} />}>
           <Link to='/report'>Report</Link>
         </Menu.Item>
         <Menu.Item
           className='navbar-menu-item'
           key='/contribute'
-          icon={<PlusCircleTwoTone twoToneColor='#4c88ef' />}>
+          icon={<PlusCircleTwoTone twoToneColor={twoToneColor} />}>
           <Link to='/contribute'>Contribute</Link>
         </Menu.Item>
       </Menu>

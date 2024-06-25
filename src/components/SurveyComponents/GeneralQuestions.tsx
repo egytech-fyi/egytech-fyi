@@ -1,4 +1,5 @@
 import { FormInput, FormInputNumber, Navigation, SurveyStep } from '@components'
+import { scrollToRef } from '@utils'
 import { useEffect, useRef } from 'react'
 import { useFormContext } from 'react-hook-form'
 import { FormSelect } from './FormSelect'
@@ -245,8 +246,7 @@ export function GeneralQuestions({ next, back }: propTypes) {
   const titleRef = useRef<HTMLHeadingElement | null>(null)
   const { getValues } = useFormContext()
   useEffect(() => {
-    // scroll to top
-    titleRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    scrollToRef(titleRef.current)
   }, [])
   return (
     <SurveyStep>
