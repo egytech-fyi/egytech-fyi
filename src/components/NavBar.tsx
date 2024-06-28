@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { Button, Layout, Menu } from 'antd'
 import { Link, useLocation } from 'react-router-dom'
-import { FundTwoTone, DollarTwoTone, MenuOutlined } from '@ant-design/icons'
+import { FundTwoTone, DollarTwoTone, MenuOutlined, StarTwoTone } from '@ant-design/icons'
 import logo from '/symbol.svg'
 import '@styles/Navbar.styles.scss'
 
@@ -26,6 +26,7 @@ export const Navbar = ({ handleOpenDrawer }: NavbarProps) => {
   }, [location.pathname])
 
   const isReport = location.pathname === '/report'
+  const twoToneColor = '#4c88ef'
 
   return (
     <Header className='navbar-header'>
@@ -42,14 +43,20 @@ export const Navbar = ({ handleOpenDrawer }: NavbarProps) => {
         <Menu.Item
           className='navbar-menu-item'
           key='/dashboard'
-          icon={<DollarTwoTone twoToneColor='#4c88ef' />}>
+          icon={<DollarTwoTone twoToneColor={twoToneColor} />}>
           <Link to='/dashboard'>Dashboard</Link>
         </Menu.Item>
         <Menu.Item
           className='navbar-menu-item'
           key='/report'
-          icon={<FundTwoTone twoToneColor='#4c88ef' />}>
+          icon={<FundTwoTone twoToneColor={twoToneColor}/>}>
           <Link to='/report'>Report</Link>
+        </Menu.Item>
+        <Menu.Item
+          className='navbar-menu-item'
+          key='/repos'
+          icon={<StarTwoTone twoToneColor={twoToneColor} />}>
+          <Link to='/repos'>Top Egy Repos</Link>
         </Menu.Item>
       </Menu>
       {isReport && (
