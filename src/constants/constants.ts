@@ -84,6 +84,7 @@ export const programmingLanguageMap: Record<string, string> = {
   php: 'PHP',
   c_cplusplus: 'C/C++',
   kotlin: 'Kotlin',
+  ruby: 'Ruby',
   swift: 'Swift',
   dart: 'Dart',
   go: 'Go',
