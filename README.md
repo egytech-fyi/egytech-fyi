@@ -67,7 +67,6 @@ For best development, use these VS Code extensions:
 - ESLint
 - Prettier - Code formatter
 
-
 ### 👀 Previewing Build
 
 To build the project and preview it locally:
@@ -117,6 +116,7 @@ This dashboard includes:
         └── main.tsx
         └── vite-env.d.ts
     └── README.md
+    └── CONTRIBUTING.md
     └── index.html
     └── package.json
     └── tsconfig.json
@@ -126,14 +126,7 @@ This dashboard includes:
 
 ## 🤝 Contributing
 
-Contributions are welcome! To help make this project better, please follow these steps:
-
-1. Fork the repository.
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -am 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a pull request to staging branch.
-6. Once merged test your changes on [staging](https://staging.egytech-fyi-3s7.pages.dev)
+Contributions are welcome! To help make this project better, please see the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 ### Contributors
 
