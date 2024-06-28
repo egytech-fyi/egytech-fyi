@@ -10,5 +10,5 @@ const fetchRepos = async (): Promise<GetRepoResponse> => {
 }
 
 export const useGetRepos = (): UseQueryResult<GetRepoResponse> => {
-  return useQuery<GetRepoResponse>('repos', fetchRepos);
-};
+  return useQuery<GetRepoResponse>('repos', fetchRepos)
+}
