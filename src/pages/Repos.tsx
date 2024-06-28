@@ -7,13 +7,11 @@ import { useGetRepos } from '@services'
 
 export const Repos = () => {
   const [isLoading, setIsLoading] = useState(true)
-  const [Repos, SetRepos] = useState<GithubRepoContent[]>([])
 
   const { isError, data } = useGetRepos()
 
   useEffect(() => {
     if (data) {
-      SetRepos(data)
       setIsLoading(false)
     }
   }, [data])
@@ -31,8 +29,8 @@ export const Repos = () => {
       <Divider />
       <div className='row-container'>
         <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} justify='center'>
-          {Repos &&
-            Repos.map((repo: GithubRepoContent) => (
+          {data &&
+            data.map((repo: GithubRepoContent) => (
               <Col key={repo.id} xs={24} sm={24} md={12} lg={12}>
                 <RepoCard repo={repo} />
               </Col>

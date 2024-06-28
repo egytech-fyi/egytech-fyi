@@ -31,7 +31,7 @@ export interface Participant {
   location: string
 }
 
-export type GetRepoResponse = Participant[]
+export type GetParticipantsResponse = Participant[]
 
 export interface Stats {
   totalCount?: number
@@ -51,7 +51,7 @@ export interface GetStatsResponse {
   buckets: Bucket[]
 }
 
-export type GetParticipantsResponse = GithubRepoContent[]
+export type GetRepoResponse = GithubRepoContent[]
 
 export interface GithubRepoContent {
   id: number
