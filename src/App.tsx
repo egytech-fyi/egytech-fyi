@@ -53,7 +53,7 @@ function App() {
                     element={<Insights drawerOpen={visible} onDrawerClose={handleCloseDrawer} />}
                   />
                   <Route path='/dashboard' element={<Compensation />} />
-                  <Route path='/repos' element={<Repos/>}/>
+                  <Route path='/repos' element={<Repos />} />
                 </Switch>
               </Suspense>
               <Footer />

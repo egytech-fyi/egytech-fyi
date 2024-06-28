@@ -1,7 +1,7 @@
 import { useQuery } from 'react-query'
 import axios, { AxiosResponse } from 'axios'
 import { BASE_URL } from './constants'
-import {GetRepoResponse } from '@types'
+import { GetRepoResponse } from '@types'
 
 const fetchRepos = async (): Promise<GetRepoResponse> => {
   const response: AxiosResponse<GetRepoResponse> = await axios.get(BASE_URL + '/repos')
@@ -9,8 +9,8 @@ const fetchRepos = async (): Promise<GetRepoResponse> => {
   return response.data
 }
 
-export const useGetRepos = (): any => {
+export const useGetRepos = () => {
   return useQuery<GetRepoResponse>({
-    queryFn: () => fetchRepos()
-  });
-};
+    queryFn: () => fetchRepos(),
+  })
+}

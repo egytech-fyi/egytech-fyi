@@ -49,7 +49,7 @@ export const Navbar = ({ handleOpenDrawer }: NavbarProps) => {
         <Menu.Item
           className='navbar-menu-item'
           key='/report'
-          icon={<FundTwoTone twoToneColor={twoToneColor}/>}>
+          icon={<FundTwoTone twoToneColor={twoToneColor} />}>
           <Link to='/report'>Report</Link>
         </Menu.Item>
         <Menu.Item
