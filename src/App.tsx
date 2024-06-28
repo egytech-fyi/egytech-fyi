@@ -1,13 +1,13 @@
-import { BrowserRouter as Router, Route, Routes as Switch } from 'react-router-dom'
-import { QueryClient, QueryClientProvider } from 'react-query'
-import { Layout, Spin } from 'antd'
 import { Footer, Navbar } from '@components'
 import { GlobalStateProvider } from '@context'
-import { LandingPage, Compensation } from '@pages'
+import { Compensation, Contribute, LandingPage } from '@pages'
 import '@styles/App.styles.scss'
-import { Suspense, lazy, useState } from 'react'
+import { Layout, Spin } from 'antd'
 import Highcharts from 'highcharts'
 import HighchartsAccessibility from 'highcharts/modules/accessibility'
+import { Suspense, lazy, useState } from 'react'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { Route, BrowserRouter as Router, Routes as Switch } from 'react-router-dom'
 
 // Initialize the accessibility module
 HighchartsAccessibility(Highcharts)
@@ -53,6 +53,7 @@ function App() {
                     element={<Insights drawerOpen={visible} onDrawerClose={handleCloseDrawer} />}
                   />
                   <Route path='/dashboard' element={<Compensation />} />
+                  <Route path='/contribute' element={<Contribute />} />
                 </Switch>
               </Suspense>
               <Footer />
