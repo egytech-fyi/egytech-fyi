@@ -28,7 +28,7 @@ export const RepoCard = ({ repo }: RepoCardProp) => {
     <div className='card-bg'>
       <Row justify='space-between' align='middle' className='card-row'>
         <Col span={3}>
-          <RoundedTag tagName='Java' />
+          <RoundedTag tagName={repo.language} />
         </Col>
         <Col span={6}>
           <StarOutlined /> {repo.stargazers_count}
@@ -44,11 +44,19 @@ export const RepoCard = ({ repo }: RepoCardProp) => {
         </Text>
       </div>
 
-      <Row justify='start' className='card-row'>
-        {repo.topics.slice(0, 10).map((topic, index) => (
-          <RoundedTag key={index} tagName={topic} />
-        ))}
-      </Row>
+      {repo.topics.length === 0 && (
+        <Row justify='start' className='card-row'>
+          <RoundedTag tagName={repo.language} />
+        </Row>
+      )}
+
+      {repo.topics.length > 0 && (
+        <Row justify='start' className='card-row'>
+          {repo.topics.slice(0, 10).map((topic, index) => (
+            <RoundedTag key={index} tagName={topic} />
+          ))}
+        </Row>
+      )}
     </div>
   )
 }
