@@ -1,11 +1,25 @@
 .card-bg {
   background-color: #faf9f9;
   min-height: 250px;
-  border-radius: 30px;
+  border-radius: 20px;
   margin: 8px auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 20px;
+  &:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    cursor: pointer;
+    background-color: #ffffff;
+  }
+
 }
 
+.stars{
+  color: #E3B341;
+}
+.star-text{
+  color: #646cff;
+}
 .row-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -37,4 +51,5 @@
   text-overflow: ellipsis;
   white-space: normal;
   text-align: left;
+  color: #777676;
 }

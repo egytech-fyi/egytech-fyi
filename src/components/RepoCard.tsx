@@ -25,38 +25,40 @@ export const RepoCard = ({ repo }: RepoCardProp) => {
   }
 
   return (
-    <div className='card-bg'>
-      <Row justify='space-between' align='middle' className='card-row'>
-        <Col span={3}>
-          <RoundedTag tagName={repo.language} />
-        </Col>
-        <Col span={6}>
-          <StarOutlined /> {repo.stargazers_count}
-        </Col>
-      </Row>
+    <a href={repo.html_url} target='_blank' rel='noopener noreferrer' className='repo-card'>
+      <div className='card-bg'>
+        <Row justify='space-between' align='middle' className='card-row'>
+          <Col span={3}>
+            <RoundedTag tagName={repo.language} />
+          </Col>
+          <Col span={6} className='stars'>
+            <StarOutlined /> <span className='star-text'>{repo.stargazers_count}</span>
+          </Col>
+        </Row>
 
-      <div className='card-content'>
-        <Title className='card-title' level={3}>
-          {repo.name}
-        </Title>
-        <Text className='card-description'>
-          {repo.description && convertShortcodesToUnicode(repo.description)}
-        </Text>
+        <div className='card-content'>
+          <Title className='card-title' level={3}>
+            {repo.name}
+          </Title>
+          <Text className='card-description'>
+            {repo.description && convertShortcodesToUnicode(repo.description)}
+          </Text>
+        </div>
+
+        {repo.topics.length === 0 && (
+          <Row justify='start' className='card-row'>
+            <RoundedTag tagName={repo.language} />
+          </Row>
+        )}
+
+        {repo.topics.length > 0 && (
+          <Row justify='start' className='card-row'>
+            {repo.topics.slice(0, 10).map((topic, index) => (
+              <RoundedTag key={index} tagName={topic} />
+            ))}
+          </Row>
+        )}
       </div>
-
-      {repo.topics.length === 0 && (
-        <Row justify='start' className='card-row'>
-          <RoundedTag tagName={repo.language} />
-        </Row>
-      )}
-
-      {repo.topics.length > 0 && (
-        <Row justify='start' className='card-row'>
-          {repo.topics.slice(0, 10).map((topic, index) => (
-            <RoundedTag key={index} tagName={topic} />
-          ))}
-        </Row>
-      )}
-    </div>
+    </a>
   )
 }
