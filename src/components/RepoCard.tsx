@@ -45,7 +45,7 @@ export const RepoCard = ({ repo }: RepoCardProp) => {
       </div>
 
       <Row justify='start' className='card-row'>
-        {repo.topics.map((topic, index) => (
+        {repo.topics.slice(0, 10).map((topic, index) => (
           <RoundedTag key={index} tagName={topic} />
         ))}
       </Row>
