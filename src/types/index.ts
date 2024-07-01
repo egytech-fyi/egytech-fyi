@@ -50,3 +50,37 @@ export interface GetStatsResponse {
   stats: Stats
   buckets: Bucket[]
 }
+
+export type GetRepoResponse = GithubRepoContent[]
+
+export interface GithubRepoContent {
+  id: number
+  node_id: string
+  name: string
+  full_name: string
+  private: boolean
+  html_url: string
+  description: string
+  fork: boolean
+  url: string
+  tags_url: string
+  created_at: string
+  updated_at: string
+  pushed_at: string
+  size: number
+  stargazers_count: number
+  watchers_count: number
+  language: string
+  has_issues: boolean
+  has_projects: boolean
+  has_downloads: boolean
+  has_wiki: boolean
+  forks_count: number
+  disabled: boolean
+  open_issues_count: number
+  topics: string[]
+  visibility: string
+  forks: number
+  open_issues: number
+  watchers: number
+}

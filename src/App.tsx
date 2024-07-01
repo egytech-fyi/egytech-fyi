@@ -3,7 +3,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { Layout, Spin } from 'antd'
 import { Footer, Navbar } from '@components'
 import { GlobalStateProvider } from '@context'
-import { LandingPage, Compensation } from '@pages'
+import { LandingPage, Compensation, Repos } from '@pages'
 import '@styles/App.styles.scss'
 import { Suspense, lazy, useState } from 'react'
 import Highcharts from 'highcharts'
@@ -53,6 +53,7 @@ function App() {
                     element={<Insights drawerOpen={visible} onDrawerClose={handleCloseDrawer} />}
                   />
                   <Route path='/dashboard' element={<Compensation />} />
+                  <Route path='/repos' element={<Repos />} />
                 </Switch>
               </Suspense>
               <Footer />
