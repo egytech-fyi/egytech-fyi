@@ -1,20 +1,11 @@
 import { Divider, Spin, Row, Col } from 'antd'
-import { useEffect, useState } from 'react'
 import '@styles/RepoCard.scss'
 import { RepoCard } from '@components'
 import { GithubRepoContent } from '@types'
 import { useGetRepos } from '@services'
 
 export const Repos = () => {
-  const [isLoading, setIsLoading] = useState(true)
-
-  const { isError, data } = useGetRepos()
-
-  useEffect(() => {
-    if (data) {
-      setIsLoading(false)
-    }
-  }, [data])
+  const { isLoading, isError, data } = useGetRepos()
 
   if (isError) {
     return <div>Error fetching repositories.</div>

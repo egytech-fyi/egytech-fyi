@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { FundTwoTone, DollarTwoTone, MenuOutlined, StarTwoTone } from '@ant-design/icons'
 import logo from '/symbol.svg'
 import '@styles/Navbar.styles.scss'
+import { twoToneColor } from '@constants'
 
 const { Header } = Layout
 
@@ -26,7 +27,6 @@ export const Navbar = ({ handleOpenDrawer }: NavbarProps) => {
   }, [location.pathname])
 
   const isReport = location.pathname === '/report'
-  const twoToneColor = '#4c88ef'
 
   return (
     <Header className='navbar-header'>
