@@ -5,10 +5,11 @@ interface PropTypes {
   label: string
   isRequired: boolean
   error: string | undefined
+  id?: string
 }
-export function FormItem({ children, error, label, isRequired }: PropTypes) {
+export function FormItem({ children, error, label, isRequired, id }: PropTypes) {
   return (
-    <div className='form-item'>
+    <div className='form-item' id={id}>
       <span>
         {label} <span className='field-alert'>{isRequired && '*'}</span>
       </span>

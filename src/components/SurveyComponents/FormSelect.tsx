@@ -1,7 +1,6 @@
 import { FormItem } from '@components'
 import '@styles/SurveyComponents.styles.scss'
-import { Radio, Select } from 'antd'
-import { Controller, useFormContext } from 'react-hook-form'
+import { useFormContext } from 'react-hook-form'
 
 interface PropTypes {
   name: string
@@ -10,8 +9,7 @@ interface PropTypes {
   options: string[]
   isMultipleChoices: boolean
 }
-const { Option } = Select
-const MAX_RADIO_OPTIONS = 3
+
 /**
  *  FormSelect is a form input component that renders either a Select dropdown or a
  *  Radio group based on the number of options and allows for single or multiple selections.
@@ -19,40 +17,35 @@ const MAX_RADIO_OPTIONS = 3
  */
 export function FormSelect({ name, label, options, isRequired, isMultipleChoices }: PropTypes) {
   const {
-    control,
+    register,
     formState: { errors },
   } = useFormContext()
   return (
-    <Controller
-      name={name}
-      control={control}
-      rules={{ required: isRequired && 'This question is required!' }}
-      render={({ field }) => (
-        <FormItem error={errors[name]?.message?.toString()} isRequired={isRequired} label={label}>
-          {options.length > MAX_RADIO_OPTIONS && (
-            <Select
-              {...field}
-              mode={isMultipleChoices ? 'multiple' : undefined}
-              {...field}
-              placeholder=''>
-              {options.map((option, i) => (
-                <Option value={option} key={i}>
-                  {option}
-                </Option>
-              ))}
-            </Select>
-          )}
-          {options.length <= MAX_RADIO_OPTIONS && !isMultipleChoices && (
-            <Radio.Group {...field}>
-              {options.map((option, i) => (
-                <Radio value={option} key={i}>
-                  {option}
-                </Radio>
-              ))}
-            </Radio.Group>
-          )}
-        </FormItem>
-      )}
-    />
+    <FormItem
+      error={errors[name]?.message?.toString()}
+      isRequired={isRequired}
+      label={label}
+      id={name}>
+      {
+        <div className='radio-group'>
+          {options.map((option, i) => (
+            <div key={i} className='radio-choice'>
+              <input
+                type={isMultipleChoices ? 'checkbox' : 'radio'}
+                {...register(name, {
+                  required: { value: isRequired, message: 'This question is required!' },
+                })}
+                id={`${name}-${i}`}
+                className='radio-input'
+                value={option}
+              />
+              <label className='radio-label' htmlFor={`${name}-${i}`}>
+                {option}
+              </label>
+            </div>
+          ))}
+        </div>
+      }
+    </FormItem>
   )
 }

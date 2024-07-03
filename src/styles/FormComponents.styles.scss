@@ -58,6 +58,46 @@
   margin: 2px;
 }
 
-.error-container{
+.error-container {
   min-height: 26px;
+}
+
+/* Radio styles */
+.radio-group {
+  display: flex;
+  gap: 4px;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.radio-label {
+  display: inline-block;
+  min-width: 80px;
+  padding: 4px;
+  padding-inline: 12px;
+  margin: 4px;
+  border-radius: 6px;
+  text-align: center;
+  background: #faf9f9;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.radio-label:hover {
+  background: #4096ff;
+  color: #faf9f9;
+}
+
+.radio-input {
+  display: none;
+}
+
+.radio-input:checked + .radio-label {
+  background: #1677ff;
+  color: #faf9f9;
+}
+
+.radio-input:checked:hover + .radio-label {
+  background: #4096ff;
 }

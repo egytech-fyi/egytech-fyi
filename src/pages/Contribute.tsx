@@ -10,6 +10,7 @@ import {
 } from '@components'
 
 import '@styles/Contribute.styles.scss'
+import { scrollToRef } from '@utils'
 import { Col, Divider, Progress, Steps } from 'antd'
 import { useState } from 'react'
 import { FieldErrors, FieldValues, FormProvider, SubmitHandler, useForm } from 'react-hook-form'
@@ -23,11 +24,10 @@ export function Contribute() {
   }
 
   function scrollToFirstError(errors: FieldErrors) {
-    // scroll to first error
-    const elements = Object.keys(errors)
-      .map((name) => document.getElementsByName(name)[0])
+    const errorRefs = Object.keys(errors)
+      .map((name) => document.getElementById(name))
       .filter((el) => !!el)
-    elements[0]?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    scrollToRef(errorRefs[0])
   }
 
   async function onNext(stepNum: number) {
