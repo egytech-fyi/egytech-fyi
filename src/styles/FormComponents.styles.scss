@@ -89,13 +89,24 @@
   color: #faf9f9;
 }
 
+// hide input but keep it accessible
 .radio-input {
-  display: none;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
 }
 
 .radio-input:checked + .radio-label {
   background: #1677ff;
   color: #faf9f9;
+}
+
+.radio-input:focus + .radio-label,
+.radio-input:focus-visible + .radio-label {
+  border: 1px solid #1677ff;
+  box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1);
+  outline: 0;
 }
 
 .radio-input:checked:hover + .radio-label {
