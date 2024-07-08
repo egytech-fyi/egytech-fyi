@@ -20,12 +20,11 @@ export const Repos = () => {
       <Divider />
       <div className='row-container'>
         <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} justify='center'>
-          {data &&
-            data.map((repo: GithubRepoContent) => (
-              <Col key={repo.id} xs={24} sm={24} md={12} lg={12}>
-                <RepoCard repo={repo} />
-              </Col>
-            ))}
+          {data?.map((repo: GithubRepoContent) => (
+            <Col key={repo.id} xs={24} sm={24} md={12} lg={12}>
+              <RepoCard repo={repo} />
+            </Col>
+          ))}
         </Row>
       </div>
     </div>
