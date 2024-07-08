@@ -1,5 +1,5 @@
 import { Divider, Spin, Row, Col } from 'antd'
-import '@styles/RepoCard.scss'
+import '@styles/RepoCard.styles.scss'
 import { RepoCard } from '@components'
 import { GithubRepoContent } from '@types'
 import { useGetRepos } from '@services'

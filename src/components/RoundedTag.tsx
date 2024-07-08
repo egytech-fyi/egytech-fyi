@@ -1,4 +1,4 @@
-import '@styles/RoundedTag.scss'
+import '@styles/RoundedTag.styles.scss'
 
 interface RoundedTagProps {
   tagName: string

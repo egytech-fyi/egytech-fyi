@@ -1,8 +1,7 @@
-import '@styles/RepoCard.scss'
+import '@styles/RepoCard.styles.scss'
 import { RoundedTag } from './RoundedTag'
 import { Col, Row, Typography } from 'antd'
 import { StarOutlined } from '@ant-design/icons'
-import '@styles/RepoCard.scss'
 import { GithubRepoContent } from '@types'
 import { replaceShortcodeEmojis, transformRepoTopics } from '@utils'
 
