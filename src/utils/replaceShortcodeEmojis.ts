@@ -1,14 +1,14 @@
 interface EmojiMap {
-  [key: string]: string;
+  [key: string]: string
 }
 
 export const emojiMap: EmojiMap = {
   ':eyes:': '👀',
   ':pencil2:': '✏️',
-  ':gear:':'⚙️'
-};
+  ':gear:': '⚙️',
+}
 
 export const replaceShortcodeEmojis = (text: string) => {
-  const regex = /(:\w+:)/g;
-  return text.replace(regex, (match) => emojiMap[match] || match);
-};
+  const regex = /(:\w+:)/g
+  return text.replace(regex, (match) => emojiMap[match] || match)
+}
