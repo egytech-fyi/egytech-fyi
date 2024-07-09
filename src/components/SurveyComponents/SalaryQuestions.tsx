@@ -1,4 +1,11 @@
-import { FormInput, FormInputNumber, FormSelect, Navigation, SurveyStep } from '@components'
+import {
+  FormInput,
+  FormInputNumber,
+  FormSelect,
+  Navigation,
+  SurveyPageProps,
+  SurveyStep,
+} from '@components'
 import { useEffect, useRef } from 'react'
 
 const salaryQuestions = {
@@ -84,13 +91,9 @@ const salaryQuestions = {
     isRequired: false,
   },
 }
-interface propTypes {
-  next: (step: number) => void
-  back: () => void
-}
 
 //TODO: Either EGP or foreign currency is required not both
-export function SalaryQuestions({ next, back }: propTypes) {
+export function SalaryQuestions({ next, back }: SurveyPageProps) {
   const titleRef = useRef<HTMLHeadingElement | null>(null)
   useEffect(() => {
     titleRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
@@ -181,9 +184,9 @@ export function SalaryQuestions({ next, back }: propTypes) {
       />
       <Navigation
         onNext={() => {
-          next(6)
+          next?.(6)
         }}
-        onBack={() => back()}
+        onBack={back}
       />
     </SurveyStep>
   )

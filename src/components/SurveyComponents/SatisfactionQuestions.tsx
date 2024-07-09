@@ -1,4 +1,4 @@
-import { FormSelect, Navigation, SurveyStep } from '@components'
+import { FormSelect, Navigation, SurveyPageProps, SurveyStep } from '@components'
 import { scrollToRef } from '@utils'
 import { useEffect, useRef } from 'react'
 
@@ -46,10 +46,7 @@ const satisfactionQuestions = {
   },
 }
 
-interface propTypes {
-  back: () => void
-}
-export function SatisfactionQuestions({ back }: propTypes) {
+export function SatisfactionQuestions({ back }: SurveyPageProps) {
   const titleRef = useRef<HTMLHeadingElement | null>(null)
   useEffect(() => {
     scrollToRef(titleRef.current)
@@ -94,7 +91,7 @@ export function SatisfactionQuestions({ back }: propTypes) {
         options={satisfactionQuestions.preferredEnvironment.choices}
         isMultipleChoices={false}
       />
-      <Navigation onBack={() => back()} submit />
+      <Navigation onBack={back} submit />
     </SurveyStep>
   )
 }

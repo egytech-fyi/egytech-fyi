@@ -1,4 +1,4 @@
-import { FormInput, FormInputNumber, Navigation, SurveyStep } from '@components'
+import { FormInput, FormInputNumber, Navigation, SurveyPageProps, SurveyStep } from '@components'
 import { scrollToRef } from '@utils'
 import { useEffect, useRef } from 'react'
 import { useFormContext } from 'react-hook-form'
@@ -238,11 +238,8 @@ function getRoleSpecificPage(role: string): number {
   }
   return 5 // straight to salary
 }
-interface propTypes {
-  next: (step: number) => void
-  back: () => void
-}
-export function GeneralQuestions({ next, back }: propTypes) {
+
+export function GeneralQuestions({ next }: SurveyPageProps) {
   const titleRef = useRef<HTMLHeadingElement | null>(null)
   const { getValues } = useFormContext()
   useEffect(() => {
@@ -379,9 +376,8 @@ export function GeneralQuestions({ next, back }: propTypes) {
       />
       <Navigation
         onNext={() => {
-          next(getRoleSpecificPage(getValues('role')))
+          next?.(getRoleSpecificPage(getValues('role')))
         }}
-        onBack={back}
       />
     </SurveyStep>
   )

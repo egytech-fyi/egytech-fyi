@@ -1,6 +1,6 @@
-import { FormSelect, Navigation, SurveyStep } from '@components'
-import { useEffect, useRef } from 'react'
+import { FormSelect, Navigation, SurveyPageProps, SurveyStep } from '@components'
 import { scrollToRef } from '@utils'
+import { useEffect, useRef } from 'react'
 
 const percentageBins = ['0-20%', '20-40%', '40-60%', '60-80%']
 
@@ -31,11 +31,8 @@ const activitiesQuestions = {
     isRequired: false,
   },
 }
-interface propTypes {
-  next: (step: number) => void
-  back: () => void
-}
-export function EngineeringActivities({ next, back }: propTypes) {
+
+export function EngineeringActivities({ next, back }: SurveyPageProps) {
   const titleRef = useRef<HTMLHeadingElement | null>(null)
   useEffect(() => {
     scrollToRef(titleRef.current)
@@ -78,9 +75,9 @@ export function EngineeringActivities({ next, back }: propTypes) {
       />
       <Navigation
         onNext={() => {
-          next(5)
+          next?.(5)
         }}
-        onBack={() => back()}
+        onBack={back}
       />
     </SurveyStep>
   )

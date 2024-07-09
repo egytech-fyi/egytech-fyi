@@ -1,4 +1,4 @@
-import { FormSelect, Navigation, SurveyStep } from '@components'
+import { FormSelect, Navigation, SurveyPageProps, SurveyStep } from '@components'
 import { scrollToRef } from '@utils'
 import { useEffect, useRef } from 'react'
 
@@ -113,11 +113,8 @@ const engineeringSkills = {
     isRequired: false,
   },
 }
-interface propTypes {
-  next: (step: number) => void
-  back: () => void
-}
-export function EngineeringSkills({ next, back }: propTypes) {
+
+export function EngineeringSkills({ next, back }: SurveyPageProps) {
   const titleRef = useRef<HTMLHeadingElement | null>(null)
   useEffect(() => {
     scrollToRef(titleRef.current)
@@ -168,7 +165,7 @@ export function EngineeringSkills({ next, back }: propTypes) {
       />
       <Navigation
         onNext={() => {
-          next(2)
+          next?.(2)
         }}
         onBack={back}
       />

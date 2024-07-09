@@ -3,7 +3,7 @@ import '@styles/SurveyComponents.styles.scss'
 import { Input } from 'antd'
 import { Controller, useFormContext } from 'react-hook-form'
 
-interface PropTypes {
+interface propTypes {
   name: string
   label: string
   isRequired: boolean
@@ -13,7 +13,7 @@ interface PropTypes {
  * react-hook-form to manage form state and validation, supporting a required field option.
  */
 
-export function FormInput({ name, label, isRequired }: PropTypes) {
+export function FormInput({ name, label, isRequired }: propTypes) {
   const {
     control,
     formState: { errors },

@@ -1,13 +1,13 @@
 import { ReactNode } from 'react'
 
-interface PropTypes {
+interface propTypes {
   children: ReactNode
   label: string
   isRequired: boolean
   error: string | undefined
   id?: string
 }
-export function FormItem({ children, error, label, isRequired, id }: PropTypes) {
+export function FormItem({ children, error, label, isRequired, id }: propTypes) {
   return (
     <div className='form-item' id={id}>
       <span>
