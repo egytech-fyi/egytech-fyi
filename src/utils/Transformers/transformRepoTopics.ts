@@ -1,9 +1,15 @@
 const MAX_TOPICS = 9
 
 export const transformRepoTopics = (topics: string[], language: string): string[] => {
-  if (topics.length === 0 && language) {
-    return [language]
-  } else {
-    return topics.slice(0, MAX_TOPICS)
+  let repoTopics: string[] = []
+
+  if (topics.length) {
+    repoTopics = [...topics.slice(0, MAX_TOPICS)]
   }
+
+  if (Boolean(language)) {
+    repoTopics.push(language)
+  }
+
+  return repoTopics
 }
