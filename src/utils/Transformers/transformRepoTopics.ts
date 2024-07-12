@@ -7,7 +7,7 @@ export const transformRepoTopics = (topics: string[], language: string): string[
     repoTopics = [...topics.slice(0, MAX_TOPICS)]
   }
 
-  if (Boolean(language)) {
+  if (language) {
     repoTopics.push(language)
   }
 
