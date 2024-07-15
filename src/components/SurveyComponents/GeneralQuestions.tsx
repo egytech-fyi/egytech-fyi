@@ -1,4 +1,5 @@
 import { FormInput, FormInputNumber, Navigation, SurveyPageProps, SurveyStep } from '@components'
+import { businessLineMap, genderMap, levelMap, POSITIONS_OPTIONS } from '@constants'
 import { scrollToRef } from '@utils'
 import { useEffect, useRef } from 'react'
 import { useFormContext } from 'react-hook-form'
@@ -9,7 +10,7 @@ const generalQuestions = {
   gender: {
     type: 'MCQ',
     question: "You're a",
-    choices: ['Male', 'Female'],
+    choices: Object.values(genderMap),
     isRequired: true,
   },
   age: {
@@ -46,55 +47,13 @@ const generalQuestions = {
   role: {
     type: 'MCQ',
     question: 'Do you consider yourself a/an',
-    choices: [
-      'Backend Engineer',
-      'Frontend Engineer',
-      'Full-stack Engineer',
-      'QA / SDET Engineer',
-      'Mobile Development Engineer',
-      'DevOps / SRE / Platform',
-      'Data Scientist',
-      'Data Engineer',
-      'Data Analytics',
-      'Engineering Manager',
-      'Executive (C-level, director, etc.)',
-      'Systems Architect',
-      'Embedded Systems Engineer',
-      'R&D Engineer (Computer Vision, NLP, etc.)',
-      'AI & Automation Engineer',
-      'UI/UX Designer/Engineer',
-      'Hardware Engineer (Semiconductors, Digital Design, Electronics, etc)',
-      'Product Owner',
-      'Product Manager',
-      'Scrum Master',
-      'Security/Network Engineer',
-      'Technical Support',
-      'CRM Developer',
-    ],
+    choices: POSITIONS_OPTIONS.map((pos) => pos.positionName),
     isRequired: true,
   },
   level: {
     type: 'MCQ',
     question: 'Your level at your current company is:',
-    choices: [
-      'Junior (Software Engineer, Data Scientist, Product Manager, etc.)',
-      'Mid-level (Software Engineer, Data Scientist, Product Manager, etc.)',
-      'Senior (Software Engineer, Data Scientist, Product Manager, etc.)',
-      'Team Lead',
-      'Staff (Software Engineer, Data Scientist, Product Manager, etc.)',
-      'Senior Staff (Software Engineer, Data Scientist, Product Manager, etc.)',
-      'Principal (Software Engineer, Data Scientist, Product Manager, etc.)',
-      'Group Product Manager',
-      'Head of Products',
-      'Senior Principal (Software Engineer, Data Scientist, Product Manager, etc.)',
-      'Manager',
-      'Senior Manager',
-      'Director',
-      'Group Director',
-      'VP (Engineering, Product, etc.)',
-      'CTO / CPO / Chief Scientist / etc.',
-      'Other:',
-    ],
+    choices: Object.values(levelMap),
     isRequired: true,
   },
   yearsOfExperience: {
@@ -160,7 +119,7 @@ const generalQuestions = {
   businessFocus: {
     type: 'MCQ',
     question: 'The business main focus is:',
-    choices: ['B2B', 'B2C', 'B2B & B2C lines'],
+    choices: Object.values(businessLineMap),
     isRequired: true,
   },
   businessScope: {
@@ -200,29 +159,22 @@ const generalQuestions = {
   },
 }
 
-const engineeringRoles = new Set([
-  'Backend Engineer',
-  'Frontend Engineer',
-  'Full-stack Engineer',
-  'QA / SDET Engineer',
-  'Mobile Development Engineer',
-  'DevOps / SRE / Platform',
-  'Data Scientist',
-  'Data Engineer',
-  'Data Analytics',
-  'Systems Architect',
-  'Embedded Systems Engineer',
-  'R&D Engineer (Computer Vision, NLP, etc.)',
-  'AI & Automation Engineer',
-  'UI/UX Designer/Engineer',
-  'Hardware Engineer (Semiconductors, Digital Design, Electronics, etc)',
-  'Security/Network Engineer',
-  'Technical Support',
-  'CRM Developer',
-])
-
-const managementRoles = new Set(['Engineering Manager', 'Executive (C-level, director, etc.)'])
-const productRoles = new Set(['Product Owner', 'Product Manager'])
+const engineeringRoles = new Set(
+  POSITIONS_OPTIONS.filter((position) =>
+    ['engineer', 'developer', 'data'].includes(position.category),
+  ).map((pos) => pos.positionName),
+)
+const managementRoles = new Set(
+  POSITIONS_OPTIONS.filter((position) => position.category == 'manager').map(
+    (pos) => pos.positionName,
+  ),
+)
+const productRoles = new Set(
+  POSITIONS_OPTIONS.filter((position) => ['product'].includes(position.category)).map(
+    (pos) => pos.positionName,
+  ),
+)
+// MISC: other, designer
 
 // TODO: clear fields after current page because if user goes general => product => general => engineering the answers for product would still be filled.
 function getRoleSpecificPage(role: string): number {
