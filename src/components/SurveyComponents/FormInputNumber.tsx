@@ -3,7 +3,7 @@ import '@styles/SurveyComponents.styles.scss'
 import { InputNumber } from 'antd'
 import { Controller, useFormContext } from 'react-hook-form'
 
-interface propTypes {
+interface FormInputNumberProps {
   name: string
   label: string
   isRequired: boolean
@@ -14,7 +14,7 @@ interface propTypes {
  * FormInputNumber is a form input component for numeric values that enforces optional min and max
  * constraints and integrates with react-hook-form for form state and validation.
  */
-export function FormInputNumber({ name, label, isRequired, min, max }: propTypes) {
+export function FormInputNumber({ name, label, isRequired, min, max }: FormInputNumberProps) {
   const {
     control,
     formState: { errors },

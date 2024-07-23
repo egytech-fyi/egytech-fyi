@@ -2,7 +2,7 @@ import { FormItem } from '@components'
 import '@styles/SurveyComponents.styles.scss'
 import { useFormContext } from 'react-hook-form'
 
-interface propTypes {
+interface FormSelectProps {
   name: string
   label: string
   isRequired: boolean
@@ -15,7 +15,13 @@ interface propTypes {
  *  Radio group based on the number of options and allows for single or multiple selections.
  *  It integrates with react-hook-form for form state and validation management.
  */
-export function FormSelect({ name, label, options, isRequired, isMultipleChoices }: propTypes) {
+export function FormSelect({
+  name,
+  label,
+  options,
+  isRequired,
+  isMultipleChoices,
+}: FormSelectProps) {
   const {
     register,
     formState: { errors },
