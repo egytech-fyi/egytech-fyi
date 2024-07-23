@@ -1,5 +1,5 @@
 import '@styles/RepoCard.styles.scss'
-import { RoundedTag } from './RoundedTag'
+import { RoundedTag } from '@components'
 import { Col, Row, Typography } from 'antd'
 import { StarOutlined } from '@ant-design/icons'
 import { GithubRepoContent } from '@types'
@@ -17,10 +17,16 @@ export const RepoCard = ({ repo }: RepoCardProps) => {
     <a href={repo.html_url} target='_blank' rel='noopener noreferrer' className='repo-card'>
       <div className='card-bg'>
         <Row justify='space-between' align='middle' className='card-row'>
-          <Col span={3}>{repo.language && <RoundedTag tagName={repo.language} />}</Col>
-          <Col span={6} className='stars'>
-            <StarOutlined /> <span className='star-text'>{repo.stargazers_count}</span>
-          </Col>
+          {repo.language && (
+            <Col span={3}>
+              <RoundedTag tagName={repo.language}></RoundedTag>
+            </Col>
+          )}
+          {repo.stargazers_count && (
+            <Col span={6} className='stars'>
+              <StarOutlined /> <span className='star-text'>{repo.stargazers_count}</span>
+            </Col>
+          )}
         </Row>
 
         <div className='card-content'>

@@ -13,7 +13,7 @@ export const Repos = () => {
   if (isLoading) return <Spin size='large' style={{ margin: 'auto' }} />
 
   return (
-    <div style={{ width: '100%' }}>
+    <div className='full-width'>
       <div className='header-text'>
         <h1>Egyptian Top Open Source Repos</h1>
       </div>
