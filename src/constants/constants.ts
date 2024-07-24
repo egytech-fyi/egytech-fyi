@@ -138,3 +138,5 @@ export enum PAGES {
 }
 
 export const percentageBins = ['0-20%', '20-40%', '40-60%', '60-80%']
+
+export const twoToneColor = '#4c88ef'

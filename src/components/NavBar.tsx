@@ -1,4 +1,5 @@
 import { DollarTwoTone, FundTwoTone, MenuOutlined, PlusCircleTwoTone } from '@ant-design/icons'
+import { twoToneColor } from '@constants'
 import '@styles/Navbar.styles.scss'
 import { Button, Layout, Menu } from 'antd'
 import { useEffect } from 'react'
@@ -26,7 +27,6 @@ export const Navbar = ({ handleOpenDrawer }: NavbarProps) => {
   }, [location.pathname])
 
   const isReport = location.pathname === '/report'
-  const twoToneColor = '#4c88ef'
   return (
     <Header className='navbar-header'>
       <Menu

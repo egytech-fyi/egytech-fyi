@@ -19,8 +19,8 @@ export function FormSelect({
   name,
   label,
   options,
-  isRequired,
-  isMultipleChoices,
+  isRequired = false,
+  isMultipleChoices = false,
 }: FormSelectProps) {
   const {
     register,
