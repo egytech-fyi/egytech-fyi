@@ -1,13 +1,5 @@
-import {
-  BaseComment,
-  EngineeringActivities,
-  EngineeringSkills,
-  GeneralQuestions,
-  ManagementActivities,
-  ProductActivities,
-  SalaryQuestions,
-  SatisfactionQuestions,
-} from '@components'
+import { BaseComment, SurveyStep } from '@components'
+import { survey } from '@constants'
 
 import '@styles/Contribute.styles.scss'
 import { scrollToRef } from '@utils'
@@ -18,6 +10,7 @@ import { FieldErrors, FieldValues, FormProvider, SubmitHandler, useForm } from '
 export function Contribute() {
   const [currentStep, setCurrentStep] = useState(0)
   const [historyStack, setHistoryStack] = useState<number[]>([])
+  const numSurveySteps = survey.length
   const methods = useForm<FieldValues>({ mode: 'all' })
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     console.log('submit:', data)
@@ -26,7 +19,7 @@ export function Contribute() {
   function scrollToFirstError(errors: FieldErrors) {
     const errorRefs = Object.keys(errors)
       .map((name) => document.getElementById(name))
-      .filter((el) => !!el)
+      .filter((el) => Boolean(el))
     scrollToRef(errorRefs[0])
   }
 
@@ -46,17 +39,14 @@ export function Contribute() {
     setCurrentStep(historyStack[historyStack.length - 1])
     setHistoryStack(historyStack.slice(0, -1))
   }
-
-  const formPages = [
-    { name: 'Personal Info', component: GeneralQuestions },
-    { name: 'Engineering Skills', component: EngineeringSkills },
-    { name: 'Engineering Activities', component: EngineeringActivities },
-    { name: 'Product Activities', component: ProductActivities },
-    { name: 'Management Activities', component: ManagementActivities },
-    { name: 'Salary', component: SalaryQuestions },
-    { name: 'Satisfaction', component: SatisfactionQuestions },
-  ]
-  const CurrentPage = formPages[currentStep].component
+  const CurrentPage = (
+    <SurveyStep
+      surveyData={survey[currentStep]}
+      next={onNext}
+      back={onBack}
+      last={currentStep == numSurveySteps - 1}
+    />
+  )
   return (
     <Col xs={24} md={16} lg={12}>
       <h1 className='header-text'>Survey</h1>
@@ -75,25 +65,21 @@ export function Contribute() {
       <Steps
         className='survey-steps'
         current={currentStep}
-        items={formPages.map(() => {
-          // to create steps without any text
-          return {
-            title: '',
-          }
-        })}
+        // Hack to create steps without text. TODO: create custom steps
+        items={Array(numSurveySteps).fill({ title: '' })}
         progressDot
       />
       <Progress
         className='survey-percentage'
         type='circle'
-        percent={Math.ceil((currentStep / formPages.length) * 100)}
+        percent={Math.ceil((currentStep / numSurveySteps) * 100)}
         trailColor='rgba(0, 0, 0, 0.06)'
-        steps={formPages.length}
+        steps={numSurveySteps}
         showInfo={false}
       />
       <FormProvider {...methods}>
         <form name='survey' onSubmit={methods.handleSubmit(onSubmit)}>
-          <CurrentPage next={onNext} back={onBack} />
+          {CurrentPage}
         </form>
       </FormProvider>
     </Col>

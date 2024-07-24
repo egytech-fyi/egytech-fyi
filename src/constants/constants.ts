@@ -120,3 +120,21 @@ export const keyValueMap = {
   ...businessLineMap,
   ...programmingLanguageMap,
 }
+
+export enum QUESTION_TYPE {
+  MCQ = 'MCQ',
+  NUMBER = 'Number',
+  STRING = 'String',
+  CHECKBOX = 'Checkbox',
+}
+export enum PAGES {
+  GENERAL,
+  ENGINEERING_SKILLS,
+  ENGINEERING_ACTIVITIES,
+  PRODUCT_ACTIVITIES,
+  MANAGEMENT_ACTIVITIES,
+  SALARY,
+  SATISFACTION,
+}
+
+export const percentageBins = ['0-20%', '20-40%', '40-60%', '60-80%']

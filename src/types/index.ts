@@ -1,3 +1,6 @@
+import { QUESTION_TYPE } from '@constants'
+import { RegisterOptions } from 'react-hook-form'
+
 export interface RequestType {
   business_focus?: string
   business_line?: string
@@ -49,4 +52,22 @@ export interface Bucket {
 export interface GetStatsResponse {
   stats: Stats
   buckets: Bucket[]
+}
+
+export interface Question {
+  name: string
+  type: QUESTION_TYPE
+  label: string
+  choices?: string[]
+  isRequired: boolean
+  validationRules?: RegisterOptions
+}
+
+export interface SurveyStepType {
+  // TODO: come up with a better name
+  internalName: string // for organization
+  title: string
+  questions: Question[]
+  next?: number | ((role: string) => number)
+  back: boolean
 }
