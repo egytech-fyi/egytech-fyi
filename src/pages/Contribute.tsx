@@ -45,6 +45,7 @@ export function Contribute() {
       next={onNext}
       back={onBack}
       last={currentStep == numSurveySteps - 1}
+      key={currentStep} // to rerender every step
     />
   )
   return (

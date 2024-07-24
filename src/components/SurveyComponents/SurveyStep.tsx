@@ -23,7 +23,7 @@ export function SurveyStep({ surveyData, next, back, last }: SurveyStepProps) {
     scrollToRef(titleRef.current)
   }, [])
   return (
-    <div className='survey-step'>
+    <div className='survey-step fade-in'>
       <h2 className='header-subtext' ref={titleRef}>
         {step.title}
       </h2>
