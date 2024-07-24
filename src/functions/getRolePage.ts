@@ -1,20 +1,17 @@
 import { PAGES, POSITIONS_OPTIONS } from '@constants'
 
-const engineeringRoles = new Set(
-  POSITIONS_OPTIONS.filter((position) =>
-    ['engineer', 'developer', 'data'].includes(position.category),
-  ).map((pos) => pos.positionName),
-)
-const managementRoles = new Set(
-  POSITIONS_OPTIONS.filter((position) => position.category == 'manager').map(
-    (pos) => pos.positionName,
-  ),
-)
-const productRoles = new Set(
-  POSITIONS_OPTIONS.filter((position) => ['product'].includes(position.category)).map(
-    (pos) => pos.positionName,
-  ),
-)
+const createRoleSet = (categories: string[]) =>
+  new Set(
+    POSITIONS_OPTIONS.filter((position) => categories.includes(position.category)).map(
+      (pos) => pos.positionName,
+    ),
+  )
+
+const engineeringRoles = createRoleSet(['engineer', 'developer', 'data'])
+
+const managementRoles = createRoleSet(['manager'])
+
+const productRoles = createRoleSet(['product'])
 // MISC: other, designer
 
 export function getRoleSpecificPage(role: string): number {
