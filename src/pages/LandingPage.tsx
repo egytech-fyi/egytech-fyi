@@ -1,4 +1,3 @@
-import { Divider, Button } from 'antd'
 import { Link } from 'react-router-dom'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
@@ -6,6 +5,7 @@ import { BaseComment } from '@components'
 import logo from '/symbol.svg'
 import '@styles/LandingPage.styles.scss'
 import '@styles/SharedComponents.styles.scss'
+import { NativeButton } from '@components'
 
 const CurrencySalariesChart = () => {
   const options: Highcharts.Options = {
@@ -82,21 +82,21 @@ export const LandingPage = () => {
       <div className='header-subtext'>
         <h3>Discover Everything Tech in Egypt 🚀 — Your Ultimate Insight Hub!</h3>
       </div>
-      <Divider />
+      <hr className='divider' />
       <div className='comment-container'>
         <BaseComment>
           Did you know that although tech salaries have risen, they are barely keeping pace with the
           devaluation of the Egyptian pound?
           <br />
-          <Divider />
+          <hr className='divider' />
           <CurrencySalariesChart />
           <br />
           <Link to='/report'>
-            <Button type='default'>Read Our Full Report 💡</Button>
+            <NativeButton>Read Our Full Report 💡</NativeButton>
           </Link>
         </BaseComment>
       </div>
-      <Divider />
+      <hr className='divider' />
       <div className='comment-container'>
         <BaseComment>
           Feeling underpaid because you lack accurate market data? You're not alone. Without
@@ -106,11 +106,11 @@ export const LandingPage = () => {
           <br />
           <br />
           <Link to='/dashboard'>
-            <Button type='default'>Access Salary Dashboard 💸</Button>
+            <NativeButton>Access Salary Dashboard 💸</NativeButton>
           </Link>
         </BaseComment>
       </div>
-      <Divider />
+      <hr className='divider' />
       <div className='comment-container'>
         <BaseComment>
           Do you feel we need more accurate data? If you haven't already participated in the survey,
@@ -118,15 +118,14 @@ export const LandingPage = () => {
           data that drives meaningful change in the tech industry.
           <br />
           <br />
-          <Button
-            type='default'
-            href='https://docs.google.com/forms/d/e/1FAIpQLSfBAjjgs14SQ9i3Dgo6BDPp-m7sxqHaUt4kFOghV-44knIUPg/viewform'
+          <Link
+            to='https://docs.google.com/forms/d/e/1FAIpQLSfBAjjgs14SQ9i3Dgo6BDPp-m7sxqHaUt4kFOghV-44knIUPg/viewform'
             target='_blank'>
-            Participate Now 🙌🏻
-          </Button>
+            <NativeButton> Participate Now 🙌🏻</NativeButton>
+          </Link>
         </BaseComment>
       </div>
-      <Divider />
+      <hr className='divider' />
     </div>
   )
 }

@@ -92,6 +92,50 @@
   text-align: center;
   color: #3fa95b;
 }
+.divider {
+    border: none;
+    height: 1px;
+    background-color: #7e7e7e;
+    margin: 30px 0;
+  }
+
+  .button-basic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #1890ff;
+    color: #fff;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    outline: none;
+    box-shadow: none; /* Remove default focus box-shadow */
+  }
+
+  .button-basic:hover {
+    background-color: #40a9ff;
+  }
+  .button-basic:focus {
+    outline: 2px solid #40a9ff; /* Custom focus outline */
+    outline-offset: 2px;
+  }
+  .button-basic:active {
+    background-color: #096dd9;
+    border-color: #096dd9;
+  }
+
+  .button-basic.disabled,
+  .button-basic[disabled] {
+    background-color: #d9d9d9;
+    border-color: #d9d9d9;
+    color: #bfbfbf;
+    cursor: not-allowed;
+  }
 
 @media only screen and (max-width: 767px) {
   .comment-container {
