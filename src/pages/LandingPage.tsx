@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
-import { BaseComment } from '@components'
+import { BaseComment, NativeDivider } from '@components'
 import logo from '/symbol.svg'
 import '@styles/LandingPage.styles.scss'
 import '@styles/SharedComponents.styles.scss'
@@ -82,13 +82,13 @@ export const LandingPage = () => {
       <div className='header-subtext'>
         <h3>Discover Everything Tech in Egypt 🚀 — Your Ultimate Insight Hub!</h3>
       </div>
-      <hr className='divider' />
+      <NativeDivider />
       <div className='comment-container'>
         <BaseComment>
           Did you know that although tech salaries have risen, they are barely keeping pace with the
           devaluation of the Egyptian pound?
           <br />
-          <hr className='divider' />
+          <NativeDivider />
           <CurrencySalariesChart />
           <br />
           <Link to='/report'>
@@ -96,7 +96,7 @@ export const LandingPage = () => {
           </Link>
         </BaseComment>
       </div>
-      <hr className='divider' />
+      <NativeDivider />
       <div className='comment-container'>
         <BaseComment>
           Feeling underpaid because you lack accurate market data? You're not alone. Without
@@ -110,7 +110,7 @@ export const LandingPage = () => {
           </Link>
         </BaseComment>
       </div>
-      <hr className='divider' />
+      <NativeDivider />
       <div className='comment-container'>
         <BaseComment>
           Do you feel we need more accurate data? If you haven't already participated in the survey,
@@ -125,7 +125,7 @@ export const LandingPage = () => {
           </Link>
         </BaseComment>
       </div>
-      <hr className='divider' />
+      <NativeDivider />
     </div>
   )
 }

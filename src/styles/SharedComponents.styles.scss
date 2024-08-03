@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 .button {
   border-radius: 0;
   box-shadow: none;
@@ -114,25 +116,25 @@
     color: #fff;
     transition: background-color 0.3s, border-color 0.3s, color 0.3s;
     outline: none;
-    box-shadow: none; /* Remove default focus box-shadow */
+    box-shadow: none;
   }
 
   .button-basic:hover {
-    background-color: #40a9ff;
+    background-color: $blue-light;
   }
   .button-basic:focus {
-    outline: 2px solid #40a9ff; /* Custom focus outline */
+    outline: 2px solid $blue-light;
     outline-offset: 2px;
   }
   .button-basic:active {
-    background-color: #096dd9;
-    border-color: #096dd9;
+    background-color: $blue-dark;
+    border-color: $blue-dark;
   }
 
   .button-basic.disabled,
   .button-basic[disabled] {
-    background-color: #d9d9d9;
-    border-color: #d9d9d9;
+    background-color: $gray-disabled;
+    border-color: $gray-disabled;
     color: #bfbfbf;
     cursor: not-allowed;
   }

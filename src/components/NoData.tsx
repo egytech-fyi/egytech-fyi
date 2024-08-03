@@ -4,7 +4,7 @@ import '@styles/NoData.styles.scss'
 export const NoData = () => {
   return (
     <div className='no-data-container'>
-      <img className='cat-img' alt='cat crying' src={CryingCat} />
+      <img className='cat-img' alt='Loading' src={CryingCat} />
       <span className='text'>
         Your filter settings are too specific and do not match enough participants in the Egyptian
         Tech Scene survey to produce meaningful insights. Please broaden your filter selection to
