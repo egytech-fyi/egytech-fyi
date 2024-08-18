@@ -8,7 +8,7 @@ import {
   QUESTION_TYPE,
 } from '@constants'
 import { getRoleSpecificPage } from '@functions'
-import { SurveyStepType } from '@types'
+import { SurveySection } from '@types'
 
 function fieldMin(val: number) {
   return { min: { value: val, message: `The value must be at least ${val}` } }
@@ -17,7 +17,7 @@ function fieldMin(val: number) {
 function fieldMax(val: number) {
   return { max: { value: val, message: `The value must be at most ${val}` } }
 }
-export const survey: SurveyStepType[] = [
+export const survey: SurveySection[] = [
   {
     internalName: 'General',
     title: 'General',

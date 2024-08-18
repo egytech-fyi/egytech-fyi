@@ -63,8 +63,7 @@ export interface Question {
   validationRules?: RegisterOptions
 }
 
-export interface SurveyStepType {
-  // TODO: come up with a better name
+export interface SurveySection {
   internalName: string // for organization
   title: string
   questions: Question[]
