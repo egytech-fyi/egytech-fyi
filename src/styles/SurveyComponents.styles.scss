@@ -41,8 +41,9 @@
 
 /* Radio styles */
 .radio-group {
-  display: flex;
   gap: 4px;
+  border: 0;
+  display: flex;
   justify-content: start;
   flex-wrap: wrap;
 }

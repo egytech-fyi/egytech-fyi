@@ -33,7 +33,7 @@ export function FormSelect({
       label={label}
       id={name}>
       {
-        <div className='radio-group'>
+        <fieldset className='radio-group' role='group'>
           {options.map((option, i) => (
             <div key={i} className='radio-choice'>
               <input
@@ -42,7 +42,7 @@ export function FormSelect({
                   required: { value: isRequired, message: 'This question is required!' },
                 })}
                 id={`${name}-${i}`}
-                className='radio-input'
+                className='radio-input hidden'
                 value={option}
               />
               <label className='radio-label' htmlFor={`${name}-${i}`}>
@@ -50,7 +50,7 @@ export function FormSelect({
               </label>
             </div>
           ))}
-        </div>
+        </fieldset>
       }
     </FormItem>
   )
