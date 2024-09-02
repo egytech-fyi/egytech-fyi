@@ -1,4 +1,4 @@
-import { DollarTwoTone, FundTwoTone, MenuOutlined, PlusCircleTwoTone } from '@ant-design/icons'
+import { DollarTwoTone, FundTwoTone, MenuOutlined } from '@ant-design/icons'
 import { twoToneColor } from '@constants'
 import '@styles/Navbar.styles.scss'
 import { Button, Layout, Menu } from 'antd'
@@ -50,12 +50,6 @@ export const Navbar = ({ handleOpenDrawer }: NavbarProps) => {
           key='/report'
           icon={<FundTwoTone twoToneColor={twoToneColor} />}>
           <Link to='/report'>Report</Link>
-        </Menu.Item>
-        <Menu.Item
-          className='navbar-menu-item'
-          key='/contribute'
-          icon={<PlusCircleTwoTone twoToneColor={twoToneColor} />}>
-          <Link to='/contribute'>Contribute</Link>
         </Menu.Item>
       </Menu>
       {isReport && (
