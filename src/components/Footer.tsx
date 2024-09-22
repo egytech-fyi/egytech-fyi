@@ -11,35 +11,15 @@ const FooterNotes = () => {
   return (
     <div className='footer-notes'>
       <p className='footer-note'>
-        Built by{' '}
-        <a href='https://www.linkedin.com/in/abdelrahman-el-adawy/' target='_blank'>
-          Abdelrahman El-Adawy
-        </a>
-        ,{' '}
-        <a href='https://www.linkedin.com/in/ahmed-eladawy-00b4a3115/' target='_blank'>
-          Ahmed ElAdawy
-        </a>
-        , and{' '}
-        <a href='https://www.linkedin.com/in/mahsayedsalem/' target='_blank'>
-          Mahmoud Salem
-        </a>
-      </p>
-      <p className='footer-note'>
-        <a
-          href='https://lookerstudio.google.com/reporting/fe186294-7d07-45c7-bab5-ea172cb1d632'
-          target='_blank'>
-          Looker Studio Dashboard
-        </a>
-      </p>
-      <p className='footer-note'>
         <a href='https://api.egytech.fyi' target='_blank'>
           Check our API for Raw Data
         </a>
       </p>
       <p className='footer-note'>
-        Inspired from{' '}
-        <a href='https://handpickedberlin.com/berlin-salary-trends-2024-dashboard/' target='_blank'>
-          Berlin Salary Trends Dashboard
+        <a
+          href='https://docs.google.com/spreadsheets/d/1-KRL3Pz-S2H3tp60X6V6BO1DsBrl8jKSDSmCY961qwA/edit?usp=sharing'
+          target='_blank'>
+          Check filtered raw data for more insights (without any PII)
         </a>
       </p>
     </div>

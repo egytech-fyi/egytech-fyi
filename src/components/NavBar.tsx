@@ -1,9 +1,10 @@
-import { useEffect } from 'react'
-import { Button, Layout, Menu } from 'antd'
-import { Link, useLocation } from 'react-router-dom'
-import { FundTwoTone, DollarTwoTone, MenuOutlined } from '@ant-design/icons'
-import logo from '/symbol.svg'
+import { DollarTwoTone, FundTwoTone, MenuOutlined } from '@ant-design/icons'
+import { twoToneColor } from '@constants'
 import '@styles/Navbar.styles.scss'
+import { Button, Layout, Menu } from 'antd'
+import { useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import logo from '/symbol.svg'
 
 const { Header } = Layout
 
@@ -26,7 +27,6 @@ export const Navbar = ({ handleOpenDrawer }: NavbarProps) => {
   }, [location.pathname])
 
   const isReport = location.pathname === '/report'
-
   return (
     <Header className='navbar-header'>
       <Menu
@@ -42,13 +42,13 @@ export const Navbar = ({ handleOpenDrawer }: NavbarProps) => {
         <Menu.Item
           className='navbar-menu-item'
           key='/dashboard'
-          icon={<DollarTwoTone twoToneColor='#4c88ef' />}>
+          icon={<DollarTwoTone twoToneColor={twoToneColor} />}>
           <Link to='/dashboard'>Dashboard</Link>
         </Menu.Item>
         <Menu.Item
           className='navbar-menu-item'
           key='/report'
-          icon={<FundTwoTone twoToneColor='#4c88ef' />}>
+          icon={<FundTwoTone twoToneColor={twoToneColor} />}>
           <Link to='/report'>Report</Link>
         </Menu.Item>
       </Menu>

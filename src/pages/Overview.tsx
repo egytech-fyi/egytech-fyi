@@ -632,9 +632,11 @@ export const Overview = () => {
         </div>
         <div className='salary-comment-container'>
           <BaseComment>
-            This year, we got 1,729 responses, a 33% jump from last time when we got around 1,300.
-            About 1,650 were valid, and roughly 1,200 were verified, where participants shared their
-            company names or personal info!
+            This year, we got 2724 responses, a 215% jump from last time when we got around 1,300.
+            <br />
+            Here we analyzed the first 1,729 responses out of which 1,650 were valid, and roughly
+            1,200 were verified, where participants shared their company names or personal info! All
+            data were collected between 1st April to 1st of July 2024.
             <br />
             <br />
             Here we're exploring the analysis of these answers. If you prefer to compare your salary

@@ -31,9 +31,9 @@ export const StatsCard = () => {
       <Button
         type='primary'
         size='large'
-        href='https://docs.google.com/forms/d/e/1FAIpQLSfBAjjgs14SQ9i3Dgo6BDPp-m7sxqHaUt4kFOghV-44knIUPg/viewform?usp=sf_link'
+        href='https://docs.google.com/spreadsheets/d/1-KRL3Pz-S2H3tp60X6V6BO1DsBrl8jKSDSmCY961qwA/edit?usp=sharing'
         target='_blank'>
-        💪 Contribute Your Salary Now
+        💪 Check raw data for more insights
       </Button>
     </StepCard>
   )

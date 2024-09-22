@@ -1,0 +1,35 @@
+$large: 1258px;
+
+.survey-steps {
+  justify-content: center;
+  padding: 12px;
+}
+.survey-percentage {
+  padding: 12px;
+}
+@media screen and (max-width: $large) {
+  .survey-steps {
+    display: none !important;
+  }
+}
+@media screen and (min-width: $large) {
+  .survey-percentage {
+    display: none;
+  }
+}
+
+.survey-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: '10px';
+  margin-top: '20px';
+  align-items: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .comment-container {
+    margin: 0.5rem 1rem;
+    flex-direction: inherit;
+  }
+}

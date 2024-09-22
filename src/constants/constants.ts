@@ -84,6 +84,7 @@ export const programmingLanguageMap: Record<string, string> = {
   php: 'PHP',
   c_cplusplus: 'C/C++',
   kotlin: 'Kotlin',
+  ruby: 'Ruby',
   swift: 'Swift',
   dart: 'Dart',
   go: 'Go',
@@ -120,3 +121,23 @@ export const keyValueMap = {
   ...businessLineMap,
   ...programmingLanguageMap,
 }
+
+export enum QUESTION_TYPE {
+  MCQ = 'MCQ',
+  NUMBER = 'Number',
+  STRING = 'String',
+  CHECKBOX = 'Checkbox',
+}
+export enum PAGES {
+  GENERAL,
+  ENGINEERING_SKILLS,
+  ENGINEERING_ACTIVITIES,
+  PRODUCT_ACTIVITIES,
+  MANAGEMENT_ACTIVITIES,
+  SALARY,
+  SATISFACTION,
+}
+
+export const percentageBins = ['0-20%', '20-40%', '40-60%', '60-80%']
+
+export const twoToneColor = '#4c88ef'
