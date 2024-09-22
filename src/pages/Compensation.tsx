@@ -21,6 +21,11 @@ export const Compensation = () => {
             <span>
               We don't store your answers, so be true to yourself for the best experience. 📝
             </span>
+            <br />
+            <br />
+            <span>
+              Data collected from April 1st to July 1st 2024 (2649 valid salary responses 💸). 📅
+            </span>
           </BaseComment>
         </div>
         <MainFilters />
