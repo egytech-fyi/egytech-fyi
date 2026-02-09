@@ -6,9 +6,8 @@ export const NoData = () => {
     <div className='no-data-container'>
       <img className='cat-img' src={CryingCat} />
       <span className='text'>
-        Your filter settings are too specific and do not match enough participants in the Egyptian
-        Tech Scene survey to produce meaningful insights. Please broaden your filter selection to
-        view more data.
+        Your filters are too specific and do not match enough participants to show reliable
+        insights. Try removing one or two filters.
       </span>
     </div>
   )

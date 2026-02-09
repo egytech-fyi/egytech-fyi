@@ -7,6 +7,12 @@
     filter: brightness(100%);
 }
 
+.chart-caption {
+    margin-top: 6px;
+    color: var(--color-muted);
+    font-size: 0.9rem;
+}
+
 @media only screen and (max-width: 767px) {
     .highcharts-subtitle {
         font-size: 10px !important;

@@ -66,15 +66,18 @@ export const GraphCard = ({ type }: GraphCardProps) => {
             data={histogramData.transformedBuckets}
             salaryBucketIndex={histogramData.salaryBucketIndex}
           />
+          <p className='chart-caption'>
+            Bars show how many participants fall into each salary band.
+          </p>
           <div className='salary-comment-container'>
             <BaseComment>
-              Also, checkout our 2022{' '}
+              See the 2022{' '}
               <a
                 href='https://lookerstudio.google.com/reporting/fc89c7a2-5dd9-4954-afc3-3ea7f3c7241a/page/DUS6C?s=qk7232SNGS4'
                 target='_blank'>
                 Salary Dashboard
               </a>{' '}
-              and compare the market after EGP devaluation!
+              to compare how the market shifted after devaluation.
             </BaseComment>
           </div>
         </StepCard>
@@ -96,15 +99,16 @@ export const GraphCard = ({ type }: GraphCardProps) => {
             ]}
             salaryBucketIndex={histogramData.salaryBucketIndex}
           />
+          <p className='chart-caption'>Lines show gender distributions across salary bands.</p>
           <div className='salary-comment-container'>
             <BaseComment>
-              Also, checkout our 2022{' '}
+              Read the 2022{' '}
               <a
                 href='https://ranasamir.hashnode.dev/egypts-tech-scene-unequal-pay-in-the-tech-market'
                 target='_blank'>
                 Unequal Pay in the Tech Market
               </a>{' '}
-              report and wait for the updated one!
+              report and watch for the next update.
             </BaseComment>
           </div>
         </StepCard>

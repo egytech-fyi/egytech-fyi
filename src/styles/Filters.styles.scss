@@ -16,17 +16,17 @@
   gap: 10px;
 }
 .filters-cta {
-  font-size: 18px;
-  height: auto;
-  border: none;
-  &.clear {
-    font-size: 14px;
-    &:hover &:focus {
-      background: none !important;
-      border: none;
-      outline: none;
-      text-decoration-line: underline;
-      text-underline-offset: 4px;
+    font-size: 18px;
+    height: auto;
+    border: none;
+    &.clear {
+        font-size: 14px;
+        &:hover &:focus {
+            background: none !important;
+            border: none;
+            outline: none;
+            text-decoration-line: underline;
+            text-underline-offset: 4px;
+        }
     }
-  }
 }

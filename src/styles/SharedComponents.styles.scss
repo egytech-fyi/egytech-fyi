@@ -1,8 +1,7 @@
 .button {
-  border-radius: 0;
-  box-shadow: none;
-  width: 100%;
-  height: 100%;
+  border-radius: 12px;
+  width: auto;
+  height: auto;
 }
 .custom-tag {
   min-height: 30px;
@@ -11,15 +10,18 @@
   justify-content: center;
   gap: 4px;
   width: fit-content;
-  font-size: 14px;
-  line-height: 25px;
+  font-size: 13px;
+  line-height: 22px;
+  border-radius: 999px !important;
+  padding: 0 10px;
+  border: none;
   text-wrap: wrap;
 }
 
 .float-label {
   position: relative;
   width: 100%;
-  max-width: 304px;
+  max-width: 360px;
   overflow-x: clip;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -40,9 +42,10 @@
   position: absolute;
   pointer-events: none;
   left: 12px;
-  top: 11px;
+  top: 13px;
   right: 24px;
   transition: 0.2s ease all;
+  color: var(--color-muted);
 }
 
 .as-placeholder {
@@ -56,6 +59,7 @@
   font-size: 12px !important;
   padding: 0 4px;
   margin-left: -4px;
+  background: var(--color-surface);
 }
 .content-span {
   position: relative;
@@ -67,7 +71,7 @@
   position: absolute;
   top: calc(48.5% - -1px);
   width: calc(100% + 4px);
-  background: white;
+  background: var(--color-surface);
   height: 1px;
   z-index: -1;
   left: -2px;
@@ -79,18 +83,24 @@
 
 .comment-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
+  gap: 12px;
 }
 
 .header-text {
-  text-align: center;
-  color: #4c88ef;
+  text-align: left;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 3.5vw, 3.4rem);
+  letter-spacing: -0.02em;
 }
 
 .header-subtext {
-  text-align: center;
-  color: #3fa95b;
+  text-align: left;
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  max-width: 720px;
 }
 
 @media only screen and (max-width: 767px) {

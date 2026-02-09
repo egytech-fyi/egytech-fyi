@@ -606,21 +606,21 @@ export const Satisfaction = () => {
       <div id='satisfaction' style={{ width: '100%', marginBottom: '10px' }}>
         <div className='header-subtext'>
           <h2>
-            {' '}
-            <b>Satisfaction! 😠🥰 </b>{' '}
+            <b>Satisfaction</b>
           </h2>
         </div>
         <div className='salary-comment-container'>
           <BaseComment>
-            We specifically inquired about the participants' most recent salary increments,
-            particularly in light of currency devaluation. 💷 <br />
+            We asked about recent salary increases, especially after currency devaluation.
           </BaseComment>
         </div>
       </div>
       <div id='salary-increase' style={{ width: '100%', marginBottom: '10px' }}>
         <StepCard>
           <div className='salary-comment-container'>
-            <BaseComment>Almost 40% had a salary increase in the last 3 months</BaseComment>
+            <BaseComment>
+              Nearly 40% received a salary increase in the last three months.
+            </BaseComment>
           </div>
           <SalaryIncreasePieChart />
         </StepCard>
@@ -629,8 +629,7 @@ export const Satisfaction = () => {
       <div id='same-company' style={{ width: '100%', marginBottom: '10px' }}>
         <div className='salary-comment-container'>
           <BaseComment>
-            We asked the participants if they have been working in the same company for the past
-            year <br />
+            We asked whether participants stayed at the same company over the last year.
           </BaseComment>
         </div>
       </div>
@@ -639,8 +638,7 @@ export const Satisfaction = () => {
         <StepCard>
           <div className='salary-comment-container'>
             <BaseComment>
-              Around 37% of the participants with more than one year of experience, changed
-              companies this past year! 🤝🏼
+              About 37% of participants with more than one year of experience changed companies.
             </BaseComment>
           </div>
           <SameCompanyPieChart />
@@ -651,8 +649,8 @@ export const Satisfaction = () => {
       <div id='salaries-rise-with-currencies' style={{ width: '100%', marginBottom: '10px' }}>
         <div className='salary-comment-container'>
           <BaseComment>
-            We wanted to know how to tech salaries are moving with currency devaluation, using
-            Egyptian Geeks 2017 report and our reports from previous years. <br />
+            We compared salary growth with currency devaluation using prior reports, including the
+            Egyptian Geeks 2017 report.
           </BaseComment>
         </div>
       </div>
@@ -660,8 +658,7 @@ export const Satisfaction = () => {
         <StepCard>
           <div className='salary-comment-container'>
             <BaseComment>
-              Although tech salaries have risen, they are barely keeping pace with the devaluation
-              of the Egyptian pound. 💵 <br />
+              Salaries rose, but did not keep pace with the devaluation of the Egyptian pound.
             </BaseComment>
           </div>
           <CurrencySalariesChart />
@@ -673,8 +670,7 @@ export const Satisfaction = () => {
       <div id='currencies' style={{ width: '100%', marginBottom: '10px' }}>
         <div className='salary-comment-container'>
           <BaseComment>
-            We wanted to know the percentage of the participants who receive their salaries in
-            another currency. <br />
+            We asked what share of participants are paid in a non-EGP currency.
           </BaseComment>
         </div>
       </div>
@@ -682,8 +678,7 @@ export const Satisfaction = () => {
         <StepCard>
           <div className='salary-comment-container'>
             <BaseComment>
-              The number of participants receiving their salaries in currencies other than EGP is
-              growing. 💵 <br />
+              The share of participants paid in non-EGP currencies is growing.
             </BaseComment>
           </div>
           <CurrencyPieChart />
@@ -692,16 +687,14 @@ export const Satisfaction = () => {
       <Divider />
       <div id='salary-satisfaction' style={{ width: '100%', marginBottom: '10px' }}>
         <div className='salary-comment-container'>
-          <BaseComment>
-            We asked the participants about their salary satisfaction 😊 <br />
-          </BaseComment>
+          <BaseComment>We asked how participants feel about their compensation.</BaseComment>
         </div>
       </div>
 
       <div style={{ width: '100%', marginBottom: '10px' }}>
         <StepCard>
           <div className='salary-comment-container'>
-            <BaseComment>More than 50% thought they should earn more</BaseComment>
+            <BaseComment>Over half believe they should earn more.</BaseComment>
           </div>
           <SalarySatisfactionPieChart />
         </StepCard>
@@ -711,9 +704,7 @@ export const Satisfaction = () => {
       <div style={{ width: '100%', marginBottom: '10px' }}>
         <StepCard>
           <div className='salary-comment-container'>
-            <BaseComment>
-              We wanted to see the gender distribution between these answers 👩🏽 👨🏼
-            </BaseComment>
+            <BaseComment>We compared these responses by gender.</BaseComment>
           </div>
           <SalarySatisfactionBarChart />
         </StepCard>
@@ -722,9 +713,7 @@ export const Satisfaction = () => {
       <div id='level-satisfaction' style={{ width: '100%', marginBottom: '10px' }}>
         <StepCard>
           <div className='salary-comment-container'>
-            <BaseComment>
-              More 61% of the participants think they are placed in the level they deserve 🎉
-            </BaseComment>
+            <BaseComment>61% of participants believe they are at the right level.</BaseComment>
           </div>
           <LevelSatisfactionBarChart />
         </StepCard>
@@ -740,9 +729,7 @@ export const Satisfaction = () => {
         <Divider />
         <StepCard>
           <div id='learning' className='salary-comment-container'>
-            <BaseComment>
-              The majority also think they have the opportunity to learn new stuff! 📚
-            </BaseComment>
+            <BaseComment>Most participants feel they have opportunities to learn.</BaseComment>
           </div>
           <LearningPieChart />
         </StepCard>
@@ -751,10 +738,7 @@ export const Satisfaction = () => {
       <div style={{ width: '100%', marginBottom: '20px' }}>
         <StepCard>
           <div id='preferred-work-setting' className='salary-comment-container'>
-            <BaseComment>
-              This year, 71% of the participants expressed a preference for a hybrid work setting.
-              That's a significant surge from 63% back in 2022! 🏢 🏠
-            </BaseComment>
+            <BaseComment>71% prefer a hybrid work setting, up from 63% in 2022.</BaseComment>
           </div>
           <PreferredWorkplacePieChart />
         </StepCard>

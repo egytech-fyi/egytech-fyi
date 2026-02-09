@@ -65,47 +65,52 @@ const CustomNumberInput: React.FC<CustomInputNumberProps> = ({
   const [number, setNumber] = useState<number | undefined>(value)
   if (!show) return null
 
+  const handleCompare = () => {
+    onChange?.(number ?? 0)
+  }
+
   return (
-    <FloatLabel
-      label={label}
-      placeholder={placeholder as string}
-      value={number !== undefined ? `${number}` : undefined}
-      extraLeft
-      clearValue={
-        clearValue
-          ? () => {
-              clearValue?.()
-              setNumber(undefined)
-            }
-          : undefined
-      }>
-      <InputNumber<number>
-        className='input number-input'
-        addonBefore={<span style={{ paddingInline: '10px' }}>{inputLabel1}</span>}
-        value={number}
-        inputMode='tel'
-        pattern='[0-9]*'
-        onChange={(value) => {
-          setNumber(value ?? undefined)
-          !actionable && onChange?.(value as number)
-        }}
-        status={number === 0 || (number && number < 0) ? 'error' : ''}
-        addonAfter={
-          actionable ? (
-            <CustomButton
-              type='primary'
-              style={{ backgroundColor: '#007646' }}
-              disabled={number ? number <= 0 : false}
-              onClick={() => onChange?.(number ?? 0)}>
-              <Typography.Text strong style={{ color: 'white' }}>
-                💸 Compare
-              </Typography.Text>
-            </CustomButton>
-          ) : null
-        }
-        onPressEnter={(e) => onPressEnter?.(e)}
-      />
-    </FloatLabel>
+    <div className='number-input-wrap'>
+      <FloatLabel
+        label={label}
+        placeholder={placeholder as string}
+        value={number !== undefined ? `${number}` : undefined}
+        extraLeft
+        clearValue={
+          clearValue
+            ? () => {
+                clearValue?.()
+                setNumber(undefined)
+              }
+            : undefined
+        }>
+        <InputNumber<number>
+          className='input number-input'
+          addonBefore={<span style={{ paddingInline: '10px' }}>{inputLabel1}</span>}
+          value={number}
+          inputMode='tel'
+          pattern='[0-9]*'
+          onChange={(value) => {
+            setNumber(value ?? undefined)
+            !actionable && onChange?.(value as number)
+          }}
+          status={number === 0 || (number && number < 0) ? 'error' : ''}
+          onPressEnter={(e) => {
+            onPressEnter?.(e)
+            handleCompare()
+          }}
+        />
+      </FloatLabel>
+      {actionable ? (
+        <CustomButton
+          type='primary'
+          className='compare-button'
+          disabled={number ? number <= 0 : false}
+          onClick={handleCompare}>
+          <Typography.Text strong>💸 Compare</Typography.Text>
+        </CustomButton>
+      ) : null}
+    </div>
   )
 }
 const CustomSearchInput = ({

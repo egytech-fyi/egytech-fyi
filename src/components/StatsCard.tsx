@@ -28,13 +28,15 @@ export const StatsCard = () => {
       <div className='salary-comment-container'>
         <SalaryComment {...stats?.stats} />
       </div>
-      <Button
-        type='primary'
-        size='large'
-        href='https://docs.google.com/spreadsheets/d/1-KRL3Pz-S2H3tp60X6V6BO1DsBrl8jKSDSmCY961qwA/edit?usp=sharing'
-        target='_blank'>
-        💪 Check raw data for more insights
-      </Button>
+      <div className='stats-actions'>
+        <Button
+          type='primary'
+          size='large'
+          href='https://docs.google.com/spreadsheets/d/1-KRL3Pz-S2H3tp60X6V6BO1DsBrl8jKSDSmCY961qwA/edit?usp=sharing'
+          target='_blank'>
+          Open raw data sheet
+        </Button>
+      </div>
     </StepCard>
   )
 }

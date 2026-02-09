@@ -9,9 +9,9 @@ import logo from '/symbol.svg'
 const { Header } = Layout
 
 const pageTitleMap: { [key: string]: string } = {
-  '/': 'Ace Your Next Tech Offer Negotiation | egytech.fyi',
-  '/report': 'Egyptian Tech Scene 2024 | egytech.fyi',
-  '/dashboard': 'Compare Your Salary | egytech.fyi',
+  '/': 'Egyptian Tech Scene | Compensation Intelligence',
+  '/report': 'Egyptian Tech Scene 2024 Report',
+  '/dashboard': 'Compensation Explorer | Egyptian Tech Scene',
 }
 
 interface NavbarProps {
@@ -43,7 +43,7 @@ export const Navbar = ({ handleOpenDrawer }: NavbarProps) => {
           className='navbar-menu-item'
           key='/dashboard'
           icon={<DollarTwoTone twoToneColor={twoToneColor} />}>
-          <Link to='/dashboard'>Dashboard</Link>
+          <Link to='/dashboard'>Explorer</Link>
         </Menu.Item>
         <Menu.Item
           className='navbar-menu-item'

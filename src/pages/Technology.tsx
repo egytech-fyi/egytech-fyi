@@ -444,15 +444,13 @@ export const Technology = () => {
       <div id='trends' style={{ width: '100%', marginBottom: '10px' }}>
         <div className='header-subtext'>
           <h2>
-            {' '}
-            <b>Trends 🚀</b>{' '}
+            <b>Trends</b>
           </h2>
         </div>
 
         <div className='salary-comment-container'>
           <BaseComment>
-            This year we collected insights about popular programming languages, frameworks,
-            infrstructure and tools <br />
+            This year we captured the most used languages, frameworks, infrastructure, and tools.
           </BaseComment>
         </div>
       </div>
@@ -461,24 +459,23 @@ export const Technology = () => {
         <StepCard>
           <div className='salary-comment-container'>
             <BaseComment>
-              JavaScript, TypeScript and Python were mentioned by the majority in most used
-              programming languages &lt;/&gt;
+              JavaScript, TypeScript, and Python lead the programming language stack.
             </BaseComment>
           </div>
           <div className='salary-comment-container'>
-            <BaseComment>AWS is still by far the winner between cloud providers ☁️</BaseComment>
+            <BaseComment>AWS remains the most used cloud provider.</BaseComment>
           </div>
           <div className='salary-comment-container'>
-            <BaseComment>SQL Databases are still the go-to database solutions 🛢</BaseComment>
+            <BaseComment>SQL databases are still the default choice.</BaseComment>
           </div>
           <Divider />
           <div className='salary-comment-container'>
-            <BaseComment>React is the most used Frontend framework 🖥️</BaseComment>
+            <BaseComment>React remains the most used frontend framework.</BaseComment>
           </div>
           <div className='salary-comment-container'>
             <BaseComment>
-              Express has ascended in rankings since 2022, now claiming the second position,
-              following ASP.Net, in comparison to Spring. ⚙️
+              Express has climbed since 2022, taking second place behind ASP.NET and ahead of
+              Spring.
             </BaseComment>
           </div>
           <Divider />
@@ -488,16 +485,14 @@ export const Technology = () => {
       <Divider />
       <div id='product-tools' style={{ width: '100%', marginBottom: '10px' }}>
         <div className='salary-comment-container'>
-          <BaseComment>
-            Let's dive deeper and find out which tools are most popular between Product pros. <br />
-          </BaseComment>
+          <BaseComment>We also asked product teams about their most used tools.</BaseComment>
         </div>
       </div>
       <div style={{ width: '100%', marginBottom: '10px' }}>
         <StepCard>
           <div className='salary-comment-container'>
             <BaseComment>
-              Jira, Figma and Miro were mentioned most by Product Managers, Designers and Owners 💡
+              Jira, Figma, and Miro were the top tools across product roles.
             </BaseComment>
           </div>
           <ProductBarChart />
@@ -506,17 +501,14 @@ export const Technology = () => {
       <Divider />
       <div id='product-decision-making' style={{ width: '100%', marginBottom: '10px' }}>
         <div className='salary-comment-container'>
-          <BaseComment>
-            I've long been intrigued by the decision-making process behind pricing and packaging, so
-            I asked product folks. <br />
-          </BaseComment>
+          <BaseComment>We asked who drives pricing and packaging decisions.</BaseComment>
         </div>
       </div>
       <div style={{ width: '100%', marginBottom: '10px' }}>
         <StepCard>
           <div className='salary-comment-container'>
             <BaseComment>
-              Product Managers were responsible of packaging and pricing only 15.3% of the time 📦
+              Product managers owned pricing and packaging decisions only 15.3% of the time.
             </BaseComment>
           </div>
           <PricingPieChart />
@@ -526,8 +518,7 @@ export const Technology = () => {
       <div id='product-data-analysis' style={{ width: '100%', marginBottom: '10px' }}>
         <div className='salary-comment-container'>
           <BaseComment>
-            Product pros. typically dedicate a substantial amount of time to analyzing metrics and
-            data, We were keen to discover the tools they rely on for this task. 🔍 <br />
+            We also explored how product teams analyze metrics and which tools they rely on.
           </BaseComment>
         </div>
       </div>

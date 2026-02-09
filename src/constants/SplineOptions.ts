@@ -5,10 +5,11 @@ export const SPLINE_OPTIONS: Highcharts.Options = {
   },
   title: {
     text: 'Gender Salary Comparison',
+    style: { color: 'var(--color-ink)', fontFamily: 'var(--font-display)' },
   },
   subtitle: {
-    text: 'Exploring Salary Disparities Between Genders.',
-    style: { color: 'black', fontSize: '14px' },
+    text: 'Comparing distribution shapes by gender',
+    style: { color: 'var(--color-muted)', fontSize: '14px', fontFamily: 'var(--font-body)' },
     useHTML: true,
   },
   xAxis: {
@@ -17,23 +18,23 @@ export const SPLINE_OPTIONS: Highcharts.Options = {
       autoRotation: [-45, -90],
       style: {
         fontSize: '13px',
-        color: 'black',
-        fontFamily: 'Verdana, sans-serif',
+        color: 'var(--color-muted)',
+        fontFamily: 'var(--font-body)',
       },
     },
     title: {
       text: 'Total Monthly Net Salary in EGP (Basic + Bonus)',
-      style: { color: 'black' },
+      style: { color: 'var(--color-muted)', fontFamily: 'var(--font-body)' },
     },
   },
   yAxis: {
     min: 0,
     title: {
       text: 'Percentage (%) of Participants',
-      style: { color: 'black' },
+      style: { color: 'var(--color-muted)', fontFamily: 'var(--font-body)' },
     },
     labels: {
-      style: { color: 'black' },
+      style: { color: 'var(--color-muted)', fontFamily: 'var(--font-body)' },
       format: '{value:,.0f}%',
     },
   },
@@ -41,6 +42,7 @@ export const SPLINE_OPTIONS: Highcharts.Options = {
     enabled: true,
     align: 'right',
     verticalAlign: 'top',
+    itemStyle: { color: 'var(--color-muted)', fontFamily: 'var(--font-body)' },
   },
   tooltip: {
     shared: true,

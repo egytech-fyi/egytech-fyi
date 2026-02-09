@@ -626,27 +626,22 @@ export const Overview = () => {
         }}>
         <div className='header-subtext'>
           <h2>
-            {' '}
-            <b>Overview 🔍</b>{' '}
+            <b>Overview</b>
           </h2>
         </div>
         <div className='salary-comment-container'>
           <BaseComment>
-            This year, we got 2724 responses, a 215% jump from last time when we got around 1,300.
-            <br />
-            Here we analyzed the first 1,729 responses out of which 1,650 were valid, and roughly
-            1,200 were verified, where participants shared their company names or personal info! All
-            data were collected between 1st April to 1st of July 2024.
+            We received 2,724 responses this year, up 215% from last cycle (~1,300). This report
+            analyzes the first 1,729 responses: 1,650 valid and about 1,200 verified (company or
+            contact provided). Data collection ran Apr 1-Jul 1, 2024.
             <br />
             <br />
-            Here we're exploring the analysis of these answers. If you prefer to compare your salary
-            with others first then
+            Prefer to compare your salary first?
             <br />
             <br />
             <Link to='/dashboard'>
-              <Button type='default'>Access Our Salary Dashboard 💸</Button>
+              <Button type='default'>Open Salary Explorer</Button>
             </Link>
-            <br />
           </BaseComment>
         </div>
       </div>
@@ -654,9 +649,7 @@ export const Overview = () => {
       <div id='gender' style={{ width: '100%', marginBottom: '10px' }}>
         <StepCard>
           <div className='salary-comment-container'>
-            <BaseComment>
-              Among the participants, 388 were from females, and 1,341 were from males 🎉
-            </BaseComment>
+            <BaseComment>Responses were 1,341 male and 388 female.</BaseComment>
           </div>
           <GenderPieChart />
         </StepCard>
@@ -666,8 +659,7 @@ export const Overview = () => {
         <StepCard>
           <div className='salary-comment-container'>
             <BaseComment>
-              The majority of participants had an engineering background, with over 50% specializing
-              in Backend, Frontend, or Fullstack development.
+              Over half of respondents are Backend, Frontend, or Full-stack engineers.
             </BaseComment>
           </div>
           <TitlePieChart />
@@ -678,8 +670,7 @@ export const Overview = () => {
         <StepCard>
           <div className='salary-comment-container'>
             <BaseComment>
-              Of these participants, 1,358 held a Computer Science related degree, while 371 did
-              not.
+              1,358 participants reported a CS-related degree, while 371 did not.
             </BaseComment>
           </div>
           <ComputerSciencePieChart />
@@ -690,8 +681,7 @@ export const Overview = () => {
         <StepCard>
           <div className='salary-comment-container'>
             <BaseComment>
-              For the third year, we haven't had many participants in higher level. <br />
-              Only 10% of the participants were in levels higher than Senior Level.
+              Higher levels are still underrepresented. Only 10% reported levels above Senior.
             </BaseComment>
           </div>
           <LevelPieChart />
@@ -702,8 +692,7 @@ export const Overview = () => {
         <StepCard>
           <div className='salary-comment-container'>
             <BaseComment>
-              In 2022, 14.4% of participants from Egypt worked remotely for overseas companies. This
-              year, that figure has risen to 18.1%.
+              Remote work for overseas companies rose from 14.4% (2022) to 18.1% this year.
             </BaseComment>
           </div>
           <WorkSettingPieChart />
@@ -713,9 +702,7 @@ export const Overview = () => {
       <div id='company-size' style={{ width: '100%', marginBottom: '10px' }}>
         <StepCard>
           <div className='salary-comment-container'>
-            <BaseComment>
-              The majority of the participants are working in Small and Medium Enterprises. <br />
-            </BaseComment>
+            <BaseComment>Most participants work in small or mid-sized companies.</BaseComment>
           </div>
           <CompanySizePieChart />
         </StepCard>
@@ -725,7 +712,7 @@ export const Overview = () => {
         <StepCard>
           <div className='salary-comment-container'>
             <BaseComment>
-              The majority of the participants are working in Global Markets. <br />
+              Most participants work for companies with global market reach.
             </BaseComment>
           </div>
           <CompanyMarketPieChart />
@@ -735,9 +722,7 @@ export const Overview = () => {
       <div id='location' style={{ width: '100%', marginBottom: '20px' }}>
         <StepCard>
           <div className='salary-comment-container'>
-            <BaseComment>
-              As expected, 74% of participants working in comapnies located in Cairo!. <br />
-            </BaseComment>
+            <BaseComment>74% of participants work at companies based in Cairo.</BaseComment>
           </div>
           <CompanyLocationPieChart />
         </StepCard>
