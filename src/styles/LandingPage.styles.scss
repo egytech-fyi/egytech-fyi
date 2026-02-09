@@ -1,0 +1,125 @@
+
+.landing-hero {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+    align-items: center;
+    padding: 18px 0 8px;
+}
+
+.landing-title {
+    font-size: clamp(2.6rem, 4vw, 3.8rem);
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+}
+
+.landing-subtitle {
+    color: var(--color-muted);
+    font-size: 1.1rem;
+    max-width: 560px;
+}
+
+.landing-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+}
+
+.landing-actions .ant-btn {
+    min-width: 190px;
+}
+
+.landing-highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.landing-highlight {
+    background: var(--color-surface);
+    border-radius: 16px;
+    padding: 14px 16px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 10px 22px var(--color-soft-shadow);
+}
+
+.landing-highlight strong {
+    display: block;
+    font-size: 1.3rem;
+    color: var(--color-ink);
+}
+
+.landing-highlight span {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+}
+
+.landing-section {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.landing-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    align-items: stretch;
+}
+
+.landing-card {
+    background: var(--color-surface);
+    border-radius: 18px;
+    border: 1px solid var(--color-border);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 12px 24px var(--color-soft-shadow);
+    min-height: 220px;
+    height: 100%;
+}
+
+.landing-card .ant-btn {
+    align-self: flex-start;
+    margin-top: auto;
+    min-width: 180px;
+}
+
+.landing-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.landing-card p {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+    flex: 1 1 auto;
+}
+
+.landing-chart-card {
+    background: var(--color-surface);
+    border-radius: 18px;
+    padding: 16px;
+    border: 1px solid var(--color-border);
+}
+
+.landing-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.landing-logo img {
+    height: 56px;
+}
+
+.landing-logo span {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--color-ink);
+}

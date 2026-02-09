@@ -1,67 +1,136 @@
-:root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
 
-    color-scheme: light dark;
-    color: #242424;
-    background-color: #ffffff;
+:root {
+    color-scheme: light;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'IBM Plex Sans', sans-serif;
+    --color-ink: #1a221f;
+    --color-muted: #54615c;
+    --color-accent: #146b5a;
+    --color-accent-strong: #0c4f43;
+    --color-warm: #d8a24a;
+    --color-surface: #ffffff;
+    --color-surface-muted: #f7f3ec;
+    --color-border: #e6ddd0;
+    --color-shadow: rgba(17, 33, 30, 0.08);
+    --color-soft-shadow: rgba(17, 33, 30, 0.04);
+    --radius-card: 18px;
+    --radius-pill: 999px;
+    font-family: var(--font-body);
+    line-height: 1.6;
+    font-weight: 400;
+    color: var(--color-ink);
+    background-color: #f5f1e8;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-    font-weight: 500;
-    color: #646cff;
-    text-decoration: inherit;
-}
-a:hover {
-    color: #535bf2;
+* {
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
     min-width: 320px;
     min-height: 100vh;
+    background: radial-gradient(circle at top, rgba(210, 167, 95, 0.12), transparent 55%),
+        linear-gradient(180deg, #fbf8f1 0%, #f4efe4 45%, #fbf8f1 100%);
+    color: var(--color-ink);
 }
 
-h1 {
-    font-size: 3.2em;
-    line-height: 1.1;
+a {
+    font-weight: 600;
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 150ms ease, opacity 150ms ease;
 }
 
-button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
-    cursor: pointer;
-    transition: border-color 0.25s;
-}
-button:hover {
-    border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
+a:hover {
+    color: var(--color-accent-strong);
+    opacity: 0.92;
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-    a:hover {
-        color: #747bff;
-    }
-    button {
-        background-color: #f9f9f9;
-    }
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-display);
+    color: var(--color-ink);
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.ant-btn {
+    border-radius: 12px;
+    font-weight: 600;
+    height: auto;
+    padding: 10px 18px;
+    box-shadow: 0 8px 20px var(--color-soft-shadow);
+}
+
+.ant-btn-default {
+    background: var(--color-surface);
+    border-color: var(--color-warm);
+    color: var(--color-accent-strong);
+}
+
+.ant-btn-default:hover,
+.ant-btn-default:focus {
+    border-color: var(--color-warm);
+    color: var(--color-ink);
+    background: rgba(216, 162, 74, 0.15);
+}
+
+.ant-btn-primary {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
+}
+
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
+    background: var(--color-accent-strong);
+    border-color: var(--color-accent-strong);
+}
+
+.ant-divider {
+    border-color: var(--color-border);
+}
+
+.ant-card {
+    border-radius: var(--radius-card);
+    box-shadow: 0 14px 30px var(--color-soft-shadow);
+    border: 1px solid var(--color-border);
+}
+
+.ant-drawer-content {
+    background: var(--color-surface);
+}
+
+.ant-menu {
+    color: var(--color-ink);
+}
+
+.ant-menu-light {
+    background: transparent;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    border: 0;
 }
 
 .sr-only {

@@ -11,6 +11,60 @@ import { Route, BrowserRouter as Router, Routes as Switch } from 'react-router-d
 
 // Initialize the accessibility module
 HighchartsAccessibility(Highcharts)
+Highcharts.setOptions({
+  chart: {
+    style: {
+      fontFamily: 'var(--font-body)',
+      color: 'var(--color-ink)',
+    },
+  },
+  title: {
+    style: {
+      fontFamily: 'var(--font-display)',
+      color: 'var(--color-ink)',
+    },
+  },
+  subtitle: {
+    style: {
+      fontFamily: 'var(--font-body)',
+      color: 'var(--color-muted)',
+    },
+  },
+  xAxis: {
+    labels: {
+      style: {
+        color: 'var(--color-muted)',
+        fontFamily: 'var(--font-body)',
+      },
+    },
+    title: {
+      style: {
+        color: 'var(--color-muted)',
+        fontFamily: 'var(--font-body)',
+      },
+    },
+  },
+  yAxis: {
+    labels: {
+      style: {
+        color: 'var(--color-muted)',
+        fontFamily: 'var(--font-body)',
+      },
+    },
+    title: {
+      style: {
+        color: 'var(--color-muted)',
+        fontFamily: 'var(--font-body)',
+      },
+    },
+  },
+  legend: {
+    itemStyle: {
+      color: 'var(--color-muted)',
+      fontFamily: 'var(--font-body)',
+    },
+  },
+})
 
 const Insights = lazy(() =>
   import('./pages/Insights').then((module) => ({ default: module.Insights })),

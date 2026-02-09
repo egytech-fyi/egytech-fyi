@@ -4,12 +4,12 @@ export const HISTOGRAM_OPTIONS: Highcharts.Options = {
     backgroundColor: 'transparent',
   },
   title: {
-    text: 'Salary Range Distribution Among Participants',
-    style: { color: 'black' },
+    text: 'Salary Distribution',
+    style: { color: 'var(--color-ink)', fontFamily: 'var(--font-display)' },
   },
   subtitle: {
-    text: 'Identify Your Position in the Salary Spectrum',
-    style: { color: 'black', fontSize: '14px' },
+    text: 'Where your salary sits in the 2024 dataset',
+    style: { color: 'var(--color-muted)', fontSize: '14px', fontFamily: 'var(--font-body)' },
     useHTML: true,
   },
   xAxis: {
@@ -18,22 +18,22 @@ export const HISTOGRAM_OPTIONS: Highcharts.Options = {
       autoRotation: [-45, -90],
       style: {
         fontSize: '13px',
-        color: 'black',
-        fontFamily: 'Verdana, sans-serif',
+        color: 'var(--color-muted)',
+        fontFamily: 'var(--font-body)',
       },
     },
     title: {
       text: 'Total Monthly Net Salary in EGP (Basic + Bonus)',
-      style: { color: 'black' },
+      style: { color: 'var(--color-muted)', fontFamily: 'var(--font-body)' },
     },
   },
   yAxis: {
     min: 0,
     title: {
       text: 'Number of Participants',
-      style: { color: 'black' },
+      style: { color: 'var(--color-muted)', fontFamily: 'var(--font-body)' },
     },
-    labels: { style: { color: 'black' } },
+    labels: { style: { color: 'var(--color-muted)', fontFamily: 'var(--font-body)' } },
   },
   legend: {
     enabled: false,
@@ -49,7 +49,7 @@ export const SERIES_STATIC_OPTIONS = {
 
   dataLabels: {
     enabled: true,
-    color: '#FFFFFF',
+    color: '#ffffff',
     rotation: -90,
     inside: false,
     verticalAlign: 'top',
@@ -57,7 +57,7 @@ export const SERIES_STATIC_OPTIONS = {
     y: 10, // 10 pixels down from the top
     style: {
       fontSize: '13px',
-      fontFamily: 'Verdana, sans-serif',
+      fontFamily: 'var(--font-body)',
     },
   },
 }

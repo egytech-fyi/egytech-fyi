@@ -6,18 +6,18 @@ import '@styles/FilterTags.styles.scss'
 type StateKey = keyof StateType
 
 const colors = [
-  '#DC143C',
-  '#1434A4',
-  '#097969',
-  '#108ee9',
-  '#702963',
-  '#023020',
-  '#C04000',
-  '#770737',
-  '#1B1212',
-  '#5D3FD3',
-  '#FA5F55',
-  '#C04000',
+  '#1b7f6b',
+  '#2f6f5f',
+  '#3d5a57',
+  '#d2a75f',
+  '#9a6b2f',
+  '#4c5f5b',
+  '#6b7b76',
+  '#1f4f46',
+  '#c99347',
+  '#2d3c39',
+  '#7aa396',
+  '#8a6a42',
 ]
 
 export const FiltersTags = () => {

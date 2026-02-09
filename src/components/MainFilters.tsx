@@ -22,46 +22,54 @@ export const MainFilters = () => {
 
   return (
     <StepCard>
-      <span className='labelText'>What is your Monthly Net Salary (Base+Bonus)*?</span>
-      <div className='inputs-container'>
-        <CustomInput
-          mode='multiple'
-          type='search'
-          label='Title'
-          options={positionsOptions}
-          value={state.title}
-          onSelect={(payload) => dispatch({ type: 'title', payload })}
-          placeholder='Select your current position'
-        />
-        <CustomInput
-          label='Salary'
-          type='number'
-          actionable
-          value={state.salary}
-          onChange={(payload) => dispatch({ type: 'salary', payload })}
-          onPressEnter={(e) => {
-            const payload = Number((e.target as HTMLInputElement).value)
-            dispatch({ type: 'salary', payload })
-          }}
-        />
+      <div className='filters-header'>
+        <div>
+          <div className='filters-title'>Step 1 — Role and salary</div>
+          <div className='filters-subtitle'>
+            Monthly net salary (base + bonus). Stored locally only. Results appear when enough data
+            is available.
+          </div>
+        </div>
         {status !== 'idle' ? (
           <Button className='submit-button' icon={<FilterOutlined />} onClick={() => setOpen(true)}>
-            More Filters
+            Refine Filters
           </Button>
         ) : null}
-        <FiltersDrawer open={open} onClose={() => setOpen(false)} />
       </div>
-      <p className='disclaimer'>
-        * In case of yearly bonus, divide it by 12 then add to monthly base. <br />
-        * Without RSUs or equity. <br />
-        We do not keep your answer.
-      </p>
+      <div className='inputs-container'>
+        <div className='inputs-group'>
+          <CustomInput
+            mode='multiple'
+            type='search'
+            label='Role'
+            options={positionsOptions}
+            value={state.title}
+            onSelect={(payload) => dispatch({ type: 'title', payload })}
+            placeholder='Select your role'
+          />
+          <CustomInput
+            label='Monthly Net Salary'
+            type='number'
+            actionable
+            value={state.salary}
+            onChange={(payload) => dispatch({ type: 'salary', payload })}
+            onPressEnter={(e) => {
+              const payload = Number((e.target as HTMLInputElement).value)
+              dispatch({ type: 'salary', payload })
+            }}
+          />
+        </div>
+        <div className='filters-disclaimer'>
+          * If you have an annual bonus, divide by 12 and add it to monthly base. Excludes equity
+          and RSUs.
+        </div>
+      </div>
+      <FiltersDrawer open={open} onClose={() => setOpen(false)} />
       <FiltersTags />
       {status !== 'idle' ? (
         <p className='disclaimer'>
           By default, we do not include relocated participants or participants working remotely for
-          companies outside Egypt. <br />
-          You will need to choose to include them using the More Filters option
+          companies outside Egypt. Use Refine Filters to include them.
         </p>
       ) : null}
     </StepCard>

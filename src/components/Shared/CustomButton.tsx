@@ -6,9 +6,9 @@ interface CustomButtonProps extends ButtonProps {
   onClick?: () => void
   children?: ReactNode
 }
-export const CustomButton = ({ onClick, children, ...rest }: CustomButtonProps) => {
+export const CustomButton = ({ onClick, children, className, ...rest }: CustomButtonProps) => {
   return (
-    <Button className='button' onClick={onClick} {...rest}>
+    <Button className={['button', className].filter(Boolean).join(' ')} onClick={onClick} {...rest}>
       {children}
     </Button>
   )

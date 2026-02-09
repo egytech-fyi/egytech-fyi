@@ -12,15 +12,15 @@ export const SalaryComment = (props: SalaryCommentProps) => {
   let comment
   if (state.salary && median && p20Compensation && p75Compensation && p90Compensation) {
     if (state.salary < p20Compensation) {
-      comment = `You are in the lower range of salaries. 80% of the participants earn more than you. Try using more filters to narrow the result to participants with the same criteria as you 🔍`
+      comment = `You are in the lower range of salaries. 80% of participants earn more than you. Use filters to narrow the comparison to peers with similar criteria.`
     } else if (state.salary < median) {
-      comment = `You are in the lower range of salaries. 50% of the participants earn more than you. Try using more filters to narrow the result to participants with the same criteria as you 🔍`
+      comment = `You are in the lower range of salaries. 50% of participants earn more than you. Use filters to narrow the comparison to peers with similar criteria.`
     } else if (state.salary < p75Compensation) {
-      comment = `You are in the upper range of salaries, earning more than 50% of the partcipants. Good job! 👏`
+      comment = `You are in the upper range of salaries, earning more than 50% of participants.`
     } else if (state.salary < p90Compensation) {
-      comment = `You are in the upper range of salaries, earning more than 75% of the partcipants. Great job! 👏`
+      comment = `You are in the upper range of salaries, earning more than 75% of participants.`
     } else {
-      comment = 'You earn more than 90% of the participants who took the survey. Bravo! 🚀'
+      comment = 'You earn more than 90% of participants who took the survey.'
     }
   }
 

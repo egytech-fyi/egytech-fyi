@@ -3,11 +3,13 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    text-align: center;
     .cat-img {
-        width: 200px;
+        width: 160px;
         transform: rotate(200deg);
     }
     .text {
-        font-size: 20px;
+        font-size: 16px;
+        color: var(--color-muted);
     }
 }

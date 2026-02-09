@@ -1,20 +1,21 @@
 .step-container {
-    background-color: #ececec;
-    border-radius: 6px;
+    background-color: var(--color-surface);
+    border-radius: var(--radius-card);
     width: 100%;
-    padding: 0.5em;
-    border: 0;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 18px 40px var(--color-soft-shadow);
 }
 .step-content-container {
     width: 100%;
-    gap: 16px;
+    gap: 18px;
 }
 
 @media only screen and (max-width: 767px) {
     .step-container {
-        padding: 0;
+        padding: 0.5rem;
     }
     .ant-card-body {
-        padding-inline: 0 !important;
+        padding-inline: 0.5rem !important;
     }
 }

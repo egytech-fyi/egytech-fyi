@@ -2,15 +2,19 @@
 
 #root {
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
+    width: 100%;
 }
 
 .app-container {
     display: flex;
     min-height: calc(100vh - 64px);
     flex-direction: column;
-    align-items: center;
-    padding: 2rem;
+    align-items: stretch;
+    padding: 2.5rem 1.5rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 32px;
 }
 
 .ant-layout-header {
@@ -19,6 +23,7 @@
 
 @media only screen and (max-width: 767px) {
     .app-container {
-        padding: 1rem;
+        padding: 1.5rem 1rem 3rem;
+        gap: 24px;
     }
 }

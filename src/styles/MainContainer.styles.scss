@@ -1,11 +1,73 @@
 .main-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    align-items: stretch;
+    gap: 24px;
     width: 100%;
     flex: 1;
     margin-bottom: 32px;
+}
+
+.dashboard-shell {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.dashboard-note {
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard-note .comment {
+    text-align: center;
+    align-items: center;
+}
+
+.content-container .comment-container,
+.content-container .salary-comment-container {
+    align-items: center;
+}
+
+.content-container .comment {
+    text-align: center;
+    align-items: center;
+}
+
+.dashboard-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 0 8px;
+}
+
+.dashboard-hero-title {
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+}
+
+.dashboard-hero-subtitle {
+    color: var(--color-muted);
+    max-width: 720px;
+    font-size: 1.05rem;
+}
+
+.dashboard-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.dashboard-step {
+    background: rgba(27, 127, 107, 0.08);
+    border-radius: 12px;
+    padding: 12px 14px;
+    border: 1px solid rgba(27, 127, 107, 0.14);
+    font-size: 0.95rem;
+    color: var(--color-ink);
 }
 
 .content-container {
@@ -14,7 +76,7 @@
     grid-auto-rows: auto;
     width: 100%;
     box-sizing: border-box;
-    gap: 10px;
+    gap: 16px;
     & > *:first-child {
         grid-column: span 2;
     }

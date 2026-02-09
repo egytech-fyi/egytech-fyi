@@ -2,7 +2,6 @@ import { Divider, Button } from 'antd'
 import { Link } from 'react-router-dom'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
-import { BaseComment } from '@components'
 import logo from '/symbol.svg'
 import '@styles/LandingPage.styles.scss'
 import '@styles/SharedComponents.styles.scss'
@@ -73,58 +72,79 @@ const CurrencySalariesChart = () => {
 
 export const LandingPage = () => {
   return (
-    <div style={{ width: '100%', marginBottom: '10px', marginTop: '20px' }}>
-      <br />
-      <div className='header-text'>
-        <img src={logo} style={{ height: '6rem' }} alt='' />
-        <h1>egytech.fyi</h1>
-      </div>
-      <div className='header-subtext'>
-        <h3>Discover Everything Tech in Egypt 🚀 — Your Ultimate Insight Hub!</h3>
-      </div>
-      <Divider />
-      <div className='comment-container'>
-        <BaseComment>
-          Did you know that although tech salaries have risen, they are barely keeping pace with the
-          devaluation of the Egyptian pound?
-          <br />
-          <Divider />
+    <div style={{ width: '100%' }}>
+      <div className='landing-hero'>
+        <div>
+          <div className='landing-logo'>
+            <img src={logo} alt='Egypt Tech Scene' />
+            <span>Egyptian Tech Scene</span>
+          </div>
+          <h1 className='landing-title'>Clear, credible salary signals for Egypt's tech market.</h1>
+          <p className='landing-subtitle'>
+            The Egyptian Tech Scene report and dashboard translate 2024 survey data into clear
+            market benchmarks.
+          </p>
+          <div className='landing-actions'>
+            <Link to='/dashboard'>
+              <Button type='primary'>Open Salary Explorer</Button>
+            </Link>
+            <Link to='/report'>
+              <Button type='default'>Read the 2024 report</Button>
+            </Link>
+          </div>
+          <div className='landing-highlight-grid'>
+            <div className='landing-highlight'>
+              <strong>2,649</strong>
+              <span>Salary responses</span>
+            </div>
+            <div className='landing-highlight'>
+              <strong>Apr-Jul 2024</strong>
+              <span>Collection window</span>
+            </div>
+            <div className='landing-highlight'>
+              <strong>Nationwide</strong>
+              <span>Local, regional, and global firms</span>
+            </div>
+          </div>
+        </div>
+        <div className='landing-chart-card'>
           <CurrencySalariesChart />
-          <br />
-          <Link to='/report'>
-            <Button type='default'>Read Our Full Report 💡</Button>
-          </Link>
-        </BaseComment>
+        </div>
       </div>
-      <Divider />
-      <div className='comment-container'>
-        <BaseComment>
-          Feeling underpaid because you lack accurate market data? You're not alone. Without
-          reliable salary information, it's hard to negotiate fair compensation. But with access to
-          up-to-date data, you can confidently advocate for yourself and secure the pay you deserve.
-          Don't settle for less – empower yourself with the knowledge to thrive in your tech career.
-          <br />
-          <br />
-          <Link to='/dashboard'>
-            <Button type='default'>Access Salary Dashboard 💸</Button>
-          </Link>
-        </BaseComment>
-      </div>
-      <Divider />
-      <div className='comment-container'>
-        <BaseComment>
-          Do you feel we need more accurate data? If you haven't already participated in the survey,
-          now's the time to share your insights. Your participation helps us gather comprehensive
-          data that drives meaningful change in the tech industry.
-          <br />
-          <br />
-          <Button
-            type='default'
-            href='https://docs.google.com/forms/d/e/1FAIpQLSfBAjjgs14SQ9i3Dgo6BDPp-m7sxqHaUt4kFOghV-44knIUPg/viewform'
-            target='_blank'>
-            Participate Now 🙌🏻
-          </Button>
-        </BaseComment>
+
+      <div className='landing-section'>
+        <div className='landing-card-grid'>
+          <div className='landing-card'>
+            <h4>Why salaries feel stuck</h4>
+            <p>
+              Compensation rose, but EGP devaluation erased gains. See how purchasing power shifted
+              year over year.
+            </p>
+            <Link to='/report'>
+              <Button type='default'>Read the story</Button>
+            </Link>
+          </div>
+          <div className='landing-card'>
+            <h4>See your market position</h4>
+            <p>
+              Use the explorer to compare your salary with peers by role, level, and company
+              profile.
+            </p>
+            <Link to='/dashboard'>
+              <Button type='default'>Open Salary Explorer</Button>
+            </Link>
+          </div>
+          <div className='landing-card'>
+            <h4>Help keep the data fresh</h4>
+            <p>More responses mean better benchmarks. Add your data to the next update.</p>
+            <Button
+              type='default'
+              href='https://docs.google.com/forms/d/e/1FAIpQLSfBAjjgs14SQ9i3Dgo6BDPp-m7sxqHaUt4kFOghV-44knIUPg/viewform'
+              target='_blank'>
+              Contribute your salary
+            </Button>
+          </div>
+        </div>
       </div>
       <Divider />
     </div>

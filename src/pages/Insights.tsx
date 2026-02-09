@@ -127,7 +127,7 @@ export const Insights = ({ drawerOpen, onDrawerClose }: InsightsProps) => {
         <Col xs={24} md={16} lg={19}>
           <div>
             <div className='header-text'>
-              <h1>Egyptian Tech Scene 2024</h1>
+              <h1>Egyptian Tech Scene 2024 Report</h1>
             </div>
             <Divider />
           </div>
@@ -145,7 +145,7 @@ export const Insights = ({ drawerOpen, onDrawerClose }: InsightsProps) => {
 
         {/* Mobile Drawer */}
         <Drawer
-          title='Content'
+          title='Report contents'
           placement='right'
           onClose={onDrawerClose}
           open={drawerOpen}

@@ -1,24 +1,26 @@
 .comment {
     width: 100%;
-    padding: 20px;
+    padding: 22px;
     margin: 0;
-    margin-bottom: 10px;
-    font-size: 18px;
+    margin-bottom: 12px;
+    font-size: 16px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 
-    text-align: center;
+    text-align: left;
 
-    border-radius: 6px;
-    background: #faf9f9;
+    border-radius: 16px;
+    background: var(--color-surface-muted);
+    border: 1px solid var(--color-border);
 
-    max-width: 800px;
+    max-width: 820px;
     min-height: 3em;
     max-height: 1000px;
     transition: all 200ms;
+    color: var(--color-ink);
 }
 
 .hiddenComment {

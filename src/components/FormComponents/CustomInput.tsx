@@ -20,11 +20,13 @@ interface CustomInputNumberProps extends CommonProps, Omit<InputNumberProps, 'on
   onPressEnter?: (e: React.KeyboardEvent<HTMLInputElement>) => void
   value?: number | undefined
 }
-interface CustomSearchInputProps extends CommonProps, SelectProps {
+interface CustomSearchInputProps extends CommonProps, Omit<SelectProps, 'onChange' | 'onSelect'> {
   type: 'search'
+  onSelect?: SelectProps['onChange']
 }
-interface CustomSelectInputProps extends CommonProps, SelectProps {
+interface CustomSelectInputProps extends CommonProps, Omit<SelectProps, 'onChange' | 'onSelect'> {
   type: 'select'
+  onSelect?: SelectProps['onChange']
 }
 interface CustomCheckBoxInput extends CommonProps, CheckboxProps {
   type: 'checkbox'
@@ -65,47 +67,52 @@ const CustomNumberInput: React.FC<CustomInputNumberProps> = ({
   const [number, setNumber] = useState<number | undefined>(value)
   if (!show) return null
 
+  const handleCompare = () => {
+    onChange?.(number ?? 0)
+  }
+
   return (
-    <FloatLabel
-      label={label}
-      placeholder={placeholder as string}
-      value={number !== undefined ? `${number}` : undefined}
-      extraLeft
-      clearValue={
-        clearValue
-          ? () => {
-              clearValue?.()
-              setNumber(undefined)
-            }
-          : undefined
-      }>
-      <InputNumber<number>
-        className='input number-input'
-        addonBefore={<span style={{ paddingInline: '10px' }}>{inputLabel1}</span>}
-        value={number}
-        inputMode='tel'
-        pattern='[0-9]*'
-        onChange={(value) => {
-          setNumber(value ?? undefined)
-          !actionable && onChange?.(value as number)
-        }}
-        status={number === 0 || (number && number < 0) ? 'error' : ''}
-        addonAfter={
-          actionable ? (
-            <CustomButton
-              type='primary'
-              style={{ backgroundColor: '#007646' }}
-              disabled={number ? number <= 0 : false}
-              onClick={() => onChange?.(number ?? 0)}>
-              <Typography.Text strong style={{ color: 'white' }}>
-                💸 Compare
-              </Typography.Text>
-            </CustomButton>
-          ) : null
-        }
-        onPressEnter={(e) => onPressEnter?.(e)}
-      />
-    </FloatLabel>
+    <div className='number-input-wrap'>
+      <FloatLabel
+        label={label}
+        placeholder={placeholder as string}
+        value={number !== undefined ? `${number}` : undefined}
+        extraLeft
+        clearValue={
+          clearValue
+            ? () => {
+                clearValue?.()
+                setNumber(undefined)
+              }
+            : undefined
+        }>
+        <InputNumber<number>
+          className='input number-input'
+          addonBefore={<span style={{ paddingInline: '10px' }}>{inputLabel1}</span>}
+          value={number}
+          inputMode='tel'
+          pattern='[0-9]*'
+          onChange={(value) => {
+            setNumber(value ?? undefined)
+            !actionable && onChange?.(value as number)
+          }}
+          status={number === 0 || (number && number < 0) ? 'error' : ''}
+          onPressEnter={(e) => {
+            onPressEnter?.(e)
+            handleCompare()
+          }}
+        />
+      </FloatLabel>
+      {actionable ? (
+        <CustomButton
+          type='primary'
+          className='compare-button'
+          disabled={number ? number <= 0 : false}
+          onClick={handleCompare}>
+          <Typography.Text strong>💸 Compare</Typography.Text>
+        </CustomButton>
+      ) : null}
+    </div>
   )
 }
 const CustomSearchInput = ({
@@ -167,7 +174,7 @@ const CustomSelectInput = ({
       clearValue={clearValue}>
       <Select
         className='select-input'
-        onSelect={onSelect}
+        onChange={onSelect}
         options={options}
         value={value}
         {...props}

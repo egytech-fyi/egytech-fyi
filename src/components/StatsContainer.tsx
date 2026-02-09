@@ -25,54 +25,57 @@ export const StatsContainer = (props: StatsContainerProps) => {
 
   return (
     <div className='stats-outer-container'>
-      <div className='stats-inner-container median'>
+      <div className='stats-hero'>
         {median ? (
-          <div className='stat'>
+          <div className='stat hero'>
+            <Typography.Text className='stat-label'>Median monthly pay</Typography.Text>
             <Typography.Text className='stat-value median'>
               {currency} {formatNumberWithCommas(median)}
             </Typography.Text>
-            <Typography.Text className='stat-label'>Median</Typography.Text>
           </div>
         ) : null}
         {totalCount ? (
-          <div className='stat mobile'>
-            <Typography.Text className='stat-value'>{totalCount}</Typography.Text>
+          <div className='stat meta'>
             <Typography.Text className='stat-label'>Participants</Typography.Text>
+            <Typography.Text className='stat-value'>
+              {formatNumberWithCommas(totalCount)}
+            </Typography.Text>
           </div>
         ) : null}
       </div>
-      <div className='stats-inner-container percentile-container'>
+      <div className='stats-divider' />
+      <div className='stats-percentiles'>
         {p20Compensation ? (
-          <div className='stat'>
+          <div className='stat pill'>
             <div className='indicator p20'></div>
-            <Typography.Text className='stat-value'>
-              {currency} {formatNumber(p20Compensation)}
-            </Typography.Text>
-            <Typography.Text className='stat-label'>20TH%</Typography.Text>
+            <div>
+              <Typography.Text className='stat-label'>20th percentile</Typography.Text>
+              <Typography.Text className='stat-value'>
+                {currency} {formatNumber(p20Compensation)}
+              </Typography.Text>
+            </div>
           </div>
         ) : null}
         {p75Compensation ? (
-          <div className='stat'>
+          <div className='stat pill'>
             <div className='indicator p75'></div>
-            <Typography.Text className='stat-value'>
-              {currency} {formatNumber(p75Compensation)}
-            </Typography.Text>
-            <Typography.Text className='stat-label'>75TH%</Typography.Text>
+            <div>
+              <Typography.Text className='stat-label'>75th percentile</Typography.Text>
+              <Typography.Text className='stat-value'>
+                {currency} {formatNumber(p75Compensation)}
+              </Typography.Text>
+            </div>
           </div>
         ) : null}
         {p90Compensation ? (
-          <div className='stat'>
+          <div className='stat pill'>
             <div className='indicator p90'></div>
-            <Typography.Text className='stat-value'>
-              {currency} {formatNumber(p90Compensation)}
-            </Typography.Text>
-            <Typography.Text className='stat-label'>90TH%</Typography.Text>
-          </div>
-        ) : null}
-        {totalCount ? (
-          <div className='stat laptop'>
-            <Typography.Text className='stat-value'>{totalCount}</Typography.Text>
-            <Typography.Text className='stat-label'>Participants</Typography.Text>
+            <div>
+              <Typography.Text className='stat-label'>90th percentile</Typography.Text>
+              <Typography.Text className='stat-value'>
+                {currency} {formatNumber(p90Compensation)}
+              </Typography.Text>
+            </div>
           </div>
         ) : null}
       </div>
