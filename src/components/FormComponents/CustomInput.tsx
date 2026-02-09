@@ -85,8 +85,7 @@ const CustomNumberInput: React.FC<CustomInputNumberProps> = ({
                 setNumber(undefined)
               }
             : undefined
-        }
-      >
+        }>
         <InputNumber<number>
           className='input number-input'
           addonBefore={<span style={{ paddingInline: '10px' }}>{inputLabel1}</span>}
@@ -109,8 +108,7 @@ const CustomNumberInput: React.FC<CustomInputNumberProps> = ({
           type='primary'
           className='compare-button'
           disabled={number ? number <= 0 : false}
-          onClick={handleCompare}
-        >
+          onClick={handleCompare}>
           <Typography.Text strong>💸 Compare</Typography.Text>
         </CustomButton>
       ) : null}
@@ -134,8 +132,7 @@ const CustomSearchInput = ({
       label={label}
       placeholder={placeholder as string}
       value={value}
-      clearValue={clearValue}
-    >
+      clearValue={clearValue}>
       <Select
         className='search-input'
         showSearch
@@ -174,8 +171,7 @@ const CustomSelectInput = ({
       label={label}
       placeholder={placeholder as string}
       value={value}
-      clearValue={clearValue}
-    >
+      clearValue={clearValue}>
       <Select
         className='select-input'
         onChange={onSelect}
