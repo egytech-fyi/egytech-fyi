@@ -20,11 +20,13 @@ interface CustomInputNumberProps extends CommonProps, Omit<InputNumberProps, 'on
   onPressEnter?: (e: React.KeyboardEvent<HTMLInputElement>) => void
   value?: number | undefined
 }
-interface CustomSearchInputProps extends CommonProps, SelectProps {
+interface CustomSearchInputProps extends CommonProps, Omit<SelectProps, 'onChange' | 'onSelect'> {
   type: 'search'
+  onSelect?: SelectProps['onChange']
 }
-interface CustomSelectInputProps extends CommonProps, SelectProps {
+interface CustomSelectInputProps extends CommonProps, Omit<SelectProps, 'onChange' | 'onSelect'> {
   type: 'select'
+  onSelect?: SelectProps['onChange']
 }
 interface CustomCheckBoxInput extends CommonProps, CheckboxProps {
   type: 'checkbox'
@@ -83,7 +85,8 @@ const CustomNumberInput: React.FC<CustomInputNumberProps> = ({
                 setNumber(undefined)
               }
             : undefined
-        }>
+        }
+      >
         <InputNumber<number>
           className='input number-input'
           addonBefore={<span style={{ paddingInline: '10px' }}>{inputLabel1}</span>}
@@ -106,7 +109,8 @@ const CustomNumberInput: React.FC<CustomInputNumberProps> = ({
           type='primary'
           className='compare-button'
           disabled={number ? number <= 0 : false}
-          onClick={handleCompare}>
+          onClick={handleCompare}
+        >
           <Typography.Text strong>💸 Compare</Typography.Text>
         </CustomButton>
       ) : null}
@@ -130,7 +134,8 @@ const CustomSearchInput = ({
       label={label}
       placeholder={placeholder as string}
       value={value}
-      clearValue={clearValue}>
+      clearValue={clearValue}
+    >
       <Select
         className='search-input'
         showSearch
@@ -169,10 +174,11 @@ const CustomSelectInput = ({
       label={label}
       placeholder={placeholder as string}
       value={value}
-      clearValue={clearValue}>
+      clearValue={clearValue}
+    >
       <Select
         className='select-input'
-        onSelect={onSelect}
+        onChange={onSelect}
         options={options}
         value={value}
         {...props}
